@@ -1,0 +1,3 @@
+mutation CreateArtistAccount($id: ObjectId!, $token: String!, $name: String!, $password: String!, $address: AlgorandAddress!, $txn: SignedTxn!) {
+  createArtistAccount(id: $id, token: $token, name: $name, password: $password, address: $address, txn: $txn)
+}

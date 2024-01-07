@@ -1,0 +1,45 @@
+query GetArtistSettings {
+  getArtistSettings {
+    name
+    normalizedName
+    location
+    joinDate
+    page {
+      description
+      twitter
+      profileImage {
+        fileroomId
+        cid
+        mimeType
+        previews {
+          size
+          cid
+          mimeType
+        }
+      }
+      bannerImage {
+        fileroomId
+        cid
+        mimeType
+        previews {
+          cid
+          size
+          mimeType
+        }
+      }
+      customLinks {
+        name
+        url
+      }
+    }
+    stats {
+      totalMinted
+      totalSold
+      floor
+    }
+    featured {
+      isFeatured
+      categories
+    }
+  }
+}

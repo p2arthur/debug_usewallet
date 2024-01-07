@@ -1,0 +1,47 @@
+query GetFeaturedArtists($skip: [ObjectId!], $limit: Int) {
+  getFeaturedArtists(skip: $skip, limit: $limit) {
+    id
+    title
+    normalizedTitle
+    artists {
+      name
+      normalizedName
+      page {
+        description
+        profileImage {
+          cid
+          mimeType
+          previews {
+            size
+            cid
+            mimeType
+          }
+        }
+        bannerImage {
+          cid
+          mimeType
+          previews {
+            size
+            cid
+            mimeType
+          }
+        }
+        customLinks {
+          name
+          url
+        }
+      }
+      stats {
+        totalMinted
+        totalSold
+        floor
+      }
+      location
+      joinDate
+      featured {
+        isFeatured
+        categories
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+query GetV1ListingsByAddress($address: AlgorandAddress) {
+  getV1ListingsByAddress(address: $address) {
+    index
+    listingAddress
+    listingProgram
+    listerAddress
+    price
+    fundingHistory {
+      date
+      amount
+    }
+    sellHistory {
+      date
+      amount
+      address
+    }
+    buyLimit
+    buyLimitOn
+    limitList {
+      amount
+      address
+    }
+  }
+}

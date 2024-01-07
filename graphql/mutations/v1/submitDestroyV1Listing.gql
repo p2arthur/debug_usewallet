@@ -1,0 +1,27 @@
+mutation SubmitDestroyV1Listing($txns: [[SignedTxn!]!]!) {
+  submitDestroyV1Listing(txns: $txns) {
+    listings {
+      index
+      listingAddress
+      listingProgram
+      listerAddress
+      price
+      fundingHistory {
+        date
+        amount
+      }
+      sellHistory {
+        date
+        amount
+        address
+      }
+      buyLimit
+      buyLimitOn
+      limitList {
+        amount
+        address
+      }
+    }
+    partialErrors
+  }
+}

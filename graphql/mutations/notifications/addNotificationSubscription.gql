@@ -1,0 +1,9 @@
+mutation AddNotificationSubscription($subscription: NotificationSubscription!) {
+  addNotificationSubscription(subscription: $subscription) {
+    subscriptions
+    enabled {
+      type
+      category
+    }
+  }
+}

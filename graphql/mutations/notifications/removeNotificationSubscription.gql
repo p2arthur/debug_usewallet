@@ -1,0 +1,9 @@
+mutation RemoveNotificationSubscription($subscriptionHash: String!) {
+  removeNotificationSubscription(subscriptionHash: $subscriptionHash) {
+    subscriptions
+    enabled {
+      type
+      category
+    }
+  }
+}

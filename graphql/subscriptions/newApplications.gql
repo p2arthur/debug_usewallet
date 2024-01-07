@@ -1,0 +1,12 @@
+subscription NewApplications {
+  newApplications {
+    id
+    name
+    email
+    status
+    twitter
+    instagram
+    links
+    art
+  }
+}

@@ -1,0 +1,3 @@
+mutation CreateBand($name: String!, $wallets: [String!]!, $asas:[String!]!, $period: Int!, $asaAmount: Int!, $coin: Float!) {
+  createBand(name: $name, wallets: $wallets, asas: $asas, period: $period, asaAmount: $asaAmount, coin: $coin)
+}

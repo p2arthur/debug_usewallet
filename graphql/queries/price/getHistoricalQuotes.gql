@@ -1,0 +1,6 @@
+query GetHistoricalQuotes($fiat: [FiatCode!]!, $asa: [AsaCode!]!, $range: TimeRange!) {
+  getHistoricalQuotes(fiat: $fiat, asa: $asa, range: $range) {
+    timestamp
+    quotes
+  }
+}

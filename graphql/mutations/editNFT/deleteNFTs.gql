@@ -1,0 +1,3 @@
+mutation DeleteNFTs($ids: [ObjectId!]!) {
+  deleteNFTs(ids: $ids)
+}

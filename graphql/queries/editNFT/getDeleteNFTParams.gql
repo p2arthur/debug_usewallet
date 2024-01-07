@@ -1,0 +1,10 @@
+query GetDeleteNFTParams($indexes: [Int!]!) {
+  getDeleteNFTParams(indexes: $indexes) {
+    description
+    blob
+    txID
+    signers
+    signature
+    authAddress
+  }
+}

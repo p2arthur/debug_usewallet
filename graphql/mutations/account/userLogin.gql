@@ -1,0 +1,58 @@
+mutation UserLogin($address: AlgorandAddress!, $password: String, $txn: SignedTxn) {
+  userLogin(address: $address, password: $password, txn: $txn) {
+    authToken
+    exp
+    user {
+      walletAddress
+      artist {
+        name
+        normalizedName
+        location
+        joinDate
+        page {
+          description
+          profileImage {
+            cid
+            mimeType
+            previews {
+              size
+              cid
+              mimeType
+            }
+          }
+          bannerImage {
+            cid
+            mimeType
+            previews {
+              cid
+              size
+              mimeType
+            }
+          }
+          customLinks {
+            name
+            url
+          }
+        }
+      }
+      collector {
+        banned
+        page {
+          overWriteNfdomains
+          description
+        }
+      }
+      generalStats {
+        followers
+        following
+      }
+      fileroom {
+        id
+        token
+      }
+      isAdmin
+      isArtist
+      isDev
+    }
+  }
+}

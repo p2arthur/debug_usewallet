@@ -1,0 +1,75 @@
+query GetFixedBidsByCollector($address: AlgorandAddress!, $offset: Int, $limit: Int) {
+  getFixedBidsByCollector(address: $address, offset: $offset, limit: $limit) {
+    listings {
+      nftIndex
+      appId
+      currency
+      sellerAddress
+      sellerPayoutAddress
+      royaltyPayoutAddress
+      managerPayoutAddress
+      sellerRevenueSink
+      royaltyRevenueSink
+      contractAddress
+      sellerShare
+      royaltyShare
+      managerShare
+      price
+      primary
+      status {
+        deleted
+        isSetup
+        balance
+      }
+      nft {
+        id
+        info {
+          title
+        }
+        token {
+          index
+          unitName
+          assetName
+          royalty
+          editions
+          mintAddress
+          timestamp
+        }
+        media {
+          fileroomId
+          cid
+          dimensions
+          storageSize
+          mimeType
+          integrity
+          previews {
+            size
+            cid
+            mimeType
+            integrity
+          }
+          thumbnail {
+            cid
+            mimeType
+            previews {
+              size
+              cid
+              mimeType
+            }
+          }
+        }
+      }
+    }
+    pageInfo {
+      totalDocs
+      offset
+      limit
+      totalPages
+      page
+      hasPrevPage
+      hasNextPage
+      prevPage
+      nextPage
+    }
+  }
+}

@@ -1,0 +1,39 @@
+.success {
+  color: $c-success;
+
+  &-hover {
+    &:hover {
+      background-color: $c-success-hover;
+    }
+  }
+}
+
+.warning {
+  color: $c-warning;
+
+  &-hover {
+    &:hover {
+      background-color: $c-warning-hover;
+    }
+  }
+}
+
+.error {
+  color: $c-error;
+
+  &-hover {
+    &:hover {
+      background-color: $c-error-hover;
+    }
+  }
+}
+
+.primary {
+  color: $c-primary;
+
+  // &-hover {
+  //   &:hover {
+  //     background-color: $c-primary-hover;
+  //   }
+  // }
+}

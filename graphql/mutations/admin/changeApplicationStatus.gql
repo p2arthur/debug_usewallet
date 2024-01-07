@@ -1,0 +1,14 @@
+mutation ChangeApplicationStatus($id: ObjectId!, $status: ApplicationStatuses!) {
+  changeApplicationStatus(id: $id, status: $status) {
+    id
+    name
+    email
+    status
+    twitter
+    instagram
+    links
+    art
+    inviteLink
+    accountCreated
+  }
+}

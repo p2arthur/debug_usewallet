@@ -1,0 +1,3 @@
+mutation CreateApplication($name: String!, $email: EmailAddress!) {
+  createApplication(name: $name, email: $email)
+}

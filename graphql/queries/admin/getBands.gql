@@ -1,0 +1,26 @@
+query GetBands($status: [BandStatuses!], $offset: Int, $limit: Int) {
+  getBands(status: $status, offset: $offset, limit: $limit) {
+    bands {
+      id
+      name
+      status
+      period
+      date{
+        startDate
+        endDate
+      }
+      wallets            
+    }
+    pageInfo {
+      totalDocs
+      offset
+      limit
+      totalPages
+      page
+      hasPrevPage
+      hasNextPage
+      prevPage
+      nextPage
+    }
+  }
+}

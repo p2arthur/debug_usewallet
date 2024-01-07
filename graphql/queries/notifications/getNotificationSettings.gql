@@ -1,0 +1,9 @@
+query GetNotificationSettings {
+  getNotificationSettings {
+    subscriptions
+    enabled {
+      type
+      category
+    }
+  }
+}

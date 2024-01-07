@@ -1,0 +1,75 @@
+query GetCollectionsByArtist($id: String!, $limit: Int, $offset: Int) {
+  getCollectionsByArtist(id: $id, limit: $limit, offset: $offset) {
+    collections {
+      id
+      title
+      normalizedTitle
+      description
+      rarity
+      attributes {
+        traitType
+        displayType
+        values {
+          value
+          rarityScore
+        }
+        range {
+          max
+          min
+        }
+      }
+      media {
+        card {
+          cid
+          mimeType
+          previews {
+            size
+            cid
+            mimeType
+          }
+        }
+        banner {
+          cid
+          mimeType
+          previews {
+            size
+            cid
+            mimeType
+          }
+        }
+      }
+      artists {
+        id
+        address
+        name
+        normalizedName
+        profileImage {
+          cid
+          mimeType
+          previews {
+            size
+            cid
+            mimeType
+          }
+        }
+      }
+      stats {
+        nNFTs
+        sales
+        floor
+        volume
+      }
+    }
+    pageInfo {
+      totalDocs
+      offset
+      limit
+      totalPages
+      page
+      hasPrevPage
+      hasNextPage
+      prevPage
+      nextPage
+    }
+  }
+}

@@ -1,0 +1,126 @@
+query GetCreatedNFTs($offset: Int, $limit: Int) {
+  getCreatedNFTs(offset: $offset, limit: $limit) {
+    nfts {
+      nft {
+        id
+        info {
+          title
+          description
+          link
+          nsfw
+          ai
+          aiDescription
+          tags
+          updated
+        }
+        token {
+          index
+          unitName
+          assetName
+          royalty
+          editions
+          mintAddress
+          timestamp
+        }
+        artist {
+          id
+          address
+          name
+          normalizedName
+          suspended
+          deleted
+          profileImage {
+            cid
+            mimeType
+            previews {
+              size
+              cid
+              mimeType
+            }
+          }
+        }
+        card {
+          x
+          y
+          type
+        }
+        c {
+          id
+          title
+          attributes {
+            traitType
+            value
+            displayType
+          }
+        }
+        media {
+          fileroomId
+          cid
+          dimensions
+          storageSize
+          mimeType
+          integrity
+          previews {
+            size
+            cid
+            mimeType
+            integrity
+          }
+          thumbnail {
+            cid
+            mimeType
+            previews {
+              cid
+              mimeType
+              size
+            }
+          }
+        }
+        metadata {
+          id
+          cid
+          mimeType
+          integrity
+          standard
+        }
+        listings {
+          listed
+          fixedBid {
+            primary
+            currency
+            price
+          }
+          auctions {
+            primary
+            currency
+            price
+            duration
+            highestBid
+            started
+          }
+        }
+        statistics {
+          sold
+          latestSale {
+            currency
+            price
+            usdValue
+          }
+        }
+        status
+      }
+      balance
+    }
+    pageInfo {
+      totalDocs
+      offset
+      limit
+      totalPages
+      page
+      hasPrevPage
+      hasNextPage
+      prevPage
+      nextPage
+    }
+  }
+}

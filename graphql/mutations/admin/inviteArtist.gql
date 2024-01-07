@@ -1,0 +1,14 @@
+mutation InviteArtist($name: String!, $email: EmailAddress!) {
+  inviteArtist(name: $name, email: $email) {
+    id
+    name
+    email
+    status
+    twitter
+    instagram
+    links
+    art
+    inviteLink
+    accountCreated
+  }
+}

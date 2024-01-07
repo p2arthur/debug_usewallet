@@ -1,0 +1,80 @@
+query GetNFTSettings($id: ObjectId!) {
+  getNFTSettings(id: $id) {
+    id
+    status
+    stage
+    edit {
+      info
+      collection
+      media
+      token
+    }
+    info {
+      title
+      description
+      link
+      nsfw
+      ai
+      aiDescription
+      tags
+    }
+    token {
+      unitName
+      assetName
+      royalty
+      editions
+    }
+    artist {
+      id
+      name
+      normalizedName
+      address
+      profileImage {
+        cid
+        mimeType
+        previews {
+          size
+          cid
+          mimeType
+        }
+      }
+    }
+    c {
+      id
+      title
+      attributes {
+        traitType
+        value
+        displayType
+      }
+    }
+    card {
+      x
+      y
+      type
+    }
+    media {
+      fileroomId
+      cid
+      dimensions
+      storageSize
+      mimeType
+      integrity
+      previews {
+        size
+        cid
+        mimeType
+        integrity
+      }
+      thumbnail {
+        cid
+        mimeType
+        previews {
+          size
+          cid
+          mimeType
+        }
+      }
+    }
+  }
+}

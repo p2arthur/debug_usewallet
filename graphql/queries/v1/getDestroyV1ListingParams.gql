@@ -1,0 +1,10 @@
+query GetDestroyV1ListingParams($settings: [DestroyV1ListingParams!]!) {
+  getDestroyV1ListingParams(settings: $settings) {
+    description
+    txID
+    signers
+    signature
+    authAddress
+    blob
+  }
+}

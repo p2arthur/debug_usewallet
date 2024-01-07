@@ -1,0 +1,3 @@
+mutation SubmitApplicationSocials($id: ObjectId!, $token: String!, $links: String!) {
+  submitApplicationSocials(id: $id, token: $token, links: $links)
+}

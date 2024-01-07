@@ -1,0 +1,7 @@
+query GetNFTOwners($index: Int!) {
+  getNFTOwners(index: $index) {
+    address
+    walletBalance
+    listingBalance
+  }
+}

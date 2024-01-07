@@ -1,0 +1,75 @@
+query GetCollectionSettings($id: ObjectId) {
+  getCollectionSettings(id: $id) {
+    id
+    title
+    normalizedTitle
+    description
+    private
+    locked
+    rarity
+    type
+    mintingAddresses {
+      address
+      active
+      locked
+    }
+    attributes {
+      traitType
+      displayType
+      values {
+        value
+        locked
+        rarityScore
+      }
+      range {
+        max
+        min
+        usedValues
+      }
+    }
+    media {
+      card {
+        fileroomId
+        cid
+        mimeType
+        previews {
+          size
+          cid
+          mimeType
+        }
+      }
+      banner {
+        fileroomId
+        cid
+        mimeType
+        previews {
+          size
+          cid
+          mimeType
+        }
+      }
+    }
+    artists {
+      id
+      address
+      name
+      normalizedName
+      status
+      profileImage {
+        cid
+        mimeType
+        previews {
+          size
+          cid
+          mimeType
+        }
+      }
+    }
+    stats {
+      nNFTs
+      sales
+      floor
+      volume
+    }
+  }
+}

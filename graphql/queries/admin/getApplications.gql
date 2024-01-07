@@ -1,0 +1,27 @@
+query GetApplications($status: [ApplicationStatuses!], $offset: Int, $limit: Int) {
+  getApplications(status: $status, offset: $offset, limit: $limit) {
+    applications {
+      id
+      name
+      email
+      status
+      twitter
+      instagram
+      links
+      art
+      inviteLink
+      accountCreated
+    }
+    pageInfo {
+      totalDocs
+      offset
+      limit
+      totalPages
+      page
+      hasPrevPage
+      hasNextPage
+      prevPage
+      nextPage
+    }
+  }
+}

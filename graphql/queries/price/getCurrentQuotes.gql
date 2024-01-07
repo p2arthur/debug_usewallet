@@ -1,0 +1,6 @@
+query GetCurrentQuotes($fiat: [FiatCode!]!, $asa: [AsaCode!]!) {
+  getCurrentQuotes(fiat: $fiat, asa: $asa) {
+    timestamp
+    quotes
+  }
+}

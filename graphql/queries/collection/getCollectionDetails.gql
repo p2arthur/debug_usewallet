@@ -1,0 +1,62 @@
+query GetCollectionDetails($id: String!) {
+  getCollectionDetails(id: $id) {
+    id
+    title
+    normalizedTitle
+    description
+    rarity
+    attributes {
+      traitType
+      displayType
+      values {
+        value
+        rarityScore
+      }
+      range {
+        max
+        min
+      }
+    }
+    media {
+      card {
+        cid
+        mimeType
+        previews {
+          size
+          cid
+          mimeType
+        }
+      }
+      banner {
+        cid
+        mimeType
+        previews {
+          size
+          cid
+          mimeType
+        }
+      }
+    }
+    artists {
+      id
+      address
+      name
+      normalizedName
+      profileImage {
+        cid
+        mimeType
+        previews {
+          size
+          cid
+          mimeType
+        }
+      }
+    }
+    stats {
+      nNFTs
+      sales
+      floor
+      volume
+    }
+  }
+}

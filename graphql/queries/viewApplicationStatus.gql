@@ -1,0 +1,12 @@
+query ViewApplicationStatus($id: ObjectId!, $token: String!) {
+  viewApplicationStatus(id: $id, token: $token) {
+    status
+    emailVerified
+    socialsAdded
+    requiresArt
+    artUploaded
+    links
+    instagram
+    twitter
+  }
+}

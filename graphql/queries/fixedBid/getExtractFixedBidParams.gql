@@ -1,0 +1,10 @@
+query GetExtractFixedBidParams($settings: [ExtractFixedBidParams!]!) {
+  getExtractFixedBidParams(settings: $settings) {
+    description
+    blob
+    txID
+    signers
+    signature
+    authAddress
+  }
+}

@@ -1,0 +1,24 @@
+query GetFixedBidsByNFT($index: Int!) {
+  getFixedBidsByNFT(index: $index) {
+    nftIndex
+    appId
+    currency
+    sellerAddress
+    sellerPayoutAddress
+    royaltyPayoutAddress
+    managerPayoutAddress
+    sellerRevenueSink
+    royaltyRevenueSink
+    contractAddress
+    sellerShare
+    royaltyShare
+    managerShare
+    price
+    primary
+    status {
+      deleted
+      isSetup
+      balance
+    }
+  }
+}

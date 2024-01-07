@@ -1,0 +1,10 @@
+query GetDeployFixedBidParams($settings: [DeployFixedBidParams!]!) {
+  getDeployFixedBidParams(settings: $settings) {
+    description
+    blob
+    txID
+    signers
+    signature
+    authAddress
+  }
+}

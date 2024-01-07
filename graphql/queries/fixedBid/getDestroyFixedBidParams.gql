@@ -1,0 +1,10 @@
+query GetDestroyFixedBidParams($settings: [DestroyFixedBidParams!]!) {
+  getDestroyFixedBidParams(settings: $settings) {
+    description
+    blob
+    txID
+    signers
+    signature
+    authAddress
+  }
+}

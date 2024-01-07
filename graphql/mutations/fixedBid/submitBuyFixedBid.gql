@@ -1,0 +1,27 @@
+mutation SubmitBuyFixedBid($txns: [[SignedTxn!]!]!) {
+  submitBuyFixedBid(txns: $txns) {
+    listings {
+      nftIndex
+      appId
+      currency
+      sellerAddress
+      sellerPayoutAddress
+      royaltyPayoutAddress
+      managerPayoutAddress
+      sellerRevenueSink
+      royaltyRevenueSink
+      contractAddress
+      sellerShare
+      royaltyShare
+      managerShare
+      price
+      primary
+      status {
+        deleted
+        isSetup
+        balance
+      }
+    }
+    partialErrors
+  }
+}

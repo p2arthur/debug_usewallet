@@ -1,0 +1,22 @@
+name = "dartroom-v2"
+main = "./.output/server/index.mjs"
+workers_dev = true
+node_compat = true
+compatibility_date = "2022-09-15"
+account_id = "a98eb9b4ee481779ab72f393eeb23bc9"
+# route = ""
+[site]
+bucket = ".output/public"
+
+[vars]
+DARTROOM_API = "https://api-v2.dartroom.xyz/graphql"
+FILEROOM_API = "https://api.fileroom.app"
+QUEUE_SYSTEM = "https://queue-1.fileroom.app"
+
+[env.staging]
+name = "dartroom-v2-staging"
+
+[env.staging.vars]
+DARTROOM_API = "https://api-v2.dartroom.xyz/graphql"
+FILEROOM_API = "https://api.fileroom.app"
+QUEUE_SYSTEM = "https://queue-1.fileroom.app"

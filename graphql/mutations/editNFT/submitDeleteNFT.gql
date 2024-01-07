@@ -1,0 +1,6 @@
+mutation SubmitDeleteNFT($txns: [[SignedTxn!]!]!) {
+  submitDeleteNFT(txns: $txns) {
+    indexes
+    partialErrors
+  }
+}

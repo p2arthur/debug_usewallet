@@ -1,0 +1,10 @@
+query GetUpdatePriceFixedBidParams($settings: [UpdatePriceFixedBidParams!]!) {
+  getUpdatePriceFixedBidParams(settings: $settings) {
+    description
+    blob
+    txID
+    signers
+    signature
+    authAddress
+  }
+}

@@ -1,0 +1,69 @@
+query GetAllSales($offset: Int, $limit: Int, $sort: SaleSortingOptions, $filter: SaleFilter) {
+  getAllSales(offset: $offset, limit: $limit, sort: $sort, filter: $filter) {
+    sales {
+      saleType
+      nftIndex
+      appId
+      currency
+      unitPrice
+      nNFTs
+      totalPrice
+      txIDs
+      groupId
+      sellerAddress
+      royaltyAddres
+      buyerAddress
+      sellerShare
+      royaltyShare
+      managerShare
+      round
+      timestamp
+      primary
+      totalValue
+      nft {
+        token {
+          index
+        }
+        info {
+          title
+          nsfw
+        }
+        media {
+          fileroomId
+          cid
+          dimensions
+          storageSize
+          mimeType
+          integrity
+          previews {
+            size
+            cid
+            mimeType
+            integrity
+          }
+          thumbnail {
+            fileroomId
+            cid
+            mimeType
+            previews {
+              size
+              cid
+              mimeType
+            }
+          }
+        }
+      }
+    }
+    pageInfo {
+      totalDocs
+      offset
+      limit
+      totalPages
+      page
+      hasPrevPage
+      hasNextPage
+      prevPage
+      nextPage
+    }
+  }
+}

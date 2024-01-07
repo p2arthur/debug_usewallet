@@ -1,0 +1,56 @@
+subscription SubAllNewSales {
+  subAllNewSales {
+    saleType
+    nftIndex
+    appId
+    currency
+    unitPrice
+    nNFTs
+    totalPrice
+    totalValue
+    txIDs
+    groupId
+    sellerAddress
+    royaltyAddres
+    buyerAddress
+    sellerShare
+    royaltyShare
+    managerShare
+    round
+    timestamp
+    primary
+    nft {
+      token {
+        index
+      }
+      info {
+        title
+        nsfw
+      }
+      media {
+        fileroomId
+        cid
+        dimensions
+        storageSize
+        mimeType
+        integrity
+        previews {
+          size
+          cid
+          mimeType
+          integrity
+        }
+        thumbnail {
+          fileroomId
+          cid
+          mimeType
+          previews {
+            size
+            cid
+            mimeType
+          }
+        }
+      }
+    }
+  }
+}

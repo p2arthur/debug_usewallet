@@ -1,0 +1,10 @@
+query GetBuyFixedBidParams($settings: [BuyFixedBidParams!]!) {
+  getBuyFixedBidParams(settings: $settings) {
+    description
+    blob
+    txID
+    signers
+    signature
+    authAddress
+  }
+}

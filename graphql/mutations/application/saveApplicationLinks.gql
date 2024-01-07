@@ -1,0 +1,3 @@
+mutation SaveApplicationLinks($id: ObjectId!, $token: String!, $links: String!) {
+  saveApplicationLinks(id: $id, token: $token, links: $links)
+}

@@ -1,0 +1,10 @@
+query GetDepositFixedBidParams($settings: [DepositFixedBidParams!]!) {
+  getDepositFixedBidParams(settings: $settings) {
+    description
+    blob
+    txID
+    signers
+    signature
+    authAddress
+  }
+}

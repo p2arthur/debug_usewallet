@@ -1,0 +1,52 @@
+query GetNFDByAddress($address: AlgorandAddress!) {
+  getNFDByAddress(address: $address) {
+    address
+    nfd {
+      i {
+        name
+        asaId
+        category
+        commission1Agent
+        commission1
+        mintingKickoffCreator
+        mintingKickoffAmount
+        highestSoldAmt
+        owner
+        sellamt
+        saleType
+        seller
+        timeCreated
+        timeChanged
+        timePurchased
+        ver
+        contractLocked
+      }
+      u {
+        name
+        bio
+        address
+        email
+        url
+        avatar
+        banner
+        twitter
+        discord
+        telegram
+        domain
+        website
+        caalgo
+      }
+      v {
+        avatar
+        avatarasaid
+        banner
+        bannerasaid
+        caAlgo
+        domain
+        twitter
+        discord
+        telegram
+      }
+    }
+  }
+}

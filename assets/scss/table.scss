@@ -1,0 +1,79 @@
+.default-table {
+  table-layout: auto;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.default-table-tr {
+  height: 44px;
+  align-items: center;
+}
+
+.default-table-header {
+  border-radius: $radius-m;
+  background-color: $c-primary;
+
+  &-left {
+    border-radius: $radius-m 0px 0px $radius-m;
+    width: 24px;
+  }
+
+  &-right {
+    min-width: $radius-m;
+    border-radius: 0px $radius-m $radius-m 0px;
+  }
+}
+
+.default-table-th {
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: left;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: $c-on-primary;
+}
+
+.default-table-td {
+  height: 24px;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: left;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 150px;
+  color: $c-on-background;
+
+  &-actions {
+    display: flex;
+    gap: 5px;
+  }
+}
+
+.default-table-spacer {
+  display: flex;
+  min-height: 2px;
+  max-height: 2px;
+  width: 100%;
+  align-items: center;
+
+  &-line {
+    height: 2px;
+    width: 100%;
+    border-radius: 2px;
+    background-color: $c-on-background;
+  }
+}
+
+.default-table-actions {
+  padding: 5px;
+
+  &-list {
+    display: flex;
+    gap: 5px;
+    height: 100%;
+  }
+}

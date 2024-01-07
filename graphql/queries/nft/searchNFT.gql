@@ -1,0 +1,37 @@
+query SearchNFT($searchTerm: String!) {
+  searchNFT(searchTerm: $searchTerm) {
+    id
+    info {
+      title
+    }
+    token {
+      index
+    }
+    artist {
+      name
+    }
+    media {
+      fileroomId
+      cid
+      dimensions
+      storageSize
+      mimeType
+      integrity
+      previews {
+        size
+        cid
+        mimeType
+        integrity
+      }
+      thumbnail {
+        cid
+        mimeType
+        previews {
+          size
+          cid
+          mimeType
+        }
+      }
+    }
+  }
+}

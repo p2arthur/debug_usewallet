@@ -1,0 +1,10 @@
+query GetMintNFTParams($ids: [ObjectId!]!) {
+  getMintNFTParams(ids: $ids) {
+    description
+    txID
+    signers
+    signature
+    authAddress
+    blob
+  }
+}

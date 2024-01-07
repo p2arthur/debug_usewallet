@@ -1,0 +1,7 @@
+subscription NewBands {
+  newBands {
+    id
+    name
+    status
+  }
+}

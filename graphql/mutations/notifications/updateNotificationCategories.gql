@@ -1,0 +1,9 @@
+mutation UpdateNotificationCategories($categories: [NotificationCategoryInput!]!) {
+  updateNotificationCategories(categories: $categories) {
+    subscriptions
+    enabled {
+      type
+      category
+    }
+  }
+}

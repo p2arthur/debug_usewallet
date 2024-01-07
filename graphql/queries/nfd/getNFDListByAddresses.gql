@@ -1,0 +1,10 @@
+query GetNFDListByAddresses($addresses: [AlgorandAddress!]!) {
+  getNFDListByAddresses(addresses: $addresses) {
+    address
+    nfd {
+      i {
+        name
+      }
+    }
+  }
+}

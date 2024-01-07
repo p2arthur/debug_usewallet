@@ -1,0 +1,10 @@
+query GetSetupFixedBidParams($settings: [SetupFixedBidParams!]!) {
+  getSetupFixedBidParams(settings: $settings) {
+    description
+    blob
+    txID
+    signers
+    signature
+    authAddress
+  }
+}

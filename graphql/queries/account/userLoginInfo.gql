@@ -1,0 +1,16 @@
+query UserLoginInfo($address: AlgorandAddress!) {
+  userLoginInfo(address: $address) {
+    walletAddress
+    hasPassword
+    newUser
+  }
+
+  verifyTxn(address: $address) {
+    description
+    txID
+    blob
+    signers
+    signature
+    authAddress
+  }
+}

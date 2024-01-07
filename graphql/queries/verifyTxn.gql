@@ -1,0 +1,10 @@
+query VerifyTxn($address: AlgorandAddress!) {
+  verifyTxn(address: $address) {
+    description
+    txID
+    blob
+    signers
+    signature
+    authAddress
+  }
+}

@@ -1,0 +1,142 @@
+// Set default text color
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+p {
+  color: $c-secondary;
+  font-family: $f-sans;
+}
+
+// scroll bars
+@mixin scrolbar-left {
+  direction: rtl;
+  scroll-behavior: smooth;
+
+  & div {
+    direction: ltr;
+  }
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 0px 0px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+
+    background: $c-divider;
+
+    border-radius: 10px;
+  }
+}
+
+@mixin scrolbar-right($color, $background-color) {
+  scroll-behavior: smooth;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: $background-color !important;
+    margin: 0px 0px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $background-color !important;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: $color !important;
+  }
+}
+
+@mixin scrolbar-small($color) {
+  scroll-behavior: smooth;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 0px 0px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: $color;
+  }
+}
+
+@mixin scrolbar-hidden {
+
+  &::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 0px 0px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+  }
+}
+
+.spacer {
+  content: "";
+  flex-grow: 1;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 150ms ease;
+
+  &:hover {
+    color: $c-secondary;
+  }
+}
+
+.prevent-select {
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10 and IE 11 */
+  user-select: none;
+  /* Standard syntax */
+}

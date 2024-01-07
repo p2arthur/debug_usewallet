@@ -1,0 +1,47 @@
+@mixin nft-card-overlay {
+  background-color: $c-overlay-background;
+  backdrop-filter: blur(4px);
+  border-radius: $radius-s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+  pointer-events: all;
+
+  &-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    margin: 0px;
+    padding: 0px;
+    color: $c-on-background;
+    cursor: pointer;
+  }
+}
+
+@mixin media-overlay {
+  background-color: $c-overlay-background;
+  backdrop-filter: blur(4px);
+  border-radius: $radius-s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+  pointer-events: all;
+  
+  // box-shadow: $shadow-0;
+
+  &-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    margin: 0px;
+    padding: 0px;
+    color: $c-on-background;
+    cursor: pointer;
+  }
+}
