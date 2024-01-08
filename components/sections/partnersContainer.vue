@@ -6,13 +6,13 @@
     <div class="center-section">
       <div class="center-panel">
           <div class="carrocel-panel">
-          <img src="/img/Card (2).png" alt="Partners" class="carousel-item" data-url="https://www.google.com">
-          <img src="/img/Card (3).png" alt="Partners" class="carousel-item" data-url="https://www.google.com">
-          <img src="/img/Card (4).png" alt="Partners" class="carousel-item" data-url="https://www.google.com">
-          <img src="/img/Card (5).png" alt="Partners" class="carousel-item">
-          <img src="/img/Card (1).png" alt="Partners" class="carousel-item">
-          <img src="/img/Card (6).png" alt="Partners" class="carousel-item">
-          <img src="/img/Card (7).png" alt="Partners" class="carousel-item">
+          <img src="/img/Card2.png" alt="Partners" class="carousel-item" data-url="https://www.google.com">
+          <img src="/img/Card3.png" alt="Partners" class="carousel-item" data-url="https://www.google.com">
+          <img src="/img/Card4.png" alt="Partners" class="carousel-item" data-url="https://www.google.com">
+          <img src="/img/Card5.png" alt="Partners" class="carousel-item">
+          <img src="/img/Card1.png" alt="Partners" class="carousel-item">
+          <img src="/img/Card6.png" alt="Partners" class="carousel-item">
+          <img src="/img/Card7.png" alt="Partners" class="carousel-item">
         </div>
       </div>
     </div>

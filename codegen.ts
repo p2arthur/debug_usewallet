@@ -15,7 +15,7 @@ if (args.length >= 3) {
 
 const config: CodegenConfig = {
 	// schema: 'https://api-ams.dartroom.xyz/graphql',
-	schema: schema ? schema : "http://localhost:3002/graphql",
+	schema: schema ? schema : "http://localhost:8080/graphql",
 	documents: ["./**/*.gql"],
 	ignoreNoDocuments: true, // for better experience with the watcher
 	generates: {

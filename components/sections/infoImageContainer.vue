@@ -4,11 +4,11 @@
   <div class="fullContainer">
   <div class="infoContainer">
     <div class="left-section">
-      <img src="/img/ilustra (1).png" alt="Descrição do Card Esquerdo">
+      <img src="/img/ilustra1.png" alt="Descrição do Card Esquerdo">
       <div class="card-description"></div>
     </div>
     <div class="right-section">
-      <img src="/img/card_info (1).png" alt="Descrição do Card Direito">
+      <img src="/img/card_info1.png" alt="Descrição do Card Direito">
       <div class="card-description">
         <div class="text-container">
           <h1 style="color: #E35151;">Construct</h1>
@@ -20,7 +20,7 @@
   </div>
   <div class="infoContainer2">
     <div class="left-section2">
-      <img src="/img/card_info (1).png" alt="Descrição do Card Direito">
+      <img src="/img/card_info1.png" alt="Descrição do Card Direito">
       <div class="card-description2">
         <div class="text-container">
           <h1 style="color: #6C8AF6;">Participate</h1>
@@ -29,17 +29,17 @@
       </div>
     </div>
     <div class="right-section2">
-      <img src="/img/ilustra (2).png" alt="Descrição do Card Esquerdo">
+      <img src="/img/ilustra2.png" alt="Descrição do Card Esquerdo">
       <div class="card-description"></div>
     </div>
   </div>
   <div class="infoContainer3">
     <div class="left-section3">
-      <img src="/img/ilustra (3).png" alt="Descrição do Card Esquerdo">
+      <img src="/img/ilustra3.png" alt="Descrição do Card Esquerdo">
       <div class="card-description"></div>
     </div>
     <div class="right-section3">
-      <img src="/img/card_info (1).png" alt="Descrição do Card Direito">
+      <img src="/img/card_info1.png" alt="Descrição do Card Direito">
       <div class="card-description3">
         <div class="text-container3">
           <h1 style="color: #E352A9;">Experience</h1>

@@ -6,7 +6,7 @@
       <div class="left-section">
         
         <img src="/img/card_team.png" alt="Descrição do Card Esquerdo">
-         <div class="pfp"><img src="/img/teampfp.jpg" alt="Descrição do Card Esquerdo"></div>
+         <div class="pfp"><img src="/img/Teampfp.jpg" alt="Descrição do Card Esquerdo"></div>
          
         
         <div class="card-name"><h4> Ulrik</h4></div>
@@ -14,13 +14,13 @@
       </div>
       <div class="center-section">
         <img src="/img/card_team.png" alt="Descrição do Card Central">
-          <div class="pfp"><img src="/img/teampfp.jpg" alt="Descrição do Card Esquerdo"></div>
+          <div class="pfp"><img src="/img/Teampfp.jpg" alt="Descrição do Card Esquerdo"></div>
         <div class="card-name"><h4>David</h4></div>
         <div class="job">CEO</div>
       </div>
       <div class="right-section">
         <img src="/img/card_team.png" alt="Descrição do Card Direito">
-          <div class="pfp"><img src="/img/teampfp.jpg" alt="Descrição do Card Esquerdo"></div>
+          <div class="pfp"><img src="/img/Teampfp.jpg" alt="Descrição do Card Esquerdo"></div>
         <div class="card-name"><h4>Allan</h4></div>
         <div class="job">BACKEND</div>
       </div>
@@ -31,13 +31,13 @@
     <div class="section2Container">
       <div class="left-section2">
         <img src="/img/card_team.png" alt="Descrição do Card Esquerdo">
-          <div class="pfp"><img src="/img/teampfp.jpg" alt="Descrição do Card Esquerdo"></div>
+          <div class="pfp"><img src="/img/Teampfp.jpg" alt="Descrição do Card Esquerdo"></div>
         <div class="card-name"><h4>Odi</h4></div>
         <div class="job">3DEV</div>
       </div>
       <div class="right-section2">
         <img src="/img/card_team.png" alt="Descrição do Card Direito">
-          <div class="pfp"><img src="/img/teampfp.jpg" alt="Descrição do Card Esquerdo"></div>
+          <div class="pfp"><img src="/img/Teampfp.jpg" alt="Descrição do Card Esquerdo"></div>
         <div class="card-name"><h4>Stef</h4> 
           <div class="job">DEVCHAIN</div>
           </div>

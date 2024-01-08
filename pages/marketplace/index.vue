@@ -26,14 +26,14 @@
                             <div class="filter-option">Size</div>
                         </div>
                     </div>
-                    <img src="/img/MarketPlace/card_market (1).png" alt="ItemSell" class="card-item">
-                    <img src="/img/MarketPlace/card_market (2).png" alt="ItemSell" class="card-item">
-                    <img src="/img/MarketPlace/card_market (3).png" alt="ItemSell" class="card-item">
-                    <img src="/img/MarketPlace/card_market (4).png" alt="ItemSell" class="card-item">
-                    <img src="/img/MarketPlace/card_market (5).png" alt="ItemSell" class="card-item">
-                    <img src="/img/MarketPlace/card_market (1).png" alt="ItemSell" class="card-item">
-                    <img src="/img/MarketPlace/card_market (4).png" alt="ItemSell" class="card-item">
-                    <img src="/img/MarketPlace/card_market (3).png" alt="ItemSell" class="card-item">
+                    <img src="/img/MarketPlace/card_market1.png" alt="ItemSell" class="card-item">
+                    <img src="/img/MarketPlace/card_market2.png" alt="ItemSell" class="card-item">
+                    <img src="/img/MarketPlace/card_market3.png" alt="ItemSell" class="card-item">
+                    <img src="/img/MarketPlace/card_market4.png" alt="ItemSell" class="card-item">
+                    <img src="/img/MarketPlace/card_market5.png" alt="ItemSell" class="card-item">
+                    <img src="/img/MarketPlace/card_market1.png" alt="ItemSell" class="card-item">
+                    <img src="/img/MarketPlace/card_market4.png" alt="ItemSell" class="card-item">
+                    <img src="/img/MarketPlace/card_market3.png" alt="ItemSell" class="card-item">
                     <!-- Conteúdo dos itens aqui -->
                 </div>
             </div>

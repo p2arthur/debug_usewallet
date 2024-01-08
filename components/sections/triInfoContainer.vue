@@ -75,11 +75,11 @@
   background-image: url('/img/InfoTable.png');
 }
 .center-section .info-image {
-  background-image: url('/img/InfoTable (2).png');
+  background-image: url('/img/InfoTable2.png');
 }
 
 .right-section .info-image {
-  background-image: url('/img/InfoTable (3).png');
+  background-image: url('/img/InfoTable3.png');
 }
 
 
