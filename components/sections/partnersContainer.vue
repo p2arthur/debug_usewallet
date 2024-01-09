@@ -1,127 +1,122 @@
+<!-- @format -->
+<script>
+  import CarouselCard from '../carousel/CarouselCard.vue';
+  export default {
+    data() {
+      return {
+        carouselItems: [
+          {
+            src: '/img/Card2.png',
+            alt: 'Partners',
+            url: 'https://www.google.com',
+          },
+          { src: '/img/Card1.png', alt: 'Partners', url: '' },
+          { src: '/img/Card2.png', alt: 'Partners', url: '' },
+          { src: '/img/Card3.png', alt: 'Partners', url: '' },
+          { src: '/img/Card4.png', alt: 'Partners', url: '' },
+          { src: '/img/Card5.png', alt: 'Partners', url: '' },
+          { src: '/img/Card6.png', alt: 'Partners', url: '' },
+          { src: '/img/Card7.png', alt: 'Partners', url: '' },
+          {
+            src: '/img/Card2.png',
+            alt: 'Partners',
+            url: 'https://www.google.com',
+          },
+          { src: '/img/Card1.png', alt: 'Partners', url: '' },
+          { src: '/img/Card2.png', alt: 'Partners', url: '' },
+          { src: '/img/Card3.png', alt: 'Partners', url: '' },
+          { src: '/img/Card4.png', alt: 'Partners', url: '' },
+          { src: '/img/Card5.png', alt: 'Partners', url: '' },
+          { src: '/img/Card6.png', alt: 'Partners', url: '' },
+          { src: '/img/Card7.png', alt: 'Partners', url: '' },
+        ],
+        itemWidth: 600, // Adjusted the item width
+        offset: 0,
+      };
+    },
+    mounted() {
+      setInterval(this.shiftCarousel, 3000);
+    },
+    methods: {
+      openUrl(url) {
+        if (url) {
+          window.open(url, '_blank');
+        }
+      },
+      shiftCarousel() {
+        const carousel = this.$refs.carousel;
+
+        // Move the first item to the end when it completely leaves the panel
+        if (this.offset <= -this.itemWidth) {
+          const firstItem = this.carouselItems.shift();
+          this.carouselItems.push(firstItem);
+          this.offset += this.itemWidth;
+          carousel.style.transition = 'none';
+          carousel.style.transform = `translateX(${this.offset}px)`;
+          getComputedStyle(carousel).transform;
+          carousel.style.transition = 'transform 0.5s ease';
+        }
+
+        // Start shifting to the next item
+        this.offset -= this.itemWidth;
+        carousel.style.transform = `translateX(${this.offset}px)`;
+      },
+    },
+    components: { CarouselCard },
+  };
+</script>
+
 <template>
   <div class="partnersContainer">
-    <div class="left-section">
-      <img src="/img/rxelms_logo_black.png" alt="Logo Rxelms">
+    <!-- Centered the logo -->
+    <div class="logo-container">
+      <h2 class="title">Our partners</h2>
     </div>
-    <div class="center-section">
-      <div class="center-panel">
-          <div class="carrocel-panel">
-          <img src="/img/Card2.png" alt="Partners" class="carousel-item" data-url="https://www.google.com">
-          <img src="/img/Card3.png" alt="Partners" class="carousel-item" data-url="https://www.google.com">
-          <img src="/img/Card4.png" alt="Partners" class="carousel-item" data-url="https://www.google.com">
-          <img src="/img/Card5.png" alt="Partners" class="carousel-item">
-          <img src="/img/Card1.png" alt="Partners" class="carousel-item">
-          <img src="/img/Card6.png" alt="Partners" class="carousel-item">
-          <img src="/img/Card7.png" alt="Partners" class="carousel-item">
-        </div>
+
+    <div class="carousel-container">
+      <div
+        class="carousel"
+        ref="carousel">
+        <CarouselCard
+          v-for="partner in carouselItems"
+          :item="partner" />
       </div>
     </div>
-    <div class="right-section"></div>
   </div>
 </template>
 
-
-<script>
-export default {
-  mounted() {
-    const centerPanel = this.$el.querySelector('.carrocel-panel');
-    let offset = 0;
-    const itemWidth = 200; // Substitua 200 pelo valor real de largura do item
-
-
-    // Adicione o manipulador de eventos de clique aqui
-    centerPanel.addEventListener('click', (event) => {
-      const target = event.target;
-      if (target.classList.contains('carousel-item')) {
-        const url = target.getAttribute('data-url');
-        if (url) {
-          window.open(url, '_blank'); // Abre o URL em uma nova aba
-        }
-      }
-    })
-
-    setInterval(() => {
-      // Move o primeiro item para o final quando ele sai completamente do painel
-      if (offset <= -itemWidth) {
-        const firstItem = centerPanel.firstElementChild;
-        centerPanel.appendChild(firstItem);
-        centerPanel.style.transition = 'none'; // Desativa a animação temporariamente
-        offset += itemWidth;
-        centerPanel.style.transform = `translateX(${offset}px)`;
-        // Força o navegador a reconhecer a mudança no transform
-        getComputedStyle(centerPanel).transform;
-        centerPanel.style.transition = 'transform 0.5s ease'; // Reativa a animação
-      }
-
-      // Inicia o deslocamento do próximo item
-      offset -= itemWidth;
-      centerPanel.style.transform = `translateX(${offset}px)`;
-    }, 3000); // Ajuste o tempo conforme necessário
-  }
-}
-
-</script>
-  
 <style scoped>
   .partnersContainer {
+    padding: 20px;
     display: flex;
-    width: 100%;
-    height: 300px;
-    background-color: #ffffff;
+    justify-content: center;
+    align-items: center; /* Centered both vertically and horizontally */
+    flex-direction: column;
+    gap: 50px;
+    background-color: rgb(19, 17, 33);
   }
 
-  .left-section, .right-section {
-    flex: 1;
+  .logo-container {
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  .carousel-item {
-  transition: transform 0.5s ease;
-}
-
-  .left-section img{
-    height: 100px;
+  .carousel-container {
+    overflow: hidden;
   }
 
-  .center-section {
-    flex: 0 0 1140px; /* Largura do painel ajustada */
-    display: fixed;
-    justify-content: center;
-    align-items: center;
-    padding: 20px
+  .carousel {
+    display: flex;
+    gap: 50px;
+    justify-content: space-between;
+    justify-items: center;
+    transition: transform 0.5s ease;
+    will-change: transform;
   }
 
-  .center-section {
-    width: 1140px;
-    height: 247px;
-
-
-    background-image: url('/img/retangule.png'); /* Imagem de fundo */
-    background-size: fixed; /* Garante que a imagem cubra todo o painel */
-    background-repeat: no-repeat; /* Impede que a imagem se repita */
-    background-position: center; /* Centraliza a imagem no painel */
-    
-    /* Adicione estilos adicionais conforme necessário */
+  .title {
+    color: white;
+    font-size: 32px;
   }
-
-  .center-panel {
-  overflow: hidden; /* Oculta conteúdo que excede os limites */
-
-}
-.carrocel-panel{
-  display: flex; /* Alinha todos os itens do carrossel em linha */
-  transition: transform 0.5s ease; /* Suaviza a animação de movimento */
-  will-change: transform; /* Otimiza a animação */
-  padding-left: 0px;
-  padding-top: 15px;
-
-}
-
-  .center-panel img:not(:last-child) {
-    margin-right: 40px; /* Adiciona espaço entre as imagens */
-
-  /* Adiciona uma margem de 40 pixels à direita de cada imagem, exceto a última */
-}
 </style>
