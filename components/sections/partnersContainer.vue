@@ -92,7 +92,7 @@
     justify-content: center;
     align-items: center; /* Centered both vertically and horizontally */
     flex-direction: column;
-    gap: 50px;
+    gap: 20px;
     background-color: rgb(19, 17, 33);
   }
 

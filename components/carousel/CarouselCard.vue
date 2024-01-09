@@ -14,8 +14,7 @@
 
 <style>
   .carousel-item {
-    flex-shrink: 0; /* Prevent items from shrinking to fit container */
-    width: 200px; /* Add any additional styling for carousel items */
+    width: 300px; /* Add any additional styling for carousel items */
   }
   .carousel-item-image {
     object-fit: fit;
