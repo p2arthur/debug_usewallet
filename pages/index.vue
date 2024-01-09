@@ -15,7 +15,7 @@
   <PartnersContainer />
   <MapCanvasContainer />
   <TripleInfoContainer :infoObjects="homeInfo" />
-  <InfoImageContainer />
+  <InfoImageContainer :infoObjects="infoImage" />
   <IntervalInfoContainer />
   <CenterCharacterContainer />
   <TeamContainer />
@@ -23,13 +23,14 @@
 
 <script setup lang="ts">
   import MapCanvasContainer from '@/components/sections/mapCanvaContainer.vue';
-  import InfoImageContainer from '@/components/sections/infoImageContainer.vue';
+  import infoImageContainer from '~/components/info-image/infoImageContainer.vue';
   import PartnersContainer from '@/components/sections/partnersContainer.vue';
   import IntervalInfoContainer from '@/components/sections/intervalContainer.vue';
   import CenterCharacterContainer from '@/components/sections/centerCharacterContainer.vue';
   import TeamContainer from '@/components/sections/teamContainer.vue';
   import TripleInfoContainer from '~/components/sections/TripleInfoContainer.vue';
-  import { homeInfo } from '../content/info/homeInfo';
+  import homeInfo from '../content/info/homeInfo';
+  import infoImage from '../content/info/homeInfoImage';
 </script>
 
 <style scoped lang="scss">

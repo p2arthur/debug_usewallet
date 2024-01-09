@@ -1,4 +1,4 @@
-export const homeInfo = [
+const homeInfo = [
   { title: 'Craft Your Dreams – Shape Your Own Reality in the Metaverse.' },
   {
     title:
@@ -6,3 +6,5 @@ export const homeInfo = [
   },
   { title: 'Explore New Horizons in the Metaverse.' },
 ];
+
+export default homeInfo;
