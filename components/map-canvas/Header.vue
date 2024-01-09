@@ -9,6 +9,9 @@
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium
       officia delectus vel? Cum quasi quia iusto ullam odit voluptatibus
       voluptas nemo deserunt nisi, possimus quaerat non vero at saepe enim?
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium
+      officia delectus vel? Cum quasi quia iusto ullam odit voluptatibus
+      voluptas nemo deserunt nisi, possimus quaerat non vero at saepe enim?
     </p>
   </div>
 </template>
@@ -17,7 +20,7 @@
   .map-canva-header {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     width: 50%;
   }
 
@@ -26,6 +29,6 @@
     margin: 0;
   }
   .text {
-    text-align: center;
+    color: rgb(179, 179, 179);
   }
 </style>

@@ -13,9 +13,9 @@
 </template>
 <style>
   .triple-info-container {
-    padding: 20px;
+    padding: 40px;
     gap: 20px;
     display: flex;
-    background: rgb(19, 17, 33);
+    background: rgb(9, 7, 27);
   }
 </style>

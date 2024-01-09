@@ -187,7 +187,6 @@
   .canva-info-container {
     width: 50%;
     display: flex;
-
     flex-direction: column;
     align-items: center;
     position: relative;
@@ -212,7 +211,6 @@
 
   .map-canva-hero {
     display: flex;
-    align-items: center;
     padding: 20px 30px;
     display: flex;
     background-color: rgb(10, 10, 23);
