@@ -1,37 +1,22 @@
 <!-- @format -->
 
 <template>
-  <div class="intervalInfoContainer">
-    <div class="center-section">
-      <img
-        src="/img/intervalo.png"
-        alt="Descrição do Card Central" />
-    </div>
+  <div class="interval-container">
+    <div class="interval-backdrop" />
+    <img class="interval-image" src="/img/intervalo.png" alt="rxelms-museum" />
   </div>
 </template>
 
 <style scoped>
-  .intervalInfoContainer {
-    display: flex;
-    width: 100%;
+.interval-container {
+  display: flex;
+  position: relative;
+  background-color: red;
+  min-height: 500px;
+}
 
-    height: 100%;
-    min-height: 500px;
-  }
-
-  .center-section {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative; /* Posição relativa para as seções */
-  }
-
-  .center-section img {
-    width: auto; /* Largura da imagem */
-    height: auto; /* Mantém a proporção da imagem */
-    align-content: center;
-    max-height: 400px;
-    min-width: 1920px;
-  }
+.interval-image {
+  max-width: 100%;
+  object-fit: cover;
+}
 </style>
