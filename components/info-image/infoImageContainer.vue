@@ -7,6 +7,9 @@ console.log("props", props);
 </script>
 
 <template>
+  <div class="background-effect">
+    <img src="/img/background_infoImages.png" alt="" />
+  </div>
   <div class="full-container">
     <SingleInfoImage
       v-for="(info, index) in infoObjects"
@@ -34,8 +37,33 @@ console.log("props", props);
 .full-container {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 70px;
   background-color: rgb(9, 7, 27);
-  padding: 100px 20px;
+  padding: 100px 150px;
+}
+
+.background-effect {
+  animation: breath 6s infinite;
+  z-index: 1;
+  opacity: 5%;
+  position: absolute;
+
+  &img {
+    object-fit: cover;
+    width: 10%;
+    height: 100%;
+  }
+}
+
+@keyframes breath {
+  0%,
+  100% {
+    transform: translateY(-1%);
+    animation-timing-function: ease-in-out;
+  }
+  50% {
+    transform: translateY(-0.3%) scale(100.5%);
+    animation-timing-function: ease-in-out;
+  }
 }
 </style>

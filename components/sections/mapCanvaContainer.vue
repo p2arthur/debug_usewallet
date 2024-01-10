@@ -160,8 +160,16 @@ export default {
 </script>
 
 <style scoped>
+.map-canva-hero {
+  z-index: 100;
+  display: flex;
+  padding: 20px 30px;
+  display: flex;
+  background-color: rgb(19, 17, 33);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.127);
+}
 .react-tile-mapcanvas {
-  background-color: rgb(20, 17, 38);
+  background-color: rgb(16, 13, 30);
   border-radius: 10px;
   /* Remova as dimensões fixas se você quiser que ele se ajuste ao contêiner */
 }
@@ -204,12 +212,5 @@ export default {
 
 .map-info-container {
   position: relative;
-}
-
-.map-canva-hero {
-  display: flex;
-  padding: 20px 30px;
-  display: flex;
-  background-color: rgb(10, 10, 23);
 }
 </style>

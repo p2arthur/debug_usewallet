@@ -20,7 +20,7 @@
 .map-canva-header {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: center;
   width: 50%;
 }
 
@@ -29,6 +29,7 @@
   margin: 0;
 }
 .text {
+  text-align: center;
   color: rgb(179, 179, 179);
 }
 </style>

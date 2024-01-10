@@ -40,7 +40,7 @@
       <div class="footer-main-links">
         <div v-for="section in navigation" class="footer-main-links-section">
           <h3>{{ section.section }}</h3>
-          <ul>
+          <ul class="footer-links-list">
             <li v-for="link in section.links">
               <nuxt-link :to="link.link">{{ link.name }}</nuxt-link>
             </li>
@@ -154,7 +154,9 @@ const navigation = [
   display: flex;
   gap: 10px;
 }
-
+.footer-links-list {
+  text-decoration: none;
+}
 .footer-main-links {
   display: flex;
   justify-content: end;
@@ -170,5 +172,6 @@ const navigation = [
 .footer-bar {
   display: flex;
   justify-content: center;
+  color: white;
 }
 </style>

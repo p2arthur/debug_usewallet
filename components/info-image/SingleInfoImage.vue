@@ -29,6 +29,8 @@ console.log(props.index);
   align-items: center;
   height: 300px;
 
+  gap: 100px;
+
   &.info-card-container-reverse {
     flex-direction: row-reverse;
   }
@@ -42,7 +44,7 @@ console.log(props.index);
 
   .info-card-main-image {
     animation: breath 2s infinite;
-    width: 80%;
+    width: 100%;
     flex-shrink: 0;
   }
 }
@@ -50,16 +52,17 @@ console.log(props.index);
 .description-section {
   display: flex;
   justify-content: center;
-  width: 70%;
+  width: 60%;
 }
 
 .text-container {
   display: flex;
   flex-direction: column;
-  background-color: rgb(6, 5, 10);
+  background-color: rgb(19, 17, 33);
   padding: 20px;
   border-radius: 10px;
   width: 100%;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.082);
 }
 
 .card-title {

@@ -1,7 +1,7 @@
 <!-- @format -->
 
 <script setup lang="ts">
-  const props = defineProps(['data', 'index']);
+const props = defineProps(["data", "index"]);
 </script>
 
 <template>
@@ -12,18 +12,20 @@
 </template>
 
 <style lang="scss" scoped>
-  .info-card {
-    padding: 10px;
-    background-color: rgb(8, 7, 18);
-    width: 33%;
-    border-radius: 10px;
-  }
+.info-card {
+  padding: 10px;
+  z-index: 10;
+  background-color: rgb(19, 17, 33);
+  width: 33%;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.082);
+}
 
-  .info-card-title {
-    font-size: 24px;
-  }
+.info-card-title {
+  font-size: 24px;
+}
 
-  .info-description {
-    color: rgb(179, 179, 179);
-  }
+.info-description {
+  color: rgb(179, 179, 179);
+}
 </style>
