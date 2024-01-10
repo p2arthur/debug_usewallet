@@ -34,7 +34,7 @@ console.log("props", props);
 .full-container {
   display: flex;
   flex-direction: column;
-  gap: 100px;
+  gap: 50px;
   background-color: rgb(9, 7, 27);
   padding: 100px 20px;
 }

@@ -38,17 +38,19 @@ console.log(props.index);
   display: flex;
   justify-content: center;
   width: 30%;
+  flex-shrink: 0;
 
   .info-card-main-image {
     animation: breath 2s infinite;
     width: 80%;
+    flex-shrink: 0;
   }
 }
 
 .description-section {
   display: flex;
   justify-content: center;
-  width: 50%;
+  width: 70%;
 }
 
 .text-container {
