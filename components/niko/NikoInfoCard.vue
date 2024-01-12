@@ -91,4 +91,31 @@
       color: rgb(189, 189, 189);
     }
   }
+
+  @media (max-width: 1000px) {
+    .niko-card {
+      width: 80%;
+      top: 25%;
+    }
+
+    .niko-card-header {
+      display: flex;
+      align-items: center;
+      .center-niko-image {
+        width: 3rem;
+      }
+
+      .center-title {
+        font-size: 2rem;
+        margin: 0;
+      }
+    }
+
+    .center-description {
+      font-size: 1rem;
+      margin: 0;
+      text-align: center;
+      color: rgb(189, 189, 189);
+    }
+  }
 </style>

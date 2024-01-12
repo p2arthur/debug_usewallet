@@ -136,15 +136,15 @@
     justify-items: center;
     align-items: center;
     list-style-type: none;
+    padding-inline-start: 0;
   }
   .footer-main-links {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     gap: 20px;
     width: 50%;
 
     h3 {
-      color: red;
       margin: 0px;
     }
   }
@@ -184,11 +184,11 @@
     }
 
     .footer-main-links {
+      justify-content: center;
       width: 100%;
 
       h3 {
-        color: red;
-        font-size: 1rem;
+        font-size: 1.5rem;
         margin: 0px;
       }
     }
