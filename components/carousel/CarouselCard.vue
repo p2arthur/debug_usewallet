@@ -8,21 +8,37 @@
 <template>
   <div class="carousel-card">
     <img
-      class="carousel-item-image"
+      class="carousel-card-image"
       :src="item.src"
       :alt="item.alt"
       @click="openUrl(item.url)" />
+    <div class="carousel-card-text">
+      <h3 class="carousel-card-title">{{ item.name }}</h3>
+    </div>
   </div>
 </template>
 
 <style>
   .carousel-card {
-    background: red;
-    padding: 10px;
-    width: 100px; /* Add any additional styling for carousel items */
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #9e86ff;
+    border-radius: 10px;
+    width: 150px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.082);
   }
-  .carousel-item-image {
+  .carousel-card-image {
     object-fit: fit;
     width: 100%;
+  }
+
+  .carousel-card-text {
+    padding: 10px 0;
+  }
+
+  .carousel-card-title {
+    margin: 0;
   }
 </style>

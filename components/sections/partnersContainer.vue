@@ -1,6 +1,11 @@
 <!-- @format -->
+
 <script>
   import CarouselCard from '../carousel/CarouselCard.vue';
+  import 'vue3-carousel/dist/carousel.css';
+  import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
+  import { isMobile } from '../../functions/view-port/isMobile';
+
   export default {
     data() {
       return {
@@ -48,54 +53,76 @@
             url: '',
           },
         ],
-        itemWidth: 600, // Adjusted the item width
+        itemWidth: 600,
         offset: 0,
+        transitionDuration: '0.5s',
       };
     },
-    mounted() {
-      setInterval(this.shiftCarousel, 3000);
+
+    computed: {
+      // Define a computed property for isMobile
+      isMobileDevice() {
+        return isMobile();
+      },
     },
+    mounted() {
+      // Assuming you want the carousel to automatically slide, you can use the following:
+      setInterval(this.animateCarousel, 3000); // Adjust the interval as needed
+    },
+
     methods: {
-      shiftCarousel() {
+      animateCarousel() {
         const carousel = this.$refs.carousel;
 
-        // Move the first item to the end when it completely leaves the panel
-        if (this.offset <= -this.itemWidth) {
-          const firstItem = this.carouselItems.shift();
-          this.carouselItems.push(firstItem);
-          this.offset += this.itemWidth;
-          if (carousel.style) {
-            carousel.style.transition = 'none';
-            carousel.style.transform = `translateX(${this.offset}px)`;
-            getComputedStyle(carousel).transform;
-            carousel.style.transition = 'transform 0.5s ease';
-          }
-        }
+        // Move the first item to the end in each iteration
+        const firstItem = this.carouselItems.shift();
+        this.carouselItems.push(firstItem);
 
         // Start shifting to the next item
         this.offset -= this.itemWidth;
+        carousel.style.transition = `transform ${this.transitionDuration} ease`;
         carousel.style.transform = `translateX(${this.offset}px)`;
+
+        // Reset the offset and transition property after the animation
+        setTimeout(() => {
+          this.offset = 0;
+          carousel.style.transition = 'none';
+          carousel.style.transform = `translateX(${this.offset}px)`;
+
+          // Ensure the browser applies the initial transform before re-enabling the transition
+          getComputedStyle(carousel).transform;
+
+          // Re-enable the transition for the next iteration
+          carousel.style.transition = `transform ${this.transitionDuration} ease`;
+        }, parseFloat(this.transitionDuration) * 1000);
       },
     },
-    components: { CarouselCard },
+    components: { Carousel, Slide, Pagination, Navigation, CarouselCard },
   };
 </script>
 
 <template>
   <div class="partnersContainer">
-    <!-- Centered the logo -->
     <div class="logo-container">
       <h2 class="title">Our partners</h2>
     </div>
 
     <div class="carousel-container">
-      <div
-        class="carousel"
+      <carousel
+        :autoplay="1000"
+        :snap-align="'center'"
+        :items-to-show="isMobileDevice ? 3 : 5"
         ref="carousel">
-        <CarouselCard
-          v-for="partner in carouselItems"
-          :item="partner" />
-      </div>
+        <slide
+          v-for="item in carouselItems"
+          :key="item.name">
+          <CarouselCard :item="item" />
+        </slide>
+        <template #addons>
+          <navigation />
+          <pagination />
+        </template>
+      </carousel>
     </div>
   </div>
 </template>
@@ -105,7 +132,7 @@
     padding: 20px;
     display: flex;
     justify-content: center;
-    align-items: center; /* Centered both vertically and horizontally */
+    align-items: center;
     flex-direction: column;
     gap: 20px;
     background-color: rgb(19, 17, 33);
@@ -118,20 +145,18 @@
   }
 
   .carousel-container {
+    width: 100%;
     overflow: hidden;
-  }
-
-  .carousel {
-    display: flex;
-    gap: 50px;
-    justify-content: space-between;
-    justify-items: center;
-    transition: transform 0.5s ease;
-    will-change: transform;
   }
 
   .title {
     color: white;
     font-size: 32px;
+  }
+
+  .v3c-btn-prev,
+  .carousel__slide--next {
+    opacity: 1;
+    transform: rotateY(10deg) scale(0.95);
   }
 </style>

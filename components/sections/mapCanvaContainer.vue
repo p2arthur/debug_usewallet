@@ -30,16 +30,7 @@
 
 <script>
   import Header from '../map-canvas/Header.vue';
-
-  function isMobile() {
-    // Check if 'window' is defined
-    if (typeof window !== 'undefined') {
-      console.log('window.in', window.innerWidth);
-      return window.innerWidth < 768;
-    } else {
-      return false;
-    }
-  }
+  import { isMobile } from '../../functions/view-port/isMobile';
 
   export default {
     components: { Header },

@@ -1,19 +1,16 @@
 <!-- @format -->
 
-import { relative } from 'path';
-<!-- @format -->
-
 <script setup lang="ts">
-  const props = defineProps(['teamMember']);
+  const { teamMember } = defineProps(['teamMember']);
 </script>
 
 <template>
   <div class="team-card">
     <div class="team-card-image-container">
       <img
-        class="team-card-image"
         :src="teamMember.image"
-        alt="Descrição do Card Esquerdo" />
+        :alt="`${teamMember.name} Image`"
+        class="team-card-image" />
     </div>
     <div class="team-card-text-container">
       <h4 class="team-card-title">{{ teamMember.name }}</h4>
@@ -22,14 +19,15 @@ import { relative } from 'path';
   </div>
 </template>
 
-<style>
+<style scoped>
   .team-card {
     position: relative;
     border-radius: 10px;
-    border: 2px solid #9e86ff;
     overflow: hidden;
+    width: 300px;
+    transition: transform 0.3s ease; /* Added transition for hover effect */
     &:hover {
-      transform: scale(101%);
+      transform: scale(1.01);
     }
   }
 
@@ -54,13 +52,12 @@ import { relative } from 'path';
     width: 100%;
     position: absolute;
     background-color: rgb(14, 10, 30);
-    bottom: 0%;
+    bottom: 0;
     border-radius: 0 0 10px 10px;
     padding: 10px 0;
   }
 
   .team-card-title {
-    opacity: 100%;
     margin: 0;
     font-size: 2.5rem;
   }
@@ -68,11 +65,5 @@ import { relative } from 'path';
   .team-card-role {
     color: rgb(179, 179, 179);
     font-size: 1.5rem;
-  }
-
-  @media (max-width: 768px) {
-    .team-card {
-      width: 40%;
-    }
   }
 </style>
