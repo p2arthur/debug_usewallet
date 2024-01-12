@@ -28,6 +28,7 @@
     border-radius: 10px;
     width: 150px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.082);
+    overflow: hidden;
   }
   .carousel-card-image {
     object-fit: fit;
