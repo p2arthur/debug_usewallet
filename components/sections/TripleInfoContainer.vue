@@ -18,4 +18,10 @@
     display: flex;
     background: rgb(9, 7, 27);
   }
+
+  @media (max-width: 768px) {
+    .triple-info-container {
+      flex-direction: column;
+    }
+  }
 </style>

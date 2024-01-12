@@ -2,6 +2,7 @@
   "private": true,
   "scripts": {
     "build": "nuxt build",
+    "dev1": "nuxt dev",
     "dev": "npm run codegen && nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
@@ -40,6 +41,7 @@
   "dependencies": {
     "@dartroom/fileroom-sdk": "^0.1.2-alpha",
     "@dartroom/signer": "^0.3.3-alpha",
+    "@heroicons/vue": "^2.1.1",
     "@pinia/nuxt": "^0.4.4",
     "@ubclaunchpad/vue-fathom": "^2.0.0",
     "@urql/core": "^4.0.7",

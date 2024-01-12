@@ -3,14 +3,13 @@
 <template>
   <div
     class="wrapper"
-    id="desktop-base"
-    v-if="isDesktop">
+    id="desktop-base">
     <div class="layout">
       <div class="layout-background"></div>
     </div>
 
     <div class="headerbar">
-      <HeaderBar :wide="screenSize.width >= 1400" />
+      <HeaderBar />
     </div>
     <div
       class="content"
@@ -24,31 +23,10 @@
       <SideBar :wide="screenSize.width >= 1400" />
     </div> -->
   </div>
-
-  <div
-    class="background"
-    id="mobile-base"
-    v-else>
-    <div class="app-bar">
-      <NavigationAppBar />
-    </div>
-
-    <div
-      class="content-mobile"
-      id="content-scroll">
-      <slot />
-      <div class="content-mobile-spacer"></div>
-      <NavigationFooter />
-    </div>
-  </div>
 </template>
 
 <script setup lang="ts">
   import HeaderBar from '@/components/navigation/HeaderBar.vue';
-  import SideBar from '@/components/navigation/HeaderBar.vue';
-
-  const isDesktop = useIsDesktop();
-  const screenSize = useScreenSize();
 </script>
 
 <style lang="scss" scoped>

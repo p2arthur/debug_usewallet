@@ -1,40 +1,40 @@
 <!-- @format -->
 
 <template>
-  <div class="header-bar" ref="headerBar">
+  <div
+    class="header-bar"
+    ref="headerBar">
     <div class="header-bar-section-placeholder">
-      <img src="/img/rxelms_logo.png" alt="Logo Rxelms" />
+      <img
+        src="/img/rxelms_logo.png"
+        alt="Logo Rxelms" />
     </div>
     <div class="header-bar-section">
       <NavBarButton
         name="Marketplace"
         to="/marketplace"
-        :active="$router.currentRoute.value.fullPath === '/marketplace'"
-      >
+        :active="$router.currentRoute.value.fullPath === '/marketplace'">
         <h4>Marketplace</h4>
       </NavBarButton>
 
       <NavBarButton
         name="Documents"
         to="/documents"
-        :active="$router.currentRoute.value.fullPath === '/documents'"
-      >
+        :active="$router.currentRoute.value.fullPath === '/documents'">
         <h4>Documents</h4>
       </NavBarButton>
 
       <NavBarButton
         name="Builder"
         to="/builder"
-        :active="matchExclude('/artists', 'docs')"
-      >
+        :active="matchExclude('/artists', 'docs')">
         <h4>Builder</h4>
       </NavBarButton>
 
       <NavBarButton
         name="Rxelms"
         to="/Rxelms"
-        :active="$router.currentRoute.value.fullPath.includes('/Rxelms')"
-      >
+        :active="$router.currentRoute.value.fullPath.includes('/Rxelms')">
         <h4>rxelms</h4>
       </NavBarButton>
     </div>
@@ -42,172 +42,120 @@
       <button
         class="connect-button"
         @click="login()"
-        :active="accountStore.loginModal || accountStore.addressModal"
-      >
+        :active="accountStore.loginModal || accountStore.addressModal">
         Connect
       </button>
-
-      <div class="header-bar-section-dif-login">
-        <Tooltip :on="!wide" v-show="accountStore.activeWallet?.address">
-          <DisplaysNavbarAvatar
-            :detailed="wide"
-            :name="name"
-            :address="accountStore.activeWallet?.address || ''"
-            :url="
-              accountStore.userInfo?.user.artist?.page.profileImage
-                ? resolveCid(accountStore.userInfo.user.artist.page.profileImage, 128)
-                : NFDDetails && NFDDetails.v && NFDDetails.v.avatar
-                ? nfdImage
-                : ''
-            "
-            @click="login()"
-            @logout="login()"
-          />
-        </Tooltip>
-      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { resolveCid, resolveMetaData } from "@/functions/media";
+  import { resolveCid, resolveMetaData } from '@/functions/media';
 
-// components
-import NavBarButton from "@/components/buttons/NavBarButton.vue";
-import Notification from "@/components/displays/Notification.vue";
+  // components
+  import NavBarButton from '@/components/buttons/NavBarButton.vue';
+  import Tooltip from '@/components/displays/NavTooltip.vue';
 
-// icons
-import DartroomLogo from "@/components/icons/dartroom/DartroomLogo.vue";
-import Tooltip from "@/components/displays/NavTooltip.vue";
+  console.log('script HeaderBar');
 
-import { env } from "@/functions/env";
-
-console.log("script HeaderBar");
-
-defineProps({
-  wide: {
-    required: true,
-    default: false,
-    type: Boolean,
-  },
-});
-
-function login() {
-  if (accountStore.wallet.addresses.length > 0) {
-    accountStore.addressModal = true;
-  } else {
-    accountStore.loginModal = true;
+  function login() {
+    if (accountStore.wallet.addresses.length > 0) {
+      accountStore.addressModal = true;
+    } else {
+      accountStore.loginModal = true;
+    }
   }
-}
 
-const accountStore = useAccountStore();
-const nfdStore = useNFDStore();
-const settignsStore = useSettingsStore();
+  const accountStore = useAccountStore();
+  const nfdStore = useNFDStore();
+  const settignsStore = useSettingsStore();
 
-const name = computed(() => {
-  if (accountStore.userInfo?.user.artist?.name) {
-    return accountStore.userInfo?.user.artist?.name;
-  } else if (accountStore.activeWallet) {
-    return nfdStore.NFDConversion(accountStore.activeWallet.address);
+  const name = computed(() => {
+    if (accountStore.userInfo?.user.artist?.name) {
+      return accountStore.userInfo?.user.artist?.name;
+    } else if (accountStore.activeWallet) {
+      return nfdStore.NFDConversion(accountStore.activeWallet.address);
+    }
+  });
+
+  const NFDDetails = computed(() => {
+    if (accountStore.activeWallet) {
+      return nfdStore.NFDDetails(accountStore.activeWallet.address);
+    }
+  });
+
+  let nfdImage = ref('');
+
+  const route = useRoute();
+
+  function matchExclude(path: string, exlude: string) {
+    return route.fullPath.includes(path) && !route.fullPath.includes(exlude);
   }
-});
-
-const NFDDetails = computed(() => {
-  if (accountStore.activeWallet) {
-    return nfdStore.NFDDetails(accountStore.activeWallet.address);
-  }
-});
-
-let nfdImage = ref("");
-
-watch(NFDDetails, async () => {
-  if (NFDDetails.value && NFDDetails.value.v && NFDDetails.value.v.avatar) {
-    const imageCid = await resolveMetaData(
-      NFDDetails.value.v.avatar.replaceAll("ipfs://", "")
-    );
-    nfdImage.value = resolveCid(imageCid);
-  }
-});
-
-onMounted(async () => {
-  if (NFDDetails.value && NFDDetails.value.v && NFDDetails.value.v.avatar) {
-    const imageCid = await resolveMetaData(
-      NFDDetails.value.v.avatar.replaceAll("ipfs://", "")
-    );
-    nfdImage.value = resolveCid(imageCid);
-  }
-});
-
-const route = useRoute();
-
-function matchExclude(path: string, exlude: string) {
-  return route.fullPath.includes(path) && !route.fullPath.includes(exlude);
-}
 </script>
 
 <style scoped lang="scss">
-@font-face {
-  font-family: "Helvetica Neue";
-  src: url("/fonts/helvetica-neue/200.ttf") format("truetype");
-  font-weight: 200;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Helvetica Neue";
-  src: url("/fonts/helvetica-neue/800.ttf") format("truetype");
-  font-weight: 800;
-  font-style: normal;
-}
-
-.header-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-around;
-  background: rgba(255, 255, 255, 0.029);
-  backdrop-filter: blur(1px);
-  padding: 10px 10px;
-}
-
-.header-bar-section-placeholder {
-  img {
-    height: 40px;
-    object-fit: contain; // Mantém a proporção da imagem sem cortá-la
+  @font-face {
+    font-family: 'Helvetica Neue';
+    src: url('/fonts/helvetica-neue/200.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
   }
-}
-
-.header-bar-section {
-  display: flex;
-  gap: 40px;
-  justify-content: center;
-  align-items: center;
-}
-
-.connect-button {
-  font-family: "Helvetica Neue", sans-serif;
-  padding: 5px 20px;
-  border: 2px solid #ffffff;
-  font-size: 1.3rem;
-  color: white;
-  border-radius: 10px;
-  background: transparent;
-  cursor: pointer;
-  &:hover {
-    background: #ffffff;
-    color: #9e86ff;
+  @font-face {
+    font-family: 'Helvetica Neue';
+    src: url('/fonts/helvetica-neue/800.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
   }
-}
 
-h4 {
-  color: #c1c0c0;
-  text-align: center;
-  font-family: "Helvetica Neue", sans-serif;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: normal;
-}
+  .header-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-around;
+    background: rgba(255, 255, 255, 0.029);
+    backdrop-filter: blur(1px);
+    padding: 10px 10px;
+  }
+
+  .header-bar-section-placeholder {
+    img {
+      height: 40px;
+      object-fit: contain; // Mantém a proporção da imagem sem cortá-la
+    }
+  }
+
+  .header-bar-section {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .connect-button {
+    font-family: 'Helvetica Neue', sans-serif;
+    padding: 5px 20px;
+    border: 2px solid #ffffff;
+    font-size: 1.3rem;
+    color: white;
+    border-radius: 10px;
+    background: transparent;
+    cursor: pointer;
+    &:hover {
+      background: #ffffff;
+      color: #9e86ff;
+    }
+  }
+
+  h4 {
+    color: #c1c0c0;
+    text-align: center;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+  }
 </style>
