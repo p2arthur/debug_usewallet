@@ -4,10 +4,12 @@
   <div
     class="header-bar"
     ref="headerBar">
-    <div class="header-bar-section-placeholder">
-      <img
-        src="/img/rxelms_logo.png"
-        alt="Logo Rxelms" />
+    <div class="header-bar-logo-container">
+      <a href="/">
+        <img
+          src="/img/rxelms_logo.png"
+          alt="Logo Rxelms" />
+      </a>
     </div>
     <div class="header-bar-section">
       <NavBarButton
@@ -38,25 +40,22 @@
         <h4>rxelms</h4>
       </NavBarButton>
     </div>
-    <div class="header-bar-section-dif">
-      <button
+    <div class="header-bar-right-container">
+      <div
         class="connect-button"
         @click="login()"
         :active="accountStore.loginModal || accountStore.addressModal">
         Connect
-      </button>
+      </div>
+
+      <Bars3Icon class="hamburger-icon" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-  import { resolveCid, resolveMetaData } from '@/functions/media';
-
-  // components
+  import { Bars3Icon } from '@heroicons/vue/24/solid';
   import NavBarButton from '@/components/buttons/NavBarButton.vue';
-  import Tooltip from '@/components/displays/NavTooltip.vue';
-
-  console.log('script HeaderBar');
 
   function login() {
     if (accountStore.wallet.addresses.length > 0) {
@@ -67,24 +66,6 @@
   }
 
   const accountStore = useAccountStore();
-  const nfdStore = useNFDStore();
-  const settignsStore = useSettingsStore();
-
-  const name = computed(() => {
-    if (accountStore.userInfo?.user.artist?.name) {
-      return accountStore.userInfo?.user.artist?.name;
-    } else if (accountStore.activeWallet) {
-      return nfdStore.NFDConversion(accountStore.activeWallet.address);
-    }
-  });
-
-  const NFDDetails = computed(() => {
-    if (accountStore.activeWallet) {
-      return nfdStore.NFDDetails(accountStore.activeWallet.address);
-    }
-  });
-
-  let nfdImage = ref('');
 
   const route = useRoute();
 
@@ -114,13 +95,15 @@
     right: 0;
     z-index: 1000;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     background: rgba(255, 255, 255, 0.029);
     backdrop-filter: blur(1px);
-    padding: 10px 10px;
+    padding: 20px 20px;
   }
 
-  .header-bar-section-placeholder {
+  .header-bar-logo-container {
+    display: flex;
+    align-items: center;
     img {
       height: 40px;
       object-fit: contain; // Mantém a proporção da imagem sem cortá-la
@@ -134,11 +117,19 @@
     align-items: center;
   }
 
+  .header-bar-right-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
   .connect-button {
+    display: flex;
+    align-items: center;
     font-family: 'Helvetica Neue', sans-serif;
-    padding: 5px 20px;
+    padding: 5px 10px;
     border: 2px solid #ffffff;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     color: white;
     border-radius: 10px;
     background: transparent;
@@ -147,6 +138,9 @@
       background: #ffffff;
       color: #9e86ff;
     }
+  }
+  .hamburger-icon {
+    display: none;
   }
 
   h4 {
@@ -157,5 +151,27 @@
     font-style: normal;
     font-weight: 300;
     line-height: normal;
+  }
+
+  @media (max-width: 768px) {
+    .header-bar-section {
+      display: none;
+    }
+
+    .header-bar-logo-container {
+      img {
+        height: 25px;
+        object-fit: contain; // Mantém a proporção da imagem sem cortá-la
+      }
+    }
+
+    .connect-button {
+      font-size: 1rem;
+    }
+    .hamburger-icon {
+      display: block;
+      color: white;
+      width: 25px;
+    }
   }
 </style>

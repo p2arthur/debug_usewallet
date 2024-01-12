@@ -35,6 +35,7 @@
     }
 
     .info-description {
+      text-align: center;
       font-size: 14px;
     }
   }

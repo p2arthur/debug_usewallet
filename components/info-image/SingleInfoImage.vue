@@ -106,11 +106,14 @@
     }
 
     .card-title {
-      font-size: 24px; /* Reduce the font size for better readability on smaller screens */
+      text-align: center;
+      font-size: 2rem; /* Reduce the font size for better readability on smaller screens */
     }
 
     .card-description {
-      font-size: 1rem; /* Adjust the font size for better readability on smaller screens */
+      text-align: center;
+      line-height: 1.5rem;
+      font-size: 1.2rem; /* Adjust the font size for better readability on smaller screens */
     }
   }
 </style>
