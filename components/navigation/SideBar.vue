@@ -58,15 +58,17 @@
   .sidebar-header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 10px;
     height: 5%;
     .sidebar-logo {
-      height: 100%;
+      height: 80%;
     }
 
     .sidebar-close-icon {
       color: white;
-      height: 80%;
+      height: 50%;
+      cursor: pointer;
     }
   }
 
@@ -79,12 +81,13 @@
   .sidebar-link {
     padding: 10px;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
   }
 
   .sidebar-link a {
     color: #fff;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 14px;
   }
 
   .sidebar-link:hover {
