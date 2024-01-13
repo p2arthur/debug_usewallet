@@ -74,27 +74,20 @@
       animateCarousel() {
         const carousel = this.$refs.carousel;
 
-        // Move the first item to the end in each iteration
-        const firstItem = this.carouselItems.shift();
-        this.carouselItems.push(firstItem);
-
-        // Start shifting to the next item
-        this.offset -= this.itemWidth;
-        carousel.style.transition = `transform ${this.transitionDuration} ease`;
-        carousel.style.transform = `translateX(${this.offset}px)`;
-
-        // Reset the offset and transition property after the animation
-        setTimeout(() => {
-          this.offset = 0;
-          carousel.style.transition = 'none';
-          carousel.style.transform = `translateX(${this.offset}px)`;
-
-          // Ensure the browser applies the initial transform before re-enabling the transition
-          getComputedStyle(carousel).transform;
-
-          // Re-enable the transition for the next iteration
+        if (carousel.style) {
+          const firstItem = this.carouselItems.shift();
+          this.carouselItems.push(firstItem);
+          this.offset -= this.itemWidth;
           carousel.style.transition = `transform ${this.transitionDuration} ease`;
-        }, parseFloat(this.transitionDuration) * 1000);
+          carousel.style.transform = `translateX(${this.offset}px)`;
+          setTimeout(() => {
+            this.offset = 0;
+            carousel.style.transition = 'none';
+            carousel.style.transform = `translateX(${this.offset}px)`;
+            getComputedStyle(carousel).transform;
+            carousel.style.transition = `transform ${this.transitionDuration} ease`;
+          }, parseFloat(this.transitionDuration) * 1000);
+        }
       },
     },
     components: { Carousel, Slide, Pagination, Navigation, CarouselCard },
