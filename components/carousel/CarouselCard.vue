@@ -24,8 +24,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 2px solid #9e86ff;
-    border-radius: 10px;
     width: 150px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.082);
     overflow: hidden;
@@ -41,5 +39,11 @@
 
   .carousel-card-title {
     margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .carousel-card {
+      width: 100px;
+    }
   }
 </style>

@@ -1,6 +1,32 @@
 <!-- @format -->
 
+<script setup lang="ts">
+  import { Bars3Icon } from '@heroicons/vue/24/solid';
+  import NavBarButton from '@/components/buttons/NavBarButton.vue';
+  import { useSidebarStore } from '~/stores/interface/sidebar.store';
+  import SideBar from './SideBar.vue';
+
+  const store = useSidebarStore();
+
+  function login() {
+    if (accountStore.wallet.addresses.length > 0) {
+      accountStore.addressModal = true;
+    } else {
+      accountStore.loginModal = true;
+    }
+  }
+
+  const accountStore = useAccountStore();
+
+  const route = useRoute();
+
+  function matchExclude(path: string, exlude: string) {
+    return route.fullPath.includes(path) && !route.fullPath.includes(exlude);
+  }
+</script>
+
 <template>
+  <SideBar v-if="store.sideBarIsOpen" />
   <div
     class="header-bar"
     ref="headerBar">
@@ -48,31 +74,12 @@
         Connect
       </div>
 
-      <Bars3Icon class="hamburger-icon" />
+      <Bars3Icon
+        @click="store.toggleSideBar"
+        class="hamburger-icon" />
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-  import { Bars3Icon } from '@heroicons/vue/24/solid';
-  import NavBarButton from '@/components/buttons/NavBarButton.vue';
-
-  function login() {
-    if (accountStore.wallet.addresses.length > 0) {
-      accountStore.addressModal = true;
-    } else {
-      accountStore.loginModal = true;
-    }
-  }
-
-  const accountStore = useAccountStore();
-
-  const route = useRoute();
-
-  function matchExclude(path: string, exlude: string) {
-    return route.fullPath.includes(path) && !route.fullPath.includes(exlude);
-  }
-</script>
 
 <style scoped lang="scss">
   @font-face {
@@ -93,7 +100,7 @@
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
+    z-index: 10;
     display: flex;
     justify-content: space-between;
     background: rgba(255, 255, 255, 0.029);
