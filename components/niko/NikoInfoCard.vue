@@ -112,7 +112,7 @@
     }
 
     .center-description {
-      font-size: 1rem;
+      font-size: 0.8rem;
       margin: 0;
       text-align: center;
       color: rgb(189, 189, 189);
