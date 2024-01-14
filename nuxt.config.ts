@@ -3,19 +3,19 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'node-server',
     compressPublicAssets: {
-      brotli: true
+      brotli: true,
     },
   },
 
   typescript: {
-    strict: true
+    strict: true,
   },
 
   vite: {
     server: {
       fs: {
-        allow: ['C:/Users/stefd/Documenten/Code/Dartroom/dart-signer/dist']
-      }
+        allow: ['C:/Users/stefd/Documenten/Code/Dartroom/dart-signer/dist'],
+      },
     },
     css: {
       preprocessorOptions: {
@@ -28,20 +28,20 @@ export default defineNuxtConfig({
             @import "@/assets/scss/color-styles.scss";
             @import "@/assets/scss/overlay.scss";
             @import "@/assets/scss/helvetica-neue.scss";
-          `
-        }
-      }
+          `,
+        },
+      },
     },
     optimizeDeps: {
       esbuildOptions: {
         // Node.js global to browser globalThis
         define: {
-          global: 'globalThis'
-        }
-      }
+          global: 'globalThis',
+        },
+      },
     },
     build: {
-      target: "es2020",
+      target: 'es2020',
     },
   },
 
@@ -50,9 +50,18 @@ export default defineNuxtConfig({
       version: '0.3.4',
       ledger: 'TestNet',
       api: 'https://api-v2.dartroom.xyz',
-      dartroomApi: process.env.NODE_ENV === 'production' ? process.env.DARTROOM_API : process.env.DEV_DARTROOM_API,
-      fileroomApi: process.env.NODE_ENV === 'production' ? process.env.FILEROOM_API : process.env.DEV_FILEROOM_API,
-      queue: process.env.NODE_ENV === 'production' ? process.env.QUEUE_SYSTEM : process.env.DEV_QUEUE_SYSTEM,
+      dartroomApi:
+        process.env.NODE_ENV === 'production'
+          ? process.env.DARTROOM_API
+          : process.env.DEV_DARTROOM_API,
+      fileroomApi:
+        process.env.NODE_ENV === 'production'
+          ? process.env.FILEROOM_API
+          : process.env.DEV_FILEROOM_API,
+      queue:
+        process.env.NODE_ENV === 'production'
+          ? process.env.QUEUE_SYSTEM
+          : process.env.DEV_QUEUE_SYSTEM,
     },
   },
 
@@ -72,13 +81,11 @@ export default defineNuxtConfig({
           ['defineStore', 'definePiniaStore'], // import { defineStore as definePiniaStore } from 'pinia'
         ],
       },
-    ]
+    ],
   ],
 
   imports: {
-    dirs: [
-      'stores/**/*'
-    ]
+    dirs: ['stores/**/*'],
   },
 
   googleFonts: {
@@ -98,41 +105,41 @@ export default defineNuxtConfig({
         wght: [100, 200, 300, 400, 500, 600, 700],
         // ital: [100, 200, 300, 400, 500, 600, 700],
       },
-    }
+    },
   },
 
   app: {
     head: {
       htmlAttrs: {
-        lang: 'en'
+        lang: 'en',
       },
-      charset: "utf-16",
-      viewport: "width=device-width, initial-scale=1",
-      title: "rxlems",
-      titleTemplate: "rxlems",
+      charset: 'utf-16',
+      viewport: 'width=device-width, initial-scale=1',
+      title: 'rxelms',
+      titleTemplate: 'rxelms',
       meta: [
         {
-          "name": "viewport",
-          "content": "width=device-width, initial-scale=1"
+          name: 'viewport',
+          content: 'width=device-width, initial-scale=1',
         },
         {
-          "name": "http-equiv",
-          "content": "Content-Security-Polic"
+          name: 'http-equiv',
+          content: 'Content-Security-Polic',
         },
       ],
       link: [
         {
           rel: 'icon',
           type: 'image/svg+xml',
-          href: '/favicon.svg'
-        }
-      ]
-    }
+          href: '/favicon.svg',
+        },
+      ],
+    },
   },
 
   components: {
     global: true,
-    dirs: ['~/components']
+    dirs: ['~/components'],
   },
 
   // i18n: {
@@ -175,8 +182,8 @@ export default defineNuxtConfig({
         // Default theme (same as single string)
         default: 'github-light',
         // Theme used if `html.dark`
-        dark: 'github-dark'
-      }
-    }
-  }
-})
+        dark: 'github-dark',
+      },
+    },
+  },
+});

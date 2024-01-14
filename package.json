@@ -2,6 +2,7 @@
   "private": true,
   "scripts": {
     "build": "nuxt build",
+    "dev1": "nuxt dev",
     "dev": "npm run codegen && nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
@@ -40,7 +41,9 @@
   "dependencies": {
     "@dartroom/fileroom-sdk": "^0.1.2-alpha",
     "@dartroom/signer": "^0.3.3-alpha",
+    "@heroicons/vue": "^2.1.1",
     "@pinia/nuxt": "^0.4.4",
+    "@splidejs/vue-splide": "^0.6.12",
     "@ubclaunchpad/vue-fathom": "^2.0.0",
     "@urql/core": "^4.0.7",
     "@vueuse/integrations": "^9.4.0",
@@ -59,6 +62,7 @@
     "unity-webgl": "^3.5.2",
     "universal-cookie": "^4.0.4",
     "vue-virtual-scroller": "^2.0.0-beta.8",
+    "vue3-carousel": "^0.3.1",
     "vuedraggable": "^4.1.0"
   },
   "optionalDependencies": {

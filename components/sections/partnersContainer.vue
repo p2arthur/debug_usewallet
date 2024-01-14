@@ -1,127 +1,155 @@
+<!-- @format -->
+
+<script>
+  import CarouselCard from '../carousel/CarouselCard.vue';
+  import 'vue3-carousel/dist/carousel.css';
+  import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
+  import { isMobile } from '../../functions/view-port/isMobile';
+
+  export default {
+    data() {
+      return {
+        carouselItems: [
+          {
+            name: 'b-kartel',
+            src: '/img/partners_images/bkartel.webp',
+            alt: 'Partners',
+            url: '',
+          },
+          {
+            name: 'b-kartel',
+            src: '/img/partners_images/bkartel.webp',
+            alt: 'Partners',
+            url: '',
+          },
+          {
+            name: 'b-kartel',
+            src: '/img/partners_images/bkartel.webp',
+            alt: 'Partners',
+            url: '',
+          },
+          {
+            name: 'b-kartel',
+            src: '/img/partners_images/bkartel.webp',
+            alt: 'Partners',
+            url: '',
+          },
+          {
+            name: 'b-kartel',
+            src: '/img/partners_images/bkartel.webp',
+            alt: 'Partners',
+            url: '',
+          },
+          {
+            name: 'b-kartel',
+            src: '/img/partners_images/bkartel.webp',
+            alt: 'Partners',
+            url: '',
+          },
+          {
+            name: 'b-kartel',
+            src: '/img/partners_images/bkartel.webp',
+            alt: 'Partners',
+            url: '',
+          },
+        ],
+        itemWidth: 600,
+        offset: 0,
+        transitionDuration: '0.5s',
+      };
+    },
+
+    computed: {
+      // Define a computed property for isMobile
+      isMobileDevice() {
+        return isMobile();
+      },
+    },
+    mounted() {
+      // Assuming you want the carousel to automatically slide, you can use the following:
+      setInterval(this.animateCarousel, 3000); // Adjust the interval as needed
+    },
+
+    methods: {
+      animateCarousel() {
+        const carousel = this.$refs.carousel;
+
+        if (carousel.style) {
+          const firstItem = this.carouselItems.shift();
+          this.carouselItems.push(firstItem);
+          this.offset -= this.itemWidth;
+          carousel.style.transition = `transform ${this.transitionDuration} ease`;
+          carousel.style.transform = `translateX(${this.offset}px)`;
+          setTimeout(() => {
+            this.offset = 0;
+            carousel.style.transition = 'none';
+            carousel.style.transform = `translateX(${this.offset}px)`;
+            getComputedStyle(carousel).transform;
+            carousel.style.transition = `transform ${this.transitionDuration} ease`;
+          }, parseFloat(this.transitionDuration) * 1000);
+        }
+      },
+    },
+    components: { Carousel, Slide, Pagination, Navigation, CarouselCard },
+  };
+</script>
+
 <template>
   <div class="partnersContainer">
-    <div class="left-section">
-      <img src="/img/rxelms_logo_black.png" alt="Logo Rxelms">
+    <div class="logo-container">
+      <h2 class="title">Our partners</h2>
     </div>
-    <div class="center-section">
-      <div class="center-panel">
-          <div class="carrocel-panel">
-          <img src="/img/Card2.png" alt="Partners" class="carousel-item" data-url="https://www.google.com">
-          <img src="/img/Card3.png" alt="Partners" class="carousel-item" data-url="https://www.google.com">
-          <img src="/img/Card4.png" alt="Partners" class="carousel-item" data-url="https://www.google.com">
-          <img src="/img/Card5.png" alt="Partners" class="carousel-item">
-          <img src="/img/Card1.png" alt="Partners" class="carousel-item">
-          <img src="/img/Card6.png" alt="Partners" class="carousel-item">
-          <img src="/img/Card7.png" alt="Partners" class="carousel-item">
-        </div>
-      </div>
+
+    <div class="carousel-container">
+      <carousel
+        :autoplay="1000"
+        :snap-align="'center'"
+        :items-to-show="isMobileDevice ? 3 : 5"
+        ref="carousel">
+        <slide
+          v-for="item in carouselItems"
+          :key="item.name">
+          <CarouselCard :item="item" />
+        </slide>
+        <template #addons>
+          <navigation />
+          <pagination />
+        </template>
+      </carousel>
     </div>
-    <div class="right-section"></div>
   </div>
 </template>
 
-
-<script>
-export default {
-  mounted() {
-    const centerPanel = this.$el.querySelector('.carrocel-panel');
-    let offset = 0;
-    const itemWidth = 200; // Substitua 200 pelo valor real de largura do item
-
-
-    // Adicione o manipulador de eventos de clique aqui
-    centerPanel.addEventListener('click', (event) => {
-      const target = event.target;
-      if (target.classList.contains('carousel-item')) {
-        const url = target.getAttribute('data-url');
-        if (url) {
-          window.open(url, '_blank'); // Abre o URL em uma nova aba
-        }
-      }
-    })
-
-    setInterval(() => {
-      // Move o primeiro item para o final quando ele sai completamente do painel
-      if (offset <= -itemWidth) {
-        const firstItem = centerPanel.firstElementChild;
-        centerPanel.appendChild(firstItem);
-        centerPanel.style.transition = 'none'; // Desativa a animação temporariamente
-        offset += itemWidth;
-        centerPanel.style.transform = `translateX(${offset}px)`;
-        // Força o navegador a reconhecer a mudança no transform
-        getComputedStyle(centerPanel).transform;
-        centerPanel.style.transition = 'transform 0.5s ease'; // Reativa a animação
-      }
-
-      // Inicia o deslocamento do próximo item
-      offset -= itemWidth;
-      centerPanel.style.transform = `translateX(${offset}px)`;
-    }, 3000); // Ajuste o tempo conforme necessário
-  }
-}
-
-</script>
-  
 <style scoped>
   .partnersContainer {
+    padding: 20px;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    background-color: rgb(19, 17, 33);
+  }
+
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .carousel-container {
     width: 100%;
-    height: 300px;
-    background-color: #ffffff;
+    overflow: hidden;
   }
 
-  .left-section, .right-section {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .title {
+    color: white;
+    font-size: 32px;
   }
 
-  .carousel-item {
-  transition: transform 0.5s ease;
-}
-
-  .left-section img{
-    height: 100px;
+  .v3c-btn-prev,
+  .carousel__slide--next {
+    opacity: 1;
+    transform: rotateY(10deg) scale(0.95);
   }
-
-  .center-section {
-    flex: 0 0 1140px; /* Largura do painel ajustada */
-    display: fixed;
-    justify-content: center;
-    align-items: center;
-    padding: 20px
-  }
-
-  .center-section {
-    width: 1140px;
-    height: 247px;
-
-
-    background-image: url('/img/retangule.png'); /* Imagem de fundo */
-    background-size: fixed; /* Garante que a imagem cubra todo o painel */
-    background-repeat: no-repeat; /* Impede que a imagem se repita */
-    background-position: center; /* Centraliza a imagem no painel */
-    
-    /* Adicione estilos adicionais conforme necessário */
-  }
-
-  .center-panel {
-  overflow: hidden; /* Oculta conteúdo que excede os limites */
-
-}
-.carrocel-panel{
-  display: flex; /* Alinha todos os itens do carrossel em linha */
-  transition: transform 0.5s ease; /* Suaviza a animação de movimento */
-  will-change: transform; /* Otimiza a animação */
-  padding-left: 0px;
-  padding-top: 15px;
-
-}
-
-  .center-panel img:not(:last-child) {
-    margin-right: 40px; /* Adiciona espaço entre as imagens */
-
-  /* Adiciona uma margem de 40 pixels à direita de cada imagem, exceto a última */
-}
 </style>

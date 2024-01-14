@@ -1,158 +1,88 @@
-<template>
-  <div class="centerCharacterContainer">
-    <div class="center-section">
-      <img src="/img/center_character.png" alt="Character">
-      <div class="card-overlay">
-        <img src="/img/center_panel.png" alt="Panel">
-        <div class="text-container">
-          <h1>Card Title</h1>
-          Card Content
-        </div>
+<!-- @format -->
 
-      </div>      
+<script setup lang="ts">
+  import NikoInfoCard from '../niko/NikoInfoCard.vue';
+</script>
+
+<template>
+  <div class="center-container">
+    <div class="niko-section-bg">
+      <img
+        src="/img/niko-background.png"
+        alt="" />
     </div>
-  </div>
-  <div class="infoContainer">
-    <div class="left-section">
-      <img src="/img/nico_token.png" alt="Token Coin">
-      <div class="card-description"></div>
-    </div>
-    <div class="right-section">
-      <img src="/img/card_nico.png" alt="Descrição do Card Direito">
-      <div class="card-description">
-        <div class="text-container">
-            <h1>NIKO Coin</h1>
-            The NIKO token is the internal currency of the rxelms universe, acting as the foundation for transactions and interactions within the metaverse. It is used in marketplace transactions and voting, and it is also central to participation rewards and encouraging creativity within the community. The distribution strategy of NIKO, managed by Dartroom, emphasizes non-commercialization of the token, prioritizing its use to strengthen the rxelms ecosystem.
-          </div>
-      </div>
+    <div class="center-header">
+      <img
+        class="center-avatar-image"
+        src="/img/center_character.png"
+        alt="Character" />
+      <NikoInfoCard />
     </div>
   </div>
 </template>
 
-
-
-
-  
 <style scoped>
-.centerCharacterContainer {
-  margin-top: -550px;
-  display: flex;
-  width: 100%;
-  height: 100%;
-  min-height: 1900px;
-  position: relative;
-  z-index: 10;
-}
+  .center-container {
+    height: 600px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(19, 17, 33);
+  }
 
-.text-container h1 {
-  font-size: 2em; /* Tamanho da fonte maior */
-  color: #333; /* Cor da fonte */
-  font-weight: bold; /* Peso da fonte */
-  margin-bottom: 20px; /* Espaço abaixo do título */
-  /* Adicione outros estilos conforme necessário */
-}
+  .niko-section-bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
 
-.center-section {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
+  .niko-section-bg img {
+    animation: expand 3s infinite;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This ensures the image covers the whole container */
+  }
 
-.center-section img {
-  width: 50%;
-  height: 50%;
-  object-fit: cover;
-}
+  .center-header {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
 
-.card-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+    .center-avatar-image {
+      animation: breath 3s infinite;
+    }
+  }
 
-.card-overlay img {
-  width: 600px; /* Largura da imagem */
-  height: auto; /* Mantém a proporção da imagem */
-}
+  @media (max-width: 768px) {
+    .center-avatar-image {
+      height: 100%;
+      width: 100%;
+    }
+  }
 
-.text-container {
-  color: black; /* Cor da fonte preta */
-  text-align: center; /* Centraliza o texto */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 80%; /* Limita a largura máxima do texto */
-  font-size: 20px;
-  text-align: justify; /* Alinha o texto justificado */
-}
-.text-container h1 {
-  font-size: 2em; /* Tamanho da fonte maior */
-  color: #333; /* Cor da fonte */
-  font-weight: bold; /* Peso da fonte */
-  margin-bottom: 20px; /* Espaço abaixo do título */
-  text-align: justify; /* Alinha o texto justificado */
-  /* Adicione outros estilos conforme necessário */
-}
+  @keyframes breath {
+    0%,
+    100% {
+      transform: translateY(-1%);
+      animation-timing-function: ease-in-out;
+    }
+    50% {
+      transform: translateY(-0.3%) scale(100.5%);
+      animation-timing-function: ease-in-out;
+    }
+  }
 
-.infoContainer {
-  padding: 200px;
-  margin-top: -750px;
-  display: flex;
-  width: 100%;
-  height: 300px;
-
-  min-height: 600px;
-}
-
-.left-section, .right-section {
-  display: flex;
-  padding-left: 50px;
-  justify-content: center;
-  align-items: center;
-  position: relative; /* Mantém a posição relativa */
-}
-
-.right-section {
-  display: flex;
-  padding-right: 100px;
-  justify-content: center;
-  align-items: center;
-  position: relative; /* Mantém a posição relativa */
-  width: 1000px; /* Defina a largura para corresponder à da imagem */
-}
-
-.right-section img {
-  width: 700px; /* Largura da imagem */
-  height: auto; /* Mantém a proporção da imagem */
-  
-  
-}
-
-.left-section img {
-  width: 500px; /* Largura da imagem */
-  height: auto; /* Mantém a proporção da imagem */
-}
-
-.card-description {
-  position: absolute;
-  top: 50%; /* Centraliza verticalmente */
-  left: 50%; /* Centraliza horizontalmente */
-  transform: translate(-50%, -50%); /* Ajusta a posição para o centro exato */
-  width: 80%; /* Largura baseada no conteúdo */
-  text-align: center; /* Centraliza o texto */
-  color: black; /* Cor do texto */
-  margin-bottom: 100px;
-
-  /* Adicione outros estilos conforme necessário */
-}
+  @keyframes expand {
+    0%,
+    100% {
+      transform: scale(101%);
+      animation-timing-function: ease-in-out;
+    }
+    50% {
+      transform: scale(100.5%);
+      animation-timing-function: ease-in-out;
+    }
+  }
 </style>
