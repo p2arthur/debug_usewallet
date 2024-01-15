@@ -5,54 +5,12 @@
   import 'vue3-carousel/dist/carousel.css';
   import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
   import { isMobile } from '../../functions/view-port/isMobile';
+  import partnersList from '../../content/partners/partnersList';
 
   export default {
     data() {
       return {
-        carouselItems: [
-          {
-            name: 'b-kartel',
-            src: '/img/partners_images/bkartel.webp',
-            alt: 'Partners',
-            url: '',
-          },
-          {
-            name: 'b-kartel',
-            src: '/img/partners_images/bkartel.webp',
-            alt: 'Partners',
-            url: '',
-          },
-          {
-            name: 'b-kartel',
-            src: '/img/partners_images/bkartel.webp',
-            alt: 'Partners',
-            url: '',
-          },
-          {
-            name: 'b-kartel',
-            src: '/img/partners_images/bkartel.webp',
-            alt: 'Partners',
-            url: '',
-          },
-          {
-            name: 'b-kartel',
-            src: '/img/partners_images/bkartel.webp',
-            alt: 'Partners',
-            url: '',
-          },
-          {
-            name: 'b-kartel',
-            src: '/img/partners_images/bkartel.webp',
-            alt: 'Partners',
-            url: '',
-          },
-          {
-            name: 'b-kartel',
-            src: '/img/partners_images/bkartel.webp',
-            alt: 'Partners',
-            url: '',
-          },
-        ],
+        carouselItems: partnersList,
         itemWidth: 600,
         offset: 0,
         transitionDuration: '0.5s',
@@ -102,7 +60,7 @@
 
     <div class="carousel-container">
       <carousel
-        :autoplay="1000"
+        :autoplay="3000"
         :snap-align="'center'"
         :items-to-show="isMobileDevice ? 3 : 5"
         ref="carousel">
