@@ -25,6 +25,11 @@
     flex-direction: column;
     align-items: center;
     width: 200px;
+    background: linear-gradient(
+      to bottom right,
+      rgba(43, 31, 88, 0.97),
+      rgb(40, 36, 52)
+    );
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.082);
     overflow: hidden;
   }

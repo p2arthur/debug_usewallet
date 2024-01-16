@@ -16,7 +16,8 @@
     padding: 40px;
     gap: 20px;
     display: flex;
-    background: rgb(9, 7, 27);
+    background: #120e1d;
+    box-shadow: 32px 0px 0px rgba(0, 0, 0, 0.621);
   }
 
   @media (max-width: 768px) {

@@ -56,7 +56,9 @@
   }
 
   .text-container {
-    background-color: rgb(19, 17, 33);
+    background: radial-gradient(rgba(33, 27, 27, 0.215), #64498a1b);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.374);
+    backdrop-filter: blur(10px);
     padding: 20px;
     border-radius: 10px;
     width: 100%;

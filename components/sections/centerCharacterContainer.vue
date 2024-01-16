@@ -36,17 +36,13 @@
     position: relative;
     display: flex;
     justify-content: center;
-    background-color: rgb(19, 17, 33);
+    background: radial-gradient(circle, #1b152b, #100e1d, #1b152b);
   }
 
   .niko-section-bg {
     width: 100%;
     height: 100%;
     position: absolute;
-
-    .coins-spline-viewer {
-      animation: expand 3s infinite;
-    }
   }
 
   .center-header {

@@ -39,7 +39,7 @@
     display: flex;
     flex-direction: column;
     gap: 70px;
-    background-color: rgb(9, 7, 27);
+    background: radial-gradient(circle, #1b152b, #100e1d, #1b152b);
     padding: 50px 100px 200px 100px;
   }
 

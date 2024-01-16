@@ -102,7 +102,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    background-color: rgb(14, 10, 30);
+    background-color: #100e1d;
     top: 0;
   }
 

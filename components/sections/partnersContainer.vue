@@ -86,7 +86,7 @@
     align-items: center;
     flex-direction: column;
     gap: 20px;
-    background-color: rgb(19, 17, 33);
+    background-color: #1b152b;
   }
 
   .logo-container {

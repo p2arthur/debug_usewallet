@@ -167,7 +167,8 @@
     display: flex;
     padding: 20px 30px;
     display: flex;
-    background-color: rgb(19, 17, 33);
+    background: radial-gradient(circle, #1b152b, #100e1d, #1b152b);
+
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.127);
   }
   .react-tile-mapcanvas {
