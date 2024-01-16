@@ -58,6 +58,8 @@
       </p>
     </div>
   </footer>
+
+  <div class="spline-container"></div>
 </template>
 
 <script setup lang="ts">
@@ -164,6 +166,12 @@
   .footer-bar-text {
     color: rgb(174, 174, 174);
     text-align: center;
+  }
+
+  .spline-container {
+    width: 100%;
+    height: 100%;
+    background-color: black;
   }
 
   @media (max-width: 768px) {

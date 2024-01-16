@@ -2,14 +2,23 @@
 
 <script setup lang="ts">
   import NikoInfoCard from '../niko/NikoInfoCard.vue';
+  onMounted(() => {
+    // Dynamically add the spline viewer script when the component is mounted
+    const script = document.createElement('script');
+    script.type = 'module';
+    script.src = 'https://unpkg.com/@splinetool/viewer/build/spline-viewer.js';
+    document.head.appendChild(script);
+  });
 </script>
 
 <template>
   <div class="center-container">
     <div class="niko-section-bg">
-      <img
-        src="/img/niko-background.png"
-        alt="" />
+      <spline-viewer
+        loading="eager"
+        events-target="local"
+        class="coins-spline-viewer"
+        url="https://prod.spline.design/C38mQ7SqfaE0gob0/scene.splinecode"></spline-viewer>
     </div>
     <div class="center-header">
       <img
@@ -34,16 +43,14 @@
     width: 100%;
     height: 100%;
     position: absolute;
-  }
 
-  .niko-section-bg img {
-    animation: expand 3s infinite;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* This ensures the image covers the whole container */
+    .coins-spline-viewer {
+      animation: expand 3s infinite;
+    }
   }
 
   .center-header {
+    pointer-events: none;
     position: relative;
     width: 100%;
     height: 100%;
