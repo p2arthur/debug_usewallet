@@ -87,9 +87,9 @@
     z-index: 10;
     display: flex;
     justify-content: space-between;
-    background: rgba(255, 255, 255, 0.029);
+    background: rgba(153, 153, 153, 0.046);
     backdrop-filter: blur(1px);
-    padding: 20px 20px;
+    padding: 10px 20px;
   }
 
   .header-bar-logo-container {
@@ -97,7 +97,7 @@
     align-items: center;
     img {
       height: 40px;
-      object-fit: contain; // Mantém a proporção da imagem sem cortá-la
+      object-fit: contain;
     }
   }
 
@@ -136,7 +136,7 @@
     .header-bar-logo-container {
       img {
         height: 25px;
-        object-fit: contain; // Mantém a proporção da imagem sem cortá-la
+        object-fit: contain;
       }
     }
 
