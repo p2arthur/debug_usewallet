@@ -34,5 +34,24 @@
   body {
     margin: 0;
     padding: 0 !important;
+
+    overflow-x: hidden;
+
+    scrollbar-width: thin;
+    scrollbar-color: #a969fd #28282816; /* thumb color and track color */
+
+    /* For older versions of Chrome and Safari */
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #a969fd; /* thumb color */
+      border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: #282828; /* track color */
+    }
   }
 </style>
