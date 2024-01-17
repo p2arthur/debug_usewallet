@@ -5,9 +5,9 @@
   import NavBarButton from '@/components/buttons/NavBarButton.vue';
   import { useSidebarStore } from '~/stores/interface/sidebar.store';
   import SideBar from './SideBar.vue';
+  import ConnectWallet from '../connect/ConnectWallet.vue';
 
   const store = useSidebarStore();
-
   const route = useRoute();
 
   function matchExclude(path: string, exlude: string) {
@@ -57,8 +57,7 @@
       </NavBarButton>
     </div>
     <div class="header-bar-right-container">
-      <div class="connect-button">Connect</div>
-
+      <ConnectWallet />
       <Bars3Icon
         @click="store.toggleSideBar"
         class="hamburger-icon" />
@@ -115,22 +114,6 @@
     gap: 10px;
   }
 
-  .connect-button {
-    display: flex;
-    align-items: center;
-    font-family: 'Helvetica Neue', sans-serif;
-    padding: 5px 10px;
-    border: 2px solid #ffffff;
-    font-size: 1.5rem;
-    color: white;
-    border-radius: 10px;
-    background: transparent;
-    cursor: pointer;
-    &:hover {
-      background: #ffffff;
-      color: #9e86ff;
-    }
-  }
   .hamburger-icon {
     display: none;
   }

@@ -86,6 +86,8 @@ export default defineNuxtConfig({
 
   srcDir: 'src/',
 
+  plugins: [],
+
   googleFonts: {
     download: true,
     base64: false,
