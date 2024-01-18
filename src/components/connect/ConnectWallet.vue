@@ -2,16 +2,16 @@
 
 <script setup lang="ts">
   import { useWallet } from '@txnlab/use-wallet-vue';
+  import { ellipseAddress } from '../../utils/walletUtils';
 
   const dropDownOpen = ref(false);
 
   const toggleDropDown = () => {
-    console.log('toggle dropdown', dropDownOpen);
     dropDownOpen.value = !dropDownOpen.value;
   };
 
-  const { wallets } = useWallet();
-  console.log('wallets', wallets.value);
+  const { wallets, activeAccount } = useWallet();
+  console.log('wallets', wallets.value, activeAccount.value?.address);
 </script>
 
 <template>
@@ -19,7 +19,7 @@
     <button
       class="connect-button"
       @click="toggleDropDown()">
-      Connect
+      {{ activeAccount ? ellipseAddress(activeAccount.address) : 'Connect' }}
     </button>
     <ul
       class="dropdown-items"
@@ -41,7 +41,6 @@
     display: flex;
     justify-content: center;
     position: relative;
-    width: 150px;
   }
 
   .dropdown-items {
