@@ -6,8 +6,10 @@
     ArrowRightEndOnRectangleIcon,
     ArrowDownIcon,
   } from '@heroicons/vue/24/solid';
+  import { useUserStore } from '~/stores/user/user.store';
 
   const { wallets, activeWallet } = useWallet();
+  const userStore = useUserStore();
 
   const connectedWalletProvider = wallets.value.find(
     (provider) => provider.id === activeWallet.value?.id
@@ -21,13 +23,15 @@
 
   const props = defineProps(['activeAccount']);
 
+  const user = await userStore.getUserInfo(props.activeAccount.address);
+
   console.log('wallets', wallets.value, connectedWalletProvider);
 </script>
 
 <template>
   <div class="dropdown-container">
     <MainButton :action="toggleDropDown">
-      {{ ellipseAddress(activeAccount.address) }}</MainButton
+      {{ user.nfd ? user.nfd : ellipseAddress(user.address) }}</MainButton
     >
     <ul
       class="dropdown-items"

@@ -9,7 +9,7 @@
   import WalletWidget from '../wallet-components/WalletWidget.vue';
   import { useWallet } from '@txnlab/use-wallet-vue';
 
-  const store = useSidebarStore();
+  const sidebarStore = useSidebarStore();
   const route = useRoute();
 
   const { activeAccount } = useWallet();
@@ -20,7 +20,7 @@
 </script>
 
 <template>
-  <SideBar v-if="store.sideBarIsOpen" />
+  <SideBar v-if="sidebarStore.sideBarIsOpen" />
   <div
     class="header-bar"
     ref="headerBar">
@@ -66,7 +66,7 @@
         v-if="activeAccount"
         :activeAccount="activeAccount" />
       <Bars3Icon
-        @click="store.toggleSideBar"
+        @click="sidebarStore.toggleSideBar"
         class="hamburger-icon" />
     </div>
   </div>

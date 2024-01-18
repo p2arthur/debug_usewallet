@@ -53,6 +53,7 @@
     "@walletconnect/types": "^2.11.0",
     "algosdk": "^2.2.0",
     "aos": "^2.3.4",
+    "axios": "^1.6.5",
     "buffer": "^6.0.3",
     "graphql": "^15.0.0 || >=16.0.0 <16.7.0",
     "graphql-codegen": "^0.4.0",
