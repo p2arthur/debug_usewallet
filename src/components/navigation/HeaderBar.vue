@@ -5,10 +5,14 @@
   import NavBarButton from '@/components/buttons/NavBarButton.vue';
   import { useSidebarStore } from '~/stores/interface/sidebar.store';
   import SideBar from './SideBar.vue';
-  import ConnectWallet from '../connect/ConnectWallet.vue';
+  import ConnectWallet from '../wallet-components/ConnectWallet.vue';
+  import WalletWidget from '../wallet-components/WalletWidget.vue';
+  import { useWallet } from '@txnlab/use-wallet-vue';
 
   const store = useSidebarStore();
   const route = useRoute();
+
+  const { activeAccount } = useWallet();
 
   function matchExclude(path: string, exlude: string) {
     return route.fullPath.includes(path) && !route.fullPath.includes(exlude);
@@ -57,7 +61,10 @@
       </NavBarButton>
     </div>
     <div class="header-bar-right-container">
-      <ConnectWallet />
+      <ConnectWallet v-if="!activeAccount" />
+      <WalletWidget
+        v-if="activeAccount"
+        :activeAccount="activeAccount" />
       <Bars3Icon
         @click="store.toggleSideBar"
         class="hamburger-icon" />

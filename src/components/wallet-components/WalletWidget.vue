@@ -1,0 +1,77 @@
+<!-- @format -->
+<script setup lang="ts">
+  import MainButton from '../buttons/MainButton.vue';
+  import { useWallet } from '@txnlab/use-wallet-vue';
+  import {
+    ArrowRightEndOnRectangleIcon,
+    ArrowDownIcon,
+  } from '@heroicons/vue/24/solid';
+
+  const { wallets, activeWallet } = useWallet();
+
+  const connectedWalletProvider = wallets.value.find(
+    (provider) => provider.id === activeWallet.value?.id
+  );
+
+  const dropDownOpen = ref(false);
+
+  const toggleDropDown = () => {
+    dropDownOpen.value = !dropDownOpen.value;
+  };
+
+  const props = defineProps(['activeAccount']);
+
+  console.log('wallets', wallets.value, connectedWalletProvider);
+</script>
+
+<template>
+  <div class="dropdown-container">
+    <MainButton :action="toggleDropDown">
+      {{ ellipseAddress(activeAccount.address) }}</MainButton
+    >
+    <ul
+      class="dropdown-items"
+      v-if="dropDownOpen">
+      <li @click="connectedWalletProvider?.disconnect">
+        <p>Disconnect</p>
+        <ArrowRightEndOnRectangleIcon class="disconnect-icon" />
+      </li>
+    </ul>
+  </div>
+</template>
+
+<style>
+  .dropdown-items {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    list-style: none;
+    padding: 0;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.272);
+    backdrop-filter: blur(1px);
+    border-radius: 5px;
+    padding: 5px;
+    width: 100%;
+
+    .disconnect-icon {
+      color: white;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    li {
+      p {
+        font-size: 1.2rem;
+        margin: 0;
+        color: #ffffff;
+      }
+
+      &:hover {
+        background-color: rgb(22, 11, 29);
+      }
+    }
+  }
+</style>
