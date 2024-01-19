@@ -1,6 +1,8 @@
 <!-- @format -->
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  import MainButton from '../buttons/MainButton.vue';
+</script>
 
 <template>
   <section class="hero-section">
@@ -15,7 +17,8 @@
         class="hero-logo"
         src="/img/rxelms_logo.png"
         alt="Logo Rxelms" />
-      <button class="hero-cta">Build your place!</button>
+
+      <MainButton text="Build your place" />
     </div>
   </section>
 </template>

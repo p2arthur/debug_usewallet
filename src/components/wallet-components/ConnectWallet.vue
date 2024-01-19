@@ -18,9 +18,7 @@
   <div class="dropdown-container">
     <MainButton
       text="Connect wallet"
-      :action="toggleDropDown"
-      >Connect wallet</MainButton
-    >
+      :action="toggleDropDown"></MainButton>
     <ul
       class="dropdown-items"
       v-if="dropDownOpen">

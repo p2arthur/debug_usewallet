@@ -30,9 +30,10 @@
 
 <template>
   <div class="dropdown-container">
-    <MainButton :action="toggleDropDown">
-      {{ user.nfd ? user.nfd : ellipseAddress(user.address) }}</MainButton
-    >
+    <MainButton
+      :text="user.nfd ? user.nfd : ellipseAddress(user.address)"
+      :action="toggleDropDown">
+    </MainButton>
     <ul
       class="dropdown-items"
       v-if="dropDownOpen">

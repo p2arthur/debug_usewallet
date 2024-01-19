@@ -1,6 +1,8 @@
 <!-- @format -->
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  import MainButton from '../buttons/MainButton.vue';
+</script>
 
 <template>
   <div class="map-canva-header">
@@ -9,7 +11,14 @@
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium
       officia delectus vel? Cum quasi quia iusto ullam odit voluptatibus
       voluptas nemo deserunt nisi, possimus quaerat non vero at saepe enim?
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium
+      officia delectus vel? Cum quasi quia iusto ullam odit voluptatibus
+      voluptas nemo deserunt nisi, possimus quaerat non vero at saepe enim?
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium
+      officia delectus vel? Cum quasi quia iusto ullam odit voluptatibus
+      voluptas nemo deserunt nisi, possimus quaerat non vero at saepe enim?
     </p>
+    <MainButton text="Visit the rxelms world" />
   </div>
 </template>
 

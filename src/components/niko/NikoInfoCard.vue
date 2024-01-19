@@ -1,6 +1,8 @@
 <!-- @format -->
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  import MainButton from '../buttons/MainButton.vue';
+</script>
 
 <template>
   <div class="niko-card">
@@ -21,6 +23,7 @@
       non-commercialization of the token, prioritizing its use to strengthen the
       rxelms ecosystem.
     </p>
+    <MainButton text="Buy $NIKO" />
   </div>
 </template>
 
