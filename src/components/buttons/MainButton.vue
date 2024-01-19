@@ -1,13 +1,16 @@
 <!-- @format -->
 
 <script setup lang="ts">
-  const props = defineProps(['text', 'variant', 'action']);
+  const props = defineProps(['text', 'variant', 'size', 'action']);
 </script>
 
 <template>
   <div class="button-container">
     <button
-      class="main-button"
+      :class="[
+        'main-button',
+        { small: props.size === 'small', large: props.size === 'large' },
+      ]"
       @click="props.action">
       <div class="button-background-front"></div>
       <!-- <div class="button-background-back"></div> -->
@@ -19,7 +22,8 @@
 <style lang="scss">
   .button-container {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+
     height: 44px;
   }
 
@@ -41,7 +45,6 @@
 
     .button-text {
       color: rgb(255, 255, 255);
-      font-size: 1rem;
       margin: 0;
       z-index: 10;
     }
@@ -54,7 +57,7 @@
       width: 100%;
       height: 0%;
       position: absolute;
-      transition: width 0.1s, height 0.1s, border-radius 0.1s,
+      transition: width 0.2s, height 0.2s, border-radius 0.2s,
         background-color 0.05s; /* Transition properties */
     }
 
@@ -88,6 +91,28 @@
 
     &:hover .button-text {
       color: #ffffff; /* Change text color on hover */
+    }
+
+    &.small {
+      font-size: 0.9rem;
+      padding: 6px 8px;
+    }
+
+    &.large {
+      font-size: 1.2rem;
+      padding: 12px 16px;
+    }
+
+    @media (max-width: 768px) {
+      &.small {
+        font-size: 0.7rem;
+        padding: 6px 8px;
+      }
+
+      &.large {
+        font-size: 1rem;
+        padding: 12px 16px;
+      }
     }
   }
 </style>

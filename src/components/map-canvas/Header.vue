@@ -14,11 +14,10 @@
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium
       officia delectus vel? Cum quasi quia iusto ullam odit voluptatibus
       voluptas nemo deserunt nisi, possimus quaerat non vero at saepe enim?
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium
-      officia delectus vel? Cum quasi quia iusto ullam odit voluptatibus
-      voluptas nemo deserunt nisi, possimus quaerat non vero at saepe enim?
     </p>
-    <MainButton text="Visit the rxelms world" />
+    <MainButton
+      size="large"
+      text="Visit the rxelms world" />
   </div>
 </template>
 
@@ -26,6 +25,7 @@
   .map-canva-header {
     display: flex;
     flex-direction: column;
+    gap: 16px;
     align-items: center;
     width: 50%;
   }
@@ -35,7 +35,7 @@
     margin: 0;
   }
   .text {
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-align: center;
     color: rgb(179, 179, 179);
   }
@@ -45,7 +45,7 @@
       width: 100%;
 
       .title {
-        font-size: 2rem;
+        font-size: 3rem;
       }
 
       .text {

@@ -18,7 +18,9 @@
         src="/img/rxelms_logo.png"
         alt="Logo Rxelms" />
 
-      <MainButton text="Build your place" />
+      <MainButton
+        size="large"
+        text="Build your place" />
     </div>
   </section>
 </template>
@@ -53,6 +55,7 @@
     position: absolute;
     top: 0;
     display: flex;
+    gap: 20px;
     flex-direction: column;
     justify-content: center;
     align-items: center;

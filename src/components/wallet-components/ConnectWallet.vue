@@ -18,6 +18,7 @@
   <div class="dropdown-container">
     <MainButton
       text="Connect wallet"
+      size="small"
       :action="toggleDropDown"></MainButton>
     <ul
       class="dropdown-items"

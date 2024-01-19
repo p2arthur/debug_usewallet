@@ -23,7 +23,9 @@
       non-commercialization of the token, prioritizing its use to strengthen the
       rxelms ecosystem.
     </p>
-    <MainButton text="Buy $NIKO" />
+    <MainButton
+      size="small"
+      text="Buy $NIKO" />
   </div>
 </template>
 
@@ -31,6 +33,7 @@
   .niko-card {
     display: flex;
     flex-direction: column;
+    gap: 10px;
     align-items: center;
     width: 50%;
     padding: 10px;

@@ -32,6 +32,7 @@
   <div class="dropdown-container">
     <MainButton
       :text="user.nfd ? user.nfd : ellipseAddress(user.address)"
+      size="small"
       :action="toggleDropDown">
     </MainButton>
     <ul

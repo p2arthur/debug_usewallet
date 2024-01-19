@@ -19,6 +19,11 @@
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.082);
+    transition: scale 0.1s ease;
+
+    &:hover {
+      scale: 105%;
+    }
   }
 
   .info-card-title {

@@ -58,13 +58,6 @@
     }
   }
 
-  @media (max-width: 768px) {
-    .center-avatar-image {
-      height: 100%;
-      width: 100%;
-    }
-  }
-
   @keyframes breath {
     0%,
     100% {
