@@ -21,6 +21,7 @@
     cursor: pointer;
     display: flex;
     flex-direction: column;
+    border-radius: 10px;
     align-items: center;
     width: 200px;
     background: linear-gradient(
@@ -30,6 +31,12 @@
     );
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.082);
     overflow: hidden;
+
+    &:hover {
+      transition: 0.1s ease-in-out;
+      scale: 105%;
+      box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.082);
+    }
   }
   .carousel-card-image {
     object-fit: fit;
@@ -39,6 +46,7 @@
   }
 
   .carousel-card-title {
+    padding: 10px 0px;
     margin: 0;
   }
 

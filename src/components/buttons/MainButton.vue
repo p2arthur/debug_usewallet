@@ -37,7 +37,7 @@
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
-    transition: border 0.1s ease;
+    transition: border 0.05s;
 
     .button-text {
       color: rgb(255, 255, 255);
@@ -49,12 +49,13 @@
     .button-background-front,
     .button-background-back {
       border-radius: 50%;
-      top: -50px;
+      bottom: -50px;
       z-index: 0;
       width: 100%;
       height: 0%;
       position: absolute;
-      transition: width 0.2s ease, height 0.2s ease, border-radius 0.2s ease; /* Transition properties */
+      transition: width 0.1s, height 0.1s, border-radius 0.1s,
+        background-color 0.05s; /* Transition properties */
     }
 
     .button-background-front {
@@ -64,7 +65,7 @@
 
     .button-background-back {
       background-color: rgb(255, 145, 0);
-      transition: width 0.1s ease, height 0.1s ease, border-radius 0.1s ease; /* Transition properties */
+      transition: width 0.1s, height 0.1s, border-radius 0.1s; /* Transition properties */
     }
 
     &:hover {
@@ -73,6 +74,9 @@
 
     &:active {
       border-bottom: 1px solid #ffff;
+      .button-background-front {
+        background-color: rgb(161, 99, 227);
+      }
     }
 
     &:hover .button-background-front,
