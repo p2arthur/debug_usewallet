@@ -6,7 +6,7 @@ const partnersList = [
     url: '',
   },
   {
-    name: 'crazy goose flock',
+    name: 'pond-verse',
     src: '/img/partners_images/crazy_goose_flock.jpg',
     alt: 'Partners',
     url: '',

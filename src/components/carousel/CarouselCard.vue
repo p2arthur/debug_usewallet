@@ -52,7 +52,11 @@
 
   @media (max-width: 768px) {
     .carousel-card {
-      width: 120px;
+      width: 110px;
+    }
+
+    .carousel-card-title {
+      font-size: 0.8rem;
     }
   }
 </style>

@@ -7,5 +7,6 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.use(WalletManagerPlugin, {
     wallets: [WalletId.PERA, WalletId.DEFLY],
     network: NetworkId.TESTNET,
+    algod: {},
   });
 });
