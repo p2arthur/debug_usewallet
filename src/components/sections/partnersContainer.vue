@@ -2,7 +2,7 @@
 
 <script>
   import CarouselCard from '../carousel/CarouselCard.vue';
-  import 'vue3-carousel/dist/carousel.css';
+  import '../../public/style/carousel.css';
   import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
   import { isMobile } from '../../functions/view-port/isMobile';
   import partnersList from '../../content/partners/partnersList';
@@ -105,9 +105,10 @@
     font-size: 32px;
   }
 
-  .v3c-btn-prev,
-  .carousel__slide--next {
+  .carousel__next {
     opacity: 1;
+    background-color: red;
+    color: red;
     transform: rotateY(10deg) scale(0.95);
   }
 </style>

@@ -81,4 +81,10 @@
       animation-timing-function: ease-in-out;
     }
   }
+  @media (max-width: 1000px) {
+    .center-avatar-image {
+      width: 100%;
+      position: absolute;
+    }
+  }
 </style>

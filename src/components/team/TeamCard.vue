@@ -24,7 +24,8 @@
     position: relative;
     border-radius: 10px;
     overflow: hidden;
-    width: 300px;
+    width: 200px;
+    height: 300px;
     transition: transform 0.3s ease; /* Added transition for hover effect */
     &:hover {
       transform: scale(1.01);
@@ -69,5 +70,25 @@
   .team-card-role {
     color: rgb(179, 179, 179);
     font-size: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .team-card {
+      height: 200px;
+      width: 80%;
+    }
+
+    .team-card-image {
+      height: 150px;
+    }
+    .team-card-title {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    .team-card-role {
+      color: rgb(179, 179, 179);
+      font-size: 1rem;
+    }
   }
 </style>

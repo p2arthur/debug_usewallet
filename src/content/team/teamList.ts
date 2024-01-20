@@ -4,6 +4,7 @@ const teamList = [
   { name: 'Allan', role: 'backend dev', image: '/img/Teampfp.jpg' },
   { name: 'Odi', role: '3dev', image: '/img/Teampfp.jpg' },
   { name: 'Stef', role: 'devchain', image: '/img/Teampfp.jpg' },
+  { name: 'P2', role: 'frontend dev', image: '/img/Teampfp.jpg' },
 ];
 
 export default teamList;

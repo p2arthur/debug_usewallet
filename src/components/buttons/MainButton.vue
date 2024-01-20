@@ -85,7 +85,7 @@
     &:hover .button-background-front,
     &:hover .button-background-back {
       width: 100%;
-      height: 250%;
+      height: 300%;
       border-radius: 0;
     }
 
