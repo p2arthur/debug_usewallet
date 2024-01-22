@@ -42,8 +42,8 @@
       </div>
       <div class="niko-card-actions">
         <MainButton
-          size="small"
-          text="Buy $NIKO" />
+          size="large"
+          text="Learn more" />
       </div>
     </div>
   </div>

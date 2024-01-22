@@ -59,6 +59,7 @@
 
     li {
       display: flex;
+      font-size: 1rem;
       gap: 10px;
       justify-content: center;
       align-items: center;
