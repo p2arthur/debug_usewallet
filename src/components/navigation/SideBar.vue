@@ -1,6 +1,10 @@
 <!-- @format -->
 
-<!-- Sidebar.vue -->
+<script setup lang="ts">
+  import { useSidebarStore } from '../../stores/interface/sidebar.store';
+  import { XCircleIcon } from '@heroicons/vue/24/solid';
+  const { sidebarLinks, sideBarIsOpen, toggleSideBar } = useSidebarStore();
+</script>
 
 <template>
   <div class="sidebar-container">
@@ -35,12 +39,6 @@
   </div>
 </template>
 
-<script setup lang="ts">
-  import { useSidebarStore } from '../../stores/interface/sidebar.store';
-  import { XCircleIcon } from '@heroicons/vue/24/solid';
-  const { sidebarLinks, sideBarIsOpen, toggleSideBar } = useSidebarStore();
-</script>
-
 <style scoped>
   .sidebar-container {
     position: fixed;
@@ -67,7 +65,7 @@
 
     .sidebar-close-icon {
       color: white;
-      height: 50%;
+      height: 80%;
       cursor: pointer;
     }
   }
@@ -82,6 +80,7 @@
     padding: 10px;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
+    font-family: 'IBM Plex Sans', sans-serif;
   }
 
   .sidebar-link a {

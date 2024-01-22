@@ -4,12 +4,11 @@
   import { Bars3Icon } from '@heroicons/vue/24/solid';
   import NavBarButton from '@/components/buttons/NavBarButton.vue';
   import { useSidebarStore } from '~/stores/interface/sidebar.store';
-  import SideBar from './SideBar.vue';
   import ConnectWallet from '../wallet-components/ConnectWallet.vue';
   import WalletWidget from '../wallet-components/WalletWidget.vue';
   import { useWallet } from '@txnlab/use-wallet-vue';
 
-  const sidebarStore = useSidebarStore();
+  const { toggleSideBar } = useSidebarStore();
   const route = useRoute();
 
   const { activeAccount } = useWallet();
@@ -20,7 +19,6 @@
 </script>
 
 <template>
-  <SideBar v-if="sidebarStore.sideBarIsOpen" />
   <div
     class="header-bar"
     ref="headerBar">
@@ -66,7 +64,7 @@
         v-if="activeAccount"
         :activeAccount="activeAccount" />
       <Bars3Icon
-        @click="sidebarStore.toggleSideBar"
+        @click="toggleSideBar"
         class="hamburger-icon" />
     </div>
   </div>

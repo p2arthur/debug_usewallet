@@ -2,6 +2,9 @@
 
 <script setup lang="ts">
   import MainButton from '../buttons/MainButton.vue';
+  import { useModalStore } from '~/stores/interface/modal.store';
+
+  const { toggleModal } = useModalStore();
 </script>
 
 <template>
@@ -19,6 +22,7 @@
         alt="Logo Rxelms" />
 
       <MainButton
+        :action="toggleModal"
         size="large"
         text="Build your place" />
     </div>

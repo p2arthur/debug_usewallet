@@ -5,7 +5,7 @@ import { WalletManagerPlugin } from '@txnlab/use-wallet-vue';
 
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.use(WalletManagerPlugin, {
-    wallets: [WalletId.PERA, WalletId.DEFLY],
+    wallets: [WalletId.PERA, WalletId.DEFLY, WalletId.EXODUS],
     network: NetworkId.TESTNET,
     algod: {},
   });
