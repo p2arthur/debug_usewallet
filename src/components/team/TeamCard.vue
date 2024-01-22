@@ -24,9 +24,9 @@
     position: relative;
     border-radius: 10px;
     overflow: hidden;
-    width: 200px;
+    width: 250px;
     height: 300px;
-    transition: transform 0.3s ease; /* Added transition for hover effect */
+    transition: transform 0.1s ease; /* Added transition for hover effect */
     &:hover {
       transform: scale(1.01);
     }

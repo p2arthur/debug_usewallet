@@ -17,7 +17,7 @@
         <carousel
           :autoplay="3000"
           :snap-align="'center'"
-          :items-to-show="isMobileDevice ? 3 : 5"
+          :items-to-show="isMobileDevice ? 2 : 5"
           ref="carousel">
           <slide
             v-for="teamMember in teamList"
@@ -69,7 +69,7 @@
   }
 
   .title {
-    font-size: 64px;
+    font-size: 2rem;
     margin: 0;
     color: white;
   }
