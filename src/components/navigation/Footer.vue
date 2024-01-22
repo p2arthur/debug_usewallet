@@ -98,7 +98,7 @@
 
 <style scoped lang="scss">
   .footer {
-    padding: 10px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -152,6 +152,7 @@
   }
 
   .footer-links-item {
+    font-family: 'IBM Plex Sans', sans-serif;
     display: flex;
     justify-content: center;
     color: white;
