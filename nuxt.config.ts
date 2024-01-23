@@ -84,9 +84,9 @@ export default defineNuxtConfig({
     ],
   ],
 
-  imports: {
-    dirs: ['stores/**/*'],
-  },
+  srcDir: 'src/',
+
+  plugins: [],
 
   googleFonts: {
     download: true,
@@ -142,41 +142,9 @@ export default defineNuxtConfig({
     dirs: ['~/components'],
   },
 
-  // i18n: {
-  //   defaultLocale: 'en',
-  //   strategy: 'prefix_except_default',
-  //   locales: [
-  //     {
-  //       code: 'en',
-  //       iso: 'en-US',
-  //       name: 'English'
-  //     },
-  //     {
-  //       code: 'pt',
-  //       iso: 'pt-PT',
-  //       name: 'Português'
-  //     },
-  //     {
-  //       code: 'nl',
-  //       iso: 'nl-NL',
-  //       name: 'Nederlands'
-  //     }
-  //   ],
-  // },
-
   content: {
     defaultLocale: 'en',
     locales: ['en', 'pt', 'nl'],
-    // sources: {
-    //   github: {
-    //     prefix: '/smart-NFT',
-    //     driver: 'github',
-    //     repo: 'dartroom/smart-nft',
-    //     branch: "main",
-    //     dir: "/",
-    //     token: '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'
-    //   }
-    // },
     highlight: {
       theme: {
         // Default theme (same as single string)
