@@ -24,25 +24,9 @@
         emphasizes non-commercialization of the token, prioritizing its use to
         strengthen the rxelms ecosystem.
       </p>
-    </div>
-    <div class="niko-card-right">
-      <div class="niko-card-info">
-        <div class="niko-card-info-card">
-          <h3>Total Supply:</h3>
-          <p>3,141,592,653</p>
-        </div>
-        <div class="niko-card-info-card">
-          <h3>Total Supply:</h3>
-          <p>3,141,592,653</p>
-        </div>
-        <div class="niko-card-info-card">
-          <h3>Total Supply:</h3>
-          <p>3,141,592,653</p>
-        </div>
-      </div>
       <div class="niko-card-actions">
         <MainButton
-          size="large"
+          size="small"
           text="Learn more" />
       </div>
     </div>
@@ -54,7 +38,7 @@
     display: flex;
     gap: 20px;
     align-items: center;
-    width: 60%;
+    width: 50%;
     padding: 10px;
     border-radius: 10px;
     background: rgb(14, 10, 30); /* Fallback color */
@@ -63,14 +47,14 @@
       rgba(14, 10, 30, 0.97),
       rgb(26, 20, 45)
     );
-    top: 25%;
+
     position: absolute;
     border: 2px solid #edb10a;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.374);
     backdrop-filter: blur(10px);
   }
 
-  .niko-card-info {
+  /* .niko-card-info {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -78,14 +62,15 @@
     h3 {
       margin: 0;
     }
-  }
+  } */
 
   .niko-card-left {
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50%;
+    width: 100%;
+    gap: 10px;
   }
 
   .niko-card-right {
@@ -96,7 +81,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 50%;
+    width: 33%;
   }
 
   .niko-card-header {
@@ -134,7 +119,7 @@
       display: flex;
       align-items: center;
       .center-niko-image {
-        width: 3rem;
+        width: 4rem;
       }
 
       .center-title {
@@ -154,14 +139,13 @@
   @media (max-width: 1000px) {
     .niko-card {
       width: 80%;
-      top: 15%;
     }
 
     .niko-card-header {
       display: flex;
       align-items: center;
       .center-niko-image {
-        width: 3rem;
+        width: 4rem;
       }
 
       .center-title {
@@ -204,7 +188,7 @@
     }
 
     .center-description {
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       margin: 0;
       text-align: center;
       color: rgb(189, 189, 189);

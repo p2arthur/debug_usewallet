@@ -94,7 +94,7 @@
     justify-content: space-between;
     background: rgba(153, 153, 153, 0.046);
     backdrop-filter: blur(1px);
-    padding: 10px 20px;
+    padding: 10px 40px;
   }
 
   .header-bar-logo-container {
@@ -121,6 +121,7 @@
 
   .hamburger-icon {
     display: none;
+    cursor: pointer;
   }
 
   h4 {
@@ -134,6 +135,9 @@
   }
 
   @media (max-width: 768px) {
+    .header-bar {
+      padding: 10px 20px;
+    }
     .header-bar-section {
       display: none;
     }

@@ -40,7 +40,7 @@
         // Definição das propriedades do Canvas
         gridContainerWidth: 10, // ajuste conforme necessário
         gridContainerHeight: 7, // ajuste conforme necessário
-        gridItemSize: isMobile() ? 35 : 55, // ajuste conforme necessário
+        gridItemSize: isMobile() ? 35 : 45, // ajuste conforme necessário
 
         selectedGrid: null,
         cardPosition: { x: 0, y: 0 },
@@ -165,10 +165,10 @@
   .map-canva-hero {
     z-index: 100;
     display: flex;
-    padding: 20px 30px;
+    padding: 20px 100px;
     display: flex;
     background: radial-gradient(circle, #1b152b, #100e1d, #1b152b);
-
+    justify-content: space-between;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.127);
   }
   .react-tile-mapcanvas {
@@ -178,22 +178,13 @@
   }
 
   .grid-item {
-    /* Estilos para cada célula do grid principal */
     background-color: #aaaaaa;
-    position: relative; /* Necessário para posicionar o mini-grid */
+    position: relative;
     width: 150px;
     height: 150px;
   }
 
-  .canva-info-container img {
-    width: 50%;
-    width: auto; /* Largura da imagem */
-    height: auto; /* Mantém a proporção da imagem */
-    display: block; /* Certifica que a imagem não tem espaço extra abaixo */
-  }
-
   .canva-info-container {
-    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -222,7 +213,7 @@
       padding: 10px;
       align-items: center;
       flex-direction: column;
-      gap: 20px;
+      gap: 60px;
     }
   }
 </style>

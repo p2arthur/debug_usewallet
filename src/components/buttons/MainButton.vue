@@ -28,6 +28,7 @@
   }
 
   .main-button {
+    min-width: 120px;
     pointer-events: all;
     position: relative;
     background-color: #ffffff35;

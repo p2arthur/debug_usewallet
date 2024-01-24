@@ -101,6 +101,7 @@
   }
 
   .title {
+    margin: 0;
     color: white;
     font-size: 32px;
   }

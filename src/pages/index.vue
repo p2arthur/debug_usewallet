@@ -15,10 +15,9 @@
 
 <template>
   <HeroSection />
-  <MapCanvasContainer />
-
-  <InfoImageContainer :infoObjects="infoImage" />
   <PartnersContainer />
+  <MapCanvasContainer />
+  <InfoImageContainer :infoObjects="infoImage" />
   <CenterCharacterContainer />
   <IntervalInfoContainer />
   <TripleInfoContainer :infoObjects="homeInfo" />

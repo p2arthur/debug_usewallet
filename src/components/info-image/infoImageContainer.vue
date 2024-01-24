@@ -34,9 +34,9 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    gap: 70px;
+    gap: 10px;
     background: radial-gradient(circle, #1b152b, #100e1d, #1b152b);
-    padding: 50px 100px 200px 100px;
+    padding: 30px 100px;
   }
 
   .background-effect {
