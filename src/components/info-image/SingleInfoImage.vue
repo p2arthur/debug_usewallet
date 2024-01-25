@@ -25,12 +25,24 @@
 <style>
   /* Common styles for both desktop and mobile */
   .info-card-container {
+    border-radius: 1000px 0 0 1000px;
+    background: linear-gradient(
+      to bottom right,
+      rgba(14, 10, 30, 0.96),
+      rgba(26, 20, 45, 0)
+    );
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     &.info-card-container-reverse {
+      border-radius: 0 1000px 1000px 0;
       flex-direction: row-reverse;
+      background: linear-gradient(
+        to bottom left,
+        rgba(14, 10, 30, 0.96),
+        rgba(26, 20, 45, 0)
+      );
     }
   }
 
@@ -52,24 +64,26 @@
   }
 
   .text-container {
-    background: radial-gradient(rgba(33, 27, 27, 0.215), #64498a1b);
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.374);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     backdrop-filter: blur(10px);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.082);
   }
 
   .card-title {
-    font-size: 32px;
+    font-size: 64px;
     margin: 0;
     color: rgb(179, 108, 255);
   }
 
   .card-description {
+    text-align: center;
     color: rgb(170, 170, 170);
     line-height: 2rem;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 
   @keyframes breath {
@@ -87,8 +101,13 @@
   /* Media query for smaller screens */
   @media (max-width: 768px) {
     .info-card-container {
+      background: transparent;
       height: auto;
       gap: 10px;
+
+      &.info-card-container-reverse {
+        background: transparent;
+      }
     }
 
     .image-section,
@@ -105,7 +124,7 @@
 
     .card-title {
       text-align: center;
-      font-size: 2rem; /* Reduce the font size for better readability on smaller screens */
+      font-size: 3rem; /* Reduce the font size for better readability on smaller screens */
     }
 
     .card-description {

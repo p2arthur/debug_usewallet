@@ -54,7 +54,7 @@
 
   @media (max-width: 768px) {
     .full-container {
-      gap: 30px;
+      gap: 10px;
       padding: 50px 20px;
     }
   }

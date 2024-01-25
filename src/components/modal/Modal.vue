@@ -63,7 +63,7 @@
     width: 70%;
     height: 50%;
     z-index: 101;
-    background-color: rgb(19, 17, 33);
+    background: linear-gradient(to bottom, rgb(14, 10, 30), rgb(26, 20, 45));
     color: white;
   }
 

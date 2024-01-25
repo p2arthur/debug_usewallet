@@ -92,7 +92,13 @@
     z-index: 10;
     display: flex;
     justify-content: space-between;
-    background: rgba(153, 153, 153, 0.046);
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.038) 0%,
+      rgba(73, 63, 113, 0.257),
+      80%,
+      rgba(255, 255, 255, 0.038) 100%
+    );
     backdrop-filter: blur(1px);
     padding: 10px 40px;
   }

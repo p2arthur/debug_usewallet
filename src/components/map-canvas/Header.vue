@@ -18,7 +18,7 @@
       </p>
     </div>
     <MainButton
-      size="large"
+      size="medium"
       text="Visit the rxelms world" />
   </div>
 </template>

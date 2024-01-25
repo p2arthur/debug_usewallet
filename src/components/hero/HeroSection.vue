@@ -23,7 +23,7 @@
 
       <MainButton
         :action="toggleModal"
-        size="large"
+        size="medium"
         text="Build your place" />
     </div>
   </section>
