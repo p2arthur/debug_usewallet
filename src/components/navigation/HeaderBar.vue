@@ -23,11 +23,11 @@
     class="header-bar"
     ref="headerBar">
     <div class="header-bar-logo-container">
-      <a href="/">
+      <NuxtLink to="/">
         <img
           src="/img/rxelms_logo.png"
-          alt="Logo Rxelms" />
-      </a>
+          alt="Logo Rxelms"
+      /></NuxtLink>
     </div>
     <div class="header-bar-section">
       <NavBarButton
