@@ -1,19 +1,15 @@
 <!-- @format -->
 
 <template>
-  <div
-    class="main"
-    ref="theme">
-    <NuxtLayout>
+  <div>
+    <NuxtLayout name="connected">
       <NuxtPage />
     </NuxtLayout>
     <DisplaysSnackList />
   </div>
 </template>
 
-<script setup lang="ts">
-  onMounted(() => {});
-</script>
+<script setup lang="ts"></script>
 
 <style lang="scss">
   html {
