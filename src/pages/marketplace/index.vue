@@ -4,13 +4,16 @@
   import TypesMenu from '~/components/marketplace/TypesMenu.vue';
   import DataBanner from '~/components/marketplace/DataBanner.vue';
   import ItensList from '~/components/marketplace/ItensList.vue';
+  import { useItemsStore } from '~/stores/marketplace/items.store';
+
+  const itemsStore = useItemsStore();
 </script>
 
 <template>
   <div class="marketplace-page">
     <DataBanner />
     <TypesMenu />
-    <ItensList />
+    <ItensList :allItems="itemsStore.filteredItems" />
   </div>
 </template>
 
