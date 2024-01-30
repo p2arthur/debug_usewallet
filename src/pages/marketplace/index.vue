@@ -87,4 +87,10 @@
     opacity: 0.5;
     /* Diminui a opacidade quando o mouse passa por cima */
   }
+
+  @media (max-width: 768px) {
+    .marketplace-page {
+      padding: 10px;
+    }
+  }
 </style>

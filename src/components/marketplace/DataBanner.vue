@@ -52,4 +52,9 @@
       margin: 0;
     }
   }
+  @media (max-width: 768px) {
+    .marketplace-statistics-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
 </style>

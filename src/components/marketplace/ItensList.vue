@@ -23,4 +23,15 @@
     gap: 32px;
     background: radial-gradient(circle, #1b152b, #100e1d, #1b152b);
   }
+
+  @media (max-width: 1300px) {
+    .marketplace-itens-list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  @media (max-width: 768px) {
+    .marketplace-itens-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
 </style>

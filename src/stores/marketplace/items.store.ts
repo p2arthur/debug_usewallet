@@ -18,9 +18,7 @@ export const useItemsStore = defineStore('items', () => {
     const emptySearchTerm = searchTerm.value === '';
     const lowerCaseSearchTerm = searchTerm.value.toLowerCase();
 
-    if (selectedCategory.value === 'all' && emptySearchTerm) {
-      return allItems;
-    } else if (selectedCategory.value !== 'all' && emptySearchTerm) {
+    if (selectedCategory.value !== 'all' && emptySearchTerm) {
       return allItems.filter(
         (item) => item.category === selectedCategory.value
       );
@@ -30,8 +28,10 @@ export const useItemsStore = defineStore('items', () => {
           item.name.toLowerCase().includes(lowerCaseSearchTerm) ||
           item.collection.toLowerCase().includes(lowerCaseSearchTerm)
       );
+    } else {
+      return allItems;
     }
   });
 
-  return { filteredItems, setCategory, setSearchTerm };
+  return { filteredItems, setCategory, setSearchTerm, searchTerm };
 });
