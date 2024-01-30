@@ -8,7 +8,9 @@
 
 <template>
   <div class="marketplace-itens-list">
-    <ItemCard v-for="items in props.allItems" />
+    <ItemCard
+      v-for="item in props.allItems"
+      :item="item" />
   </div>
 </template>
 
