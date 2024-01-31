@@ -8,7 +8,6 @@
   const itemsStore = useItemsStore();
 
   const handleSearch = () => {
-    itemsStore.setCategory('all');
     itemsStore.setSearchTerm(inputText.value);
   };
 </script>

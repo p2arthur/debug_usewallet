@@ -41,7 +41,7 @@
         Furniture
       </h1>
     </div>
-    <div class="marketplace-actions"><SearchInput /></div>
+    <div class="marketplace-actions"><SortSelector /><SearchInput /></div>
   </div>
 </template>
 
@@ -75,6 +75,11 @@
           border-bottom: 2px solid rgb(179, 108, 255);
         }
       }
+    }
+
+    .marketplace-actions {
+      display: flex;
+      gap: 10px;
     }
   }
 

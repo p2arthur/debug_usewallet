@@ -1,6 +1,8 @@
 <!-- @format -->
 
 <script setup lang="ts">
+  import { ItemInterface } from '~/interfaces/itemInterface';
+
   const props = defineProps(['item']);
 </script>
 
@@ -15,6 +17,7 @@
     <div class="item-card-text-container">
       <h5 class="item-card-collection">{{ item.collection }}</h5>
       <h3 class="item-card-title">{{ item.name }}</h3>
+      <p>{{ item.list_date }}</p>
     </div>
   </div>
 </template>
@@ -28,7 +31,7 @@
     flex-direction: column;
     height: 300px;
     gap: 5px;
-    border-radius: 10px;
+    border-radius: 5px;
     overflow: hidden;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.082);
     transition: transform 0.1s ease;
