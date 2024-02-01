@@ -50,7 +50,8 @@
     position: fixed;
     width: 50%;
     height: 100vh;
-    background-color: rgb(19, 17, 33);
+    background: linear-gradient(to bottom, rgb(14, 10, 30), rgb(26, 20, 45));
+    backdrop-filter: blur(1px);
   }
 
   .sidebar-header {

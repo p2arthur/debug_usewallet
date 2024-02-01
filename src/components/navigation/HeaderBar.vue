@@ -23,11 +23,11 @@
     class="header-bar"
     ref="headerBar">
     <div class="header-bar-logo-container">
-      <a href="/">
+      <NuxtLink to="/">
         <img
           src="/img/rxelms_logo.png"
-          alt="Logo Rxelms" />
-      </a>
+          alt="Logo Rxelms"
+      /></NuxtLink>
     </div>
     <div class="header-bar-section">
       <NavBarButton
@@ -92,9 +92,15 @@
     z-index: 10;
     display: flex;
     justify-content: space-between;
-    background: rgba(153, 153, 153, 0.046);
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.038) 0%,
+      rgba(73, 63, 113, 0.257),
+      80%,
+      rgba(255, 255, 255, 0.038) 100%
+    );
     backdrop-filter: blur(1px);
-    padding: 10px 20px;
+    padding: 10px 40px;
   }
 
   .header-bar-logo-container {
@@ -121,6 +127,7 @@
 
   .hamburger-icon {
     display: none;
+    cursor: pointer;
   }
 
   h4 {
@@ -134,6 +141,9 @@
   }
 
   @media (max-width: 768px) {
+    .header-bar {
+      padding: 10px 20px;
+    }
     .header-bar-section {
       display: none;
     }

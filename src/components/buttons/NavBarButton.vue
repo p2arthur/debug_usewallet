@@ -1,16 +1,15 @@
 <!-- @format -->
 
 <template>
-  <router-link
+  <NuxtLink
     v-if="to"
     :to="to"
-    :aria-label="name"
     class="nav-button"
     :class="`
       ${active ? 'nav-button-active' : ''}
     `">
     <slot></slot>
-  </router-link>
+  </NuxtLink>
 
   <button
     v-else

@@ -32,7 +32,7 @@
 
 <style scoped>
   .center-container {
-    height: 600px;
+    height: 100vh;
     position: relative;
     display: flex;
     justify-content: center;
@@ -46,14 +46,17 @@
   }
 
   .center-header {
+    display: flex;
     pointer-events: none;
     position: relative;
     width: 100%;
     height: 100%;
     display: flex;
+    align-items: center;
     justify-content: center;
 
     .center-avatar-image {
+      height: 80%;
       animation: breath 3s infinite;
     }
   }
@@ -83,7 +86,6 @@
   }
   @media (max-width: 1000px) {
     .center-avatar-image {
-      width: 100%;
       position: absolute;
     }
   }

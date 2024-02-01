@@ -7,6 +7,17 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.use(WalletManagerPlugin, {
     wallets: [WalletId.PERA, WalletId.DEFLY, WalletId.EXODUS],
     network: NetworkId.TESTNET,
-    algod: {},
+    algod: {
+      [NetworkId.TESTNET]: {
+        token: '',
+        baseServer: 'https://testnet-api.algonode.cloud',
+        port: '',
+      },
+      [NetworkId.MAINNET]: {
+        token: '',
+        baseServer: 'https://mainnet-api.algonode.cloud',
+        port: '',
+      },
+    },
   });
 });
