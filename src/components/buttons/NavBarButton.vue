@@ -1,15 +1,15 @@
 <!-- @format -->
 
 <template>
-  <a
+  <NuxtLink
     v-if="to"
-    :href="to"
+    :to="to"
     class="nav-button"
     :class="`
       ${active ? 'nav-button-active' : ''}
     `">
     <slot></slot>
-  </a>
+  </NuxtLink>
 
   <button
     v-else
