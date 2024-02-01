@@ -32,7 +32,7 @@
 
 <style scoped lang="scss">
   .marketplace-itens-loading {
-    height: 100vh;
+    height: 30vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,6 +55,7 @@
   @media (max-width: 768px) {
     .marketplace-itens-list {
       grid-template-columns: repeat(2, 1fr);
+      padding: 10px 0;
       gap: 10px;
     }
   }
