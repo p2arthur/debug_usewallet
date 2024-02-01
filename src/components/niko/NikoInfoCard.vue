@@ -1,15 +1,38 @@
 <!-- @format -->
 
 <script setup lang="ts">
-import MainButton from '../buttons/MainButton.vue';
-import { createOptInTransaction } from '~/utils/optInTransaction';
+import MainButton from "../buttons/MainButton.vue";
+import { createOptInTransaction } from "~/utils/optInTransaction";
+import { useWallet } from "@txnlab/use-wallet-vue";
+import algosdk from "algosdk";
+
+const { signTransactions } = useWallet();
+
+const algodServer = "https://mainnet-api.algonode.cloud";
+const algodToken = "0C3BF7223DB65E1E6EBF106BF63F5284";
+const algodPort = "";
+
+const algod = new algosdk.Algodv2(algodToken, algodServer);
 
 const handleOptIn = async () => {
-  console.log('handle opt in');
+  console.log("handle opt in");
   const optInTransaction = await createOptInTransaction(
-    'AENCK6AVVGCOQM6XGSGTSMZXVHV34QDAHH7RDH226GLD55U34BLT6YP5L4',
+    "AENCK6AVVGCOQM6XGSGTSMZXVHV34QDAHH7RDH226GLD55U34BLT6YP5L4",
     1265975021
   );
+
+  console.log("optIn transaction", optInTransaction);
+
+  const signedTransaction = await signTransactions([optInTransaction]);
+
+  console.log("signed transaction", signedTransaction);
+
+  const { txId } = await algod.sendRawTransaction(signedTransaction).do();
+  const result = await algosdk.waitForConfirmation(algod, txId, 4);
+
+  if (!result) {
+    throw new Error("Transaction failed.");
+  }
 };
 </script>
 
@@ -17,21 +40,16 @@ const handleOptIn = async () => {
   <div class="niko-card">
     <div class="niko-card-header">
       <div class="niko-card-title">
-        <img
-          class="center-niko-image"
-          src="/img/nico_token.png"
-          alt="niko coin"
-        />
+        <img class="center-niko-image" src="/img/nico_token.png" alt="niko coin" />
         <h2 class="center-title">$NIKO coin</h2>
       </div>
       <p class="center-description">
-        The NIKOs token is the internal currency of the rxelms universe, acting
-        as the foundation for transactions and interactions within the
-        metaverse. It is used in marketplace transactions and voting, and it is
-        also central to participation rewards and encouraging creativity within
-        the community. The distribution strategy of NIKO, managed by Dartroom,
-        emphasizes non-commercialization of the token, prioritizing its use to
-        strengthen the rxelms ecosystem.
+        The NIKOs token is the internal currency of the rxelms universe, acting as the
+        foundation for transactions and interactions within the metaverse. It is used in
+        marketplace transactions and voting, and it is also central to participation
+        rewards and encouraging creativity within the community. The distribution strategy
+        of NIKO, managed by Dartroom, emphasizes non-commercialization of the token,
+        prioritizing its use to strengthen the rxelms ecosystem.
       </p>
     </div>
     <div class="niko-card-actions">

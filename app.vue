@@ -1,9 +1,7 @@
 <!-- @format -->
 
 <template>
-  <div
-    class="main"
-    ref="theme">
+  <div class="main" ref="theme">
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
@@ -12,16 +10,16 @@
 </template>
 
 <script setup lang="ts">
-  onMounted(() => {});
+onMounted(() => {});
 </script>
 
 <style lang="scss">
-  html {
-    width: 100%;
-    margin: 0px;
-    background-color: green;
-    padding: 0;
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-style: normal;
-  }
+html {
+  width: 100%;
+  margin: 0px;
+  background-color: green;
+  padding: 0;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-style: normal;
+}
 </style>

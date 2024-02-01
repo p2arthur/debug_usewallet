@@ -1,4 +1,5 @@
 import algosdk from 'algosdk';
+import { useWallet } from '@txnlab/use-wallet-vue';
 
 const algodServer = 'https://mainnet-api.algonode.cloud';
 const algodToken = '';
@@ -11,16 +12,16 @@ export const createOptInTransaction = async (
   assetId: number
 ) => {
   const suggestedParams = await algod.getTransactionParams().do();
-  const unsignedTransaction = algosdk.makeAssetTransferTxnWithSuggestedParams(
-    sender,
-    sender,
-    undefined,
-    undefined,
-    0,
-    undefined,
-    assetId,
-    suggestedParams
-  );
+  const ptxn = algosdk.makeAssetTransferTxnWithSuggestedParamsFromObject({
+    from: sender,
+    to: sender,
+    closeRemainderTo: undefined,
+    assetIndex: assetId,
+    amount: 0,
+    suggestedParams,
+  });
 
-  console.log('unsignedTransaction', unsignedTransaction);
+  console.log('unsignedTransaction', ptxn);
+
+  return ptxn;
 };
