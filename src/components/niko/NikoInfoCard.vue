@@ -1,7 +1,16 @@
 <!-- @format -->
 
 <script setup lang="ts">
-  import MainButton from '../buttons/MainButton.vue';
+import MainButton from '../buttons/MainButton.vue';
+import { createOptInTransaction } from '~/utils/optInTransaction';
+
+const handleOptIn = async () => {
+  console.log('handle opt in');
+  const optInTransaction = await createOptInTransaction(
+    'AENCK6AVVGCOQM6XGSGTSMZXVHV34QDAHH7RDH226GLD55U34BLT6YP5L4',
+    1265975021
+  );
+};
 </script>
 
 <template>
@@ -11,7 +20,8 @@
         <img
           class="center-niko-image"
           src="/img/nico_token.png"
-          alt="niko coin" />
+          alt="niko coin"
+        />
         <h2 class="center-title">$NIKO coin</h2>
       </div>
       <p class="center-description">
@@ -25,40 +35,38 @@
       </p>
     </div>
     <div class="niko-card-actions">
-      <MainButton
-        size="medium"
-        text="Learn more" />
+      <MainButton :action="handleOptIn" size="medium" text="Learn more" />
     </div>
   </div>
 </template>
 
 <style>
-  .niko-card {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    align-items: center;
-    width: 50%;
-    padding: 20px;
-    border-radius: 10px;
-    background: rgb(14, 10, 30); /* Fallback color */
-    background: linear-gradient(
-      to bottom right,
-      rgba(14, 10, 30, 0.986),
-      rgba(26, 20, 45, 0.905)
-    );
+.niko-card {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  width: 50%;
+  padding: 20px;
+  border-radius: 10px;
+  background: rgb(14, 10, 30); /* Fallback color */
+  background: linear-gradient(
+    to bottom right,
+    rgba(14, 10, 30, 0.986),
+    rgba(26, 20, 45, 0.905)
+  );
 
-    position: absolute;
+  position: absolute;
 
-    backdrop-filter: blur(10px);
-  }
+  backdrop-filter: blur(10px);
+}
 
-  .niko-card-title {
-    align-items: center;
-    display: flex;
-  }
+.niko-card-title {
+  align-items: center;
+  display: flex;
+}
 
-  /* .niko-card-info {
+/* .niko-card-info {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -68,115 +76,115 @@
     }
   } */
 
-  .niko-card-header {
-    display: flex;
+.niko-card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .center-niko-image {
+    width: 5rem;
+  }
+}
+
+.center-title {
+  font-size: 4rem;
+  margin: 0;
+}
+
+.center-description {
+  color: rgb(189, 189, 189);
+  font-size: 1rem;
+  margin: 0;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .niko-card {
     flex-direction: column;
-    align-items: center;
-    .center-niko-image {
-      width: 5rem;
-    }
+    gap: 20px;
+    width: 80%;
   }
 
-  .center-title {
-    font-size: 4rem;
-    margin: 0;
+  .niko-card-info {
+    gap: 1px;
+  }
+
+  .niko-card-header {
+    display: flex;
+    align-items: center;
+    .center-niko-image {
+      width: 4rem;
+    }
+
+    .center-title {
+      font-size: 2rem;
+      margin: 0;
+    }
   }
 
   .center-description {
-    color: rgb(189, 189, 189);
     font-size: 1rem;
     margin: 0;
     text-align: center;
+    color: rgb(189, 189, 189);
+  }
+}
+
+@media (max-width: 1000px) {
+  .niko-card {
+    width: 80%;
   }
 
-  @media (max-width: 768px) {
-    .niko-card {
-      flex-direction: column;
-      gap: 20px;
-      width: 80%;
+  .niko-card-header {
+    display: flex;
+    align-items: center;
+    .center-niko-image {
+      width: 4rem;
     }
 
-    .niko-card-info {
-      gap: 1px;
+    .center-title {
+      font-size: 2rem;
+      margin: 0;
     }
+  }
 
-    .niko-card-header {
-      display: flex;
-      align-items: center;
-      .center-niko-image {
-        width: 4rem;
-      }
-
-      .center-title {
-        font-size: 2rem;
-        margin: 0;
-      }
-    }
-
-    .center-description {
+  .niko-card-info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    h3 {
       font-size: 1rem;
       margin: 0;
-      text-align: center;
-      color: rgb(189, 189, 189);
     }
-  }
-
-  @media (max-width: 1000px) {
-    .niko-card {
-      width: 80%;
-    }
-
-    .niko-card-header {
-      display: flex;
-      align-items: center;
-      .center-niko-image {
-        width: 4rem;
-      }
-
-      .center-title {
-        font-size: 2rem;
-        margin: 0;
-      }
-    }
-
-    .niko-card-info {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 10px;
-      h3 {
-        font-size: 1rem;
-        margin: 0;
-      }
-      p {
-        font-size: 0.9rem;
-      }
-    }
-
-    .niko-card-left {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-    }
-
-    .niko-card-right {
-      height: 200px;
-      border-left: 0px solid white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      height: 10%;
-    }
-
-    .center-description {
+    p {
       font-size: 0.9rem;
-      margin: 0;
-      text-align: center;
-      color: rgb(189, 189, 189);
     }
   }
+
+  .niko-card-left {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .niko-card-right {
+    height: 200px;
+    border-left: 0px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+  }
+
+  .center-description {
+    font-size: 0.9rem;
+    margin: 0;
+    text-align: center;
+    color: rgb(189, 189, 189);
+  }
+}
 </style>
