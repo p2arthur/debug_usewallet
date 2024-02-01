@@ -9,12 +9,12 @@ export default defineNuxtPlugin((nuxtApp) => {
     network: NetworkId.TESTNET,
     algod: {
       [NetworkId.TESTNET]: {
-        token: '0C3BF7223DB65E1E6EBF106BF63F5284',
+        token: '',
         baseServer: 'https://testnet-api.algonode.cloud',
         port: '',
       },
       [NetworkId.MAINNET]: {
-        token: '0C3BF7223DB65E1E6EBF106BF63F5284',
+        token: '',
         baseServer: 'https://mainnet-api.algonode.cloud',
         port: '',
       },
