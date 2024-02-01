@@ -4,20 +4,20 @@
 <template>
   <div class="marketplace-statistics-container">
     <div class="marketplace-statistics-card">
-      <h2>Volume:</h2>
-      <h3>3.552</h3>
+      <h2 class="marketplace-statistics-title">Volume:</h2>
+      <h3 class="marketplace-statistics-description">3.552</h3>
     </div>
     <div class="marketplace-statistics-card">
-      <h2>24h volume:</h2>
-      <h3>3.552</h3>
+      <h2 class="marketplace-statistics-title">24h volume:</h2>
+      <h3 class="marketplace-statistics-description">3.552</h3>
     </div>
     <div class="marketplace-statistics-card">
-      <h2>Total sales:</h2>
-      <h3>3.552</h3>
+      <h2 class="marketplace-statistics-title">Total sales:</h2>
+      <h3 class="marketplace-statistics-description">3.552</h3>
     </div>
     <div class="marketplace-statistics-card">
-      <h2>Total sales:</h2>
-      <h3>3.552</h3>
+      <h2 class="marketplace-statistics-title">Total sales:</h2>
+      <h3 class="marketplace-statistics-description">3.552</h3>
     </div>
   </div>
 </template>
@@ -30,7 +30,7 @@
     gap: 32px;
   }
   .marketplace-statistics-card {
-    padding: 20px;
+    padding: 20px 20px;
     background: linear-gradient(
       to right,
       rgba(255, 255, 255, 0.038) 0%,
@@ -47,14 +47,20 @@
     font-family: 'Helvetica Neue 500';
     src: url('/fonts/helvetica-neue/500.ttf') format('truetype');
 
-    h2 {
-      font-size: 2rem;
+    .marketplace-statistics-title {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+
+    .marketplace-statistics-description {
       margin: 0;
     }
   }
   @media (max-width: 768px) {
     .marketplace-statistics-container {
       grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      padding: 80px 0px 20px 0;
     }
   }
 </style>

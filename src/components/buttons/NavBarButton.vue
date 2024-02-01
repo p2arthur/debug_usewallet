@@ -1,16 +1,15 @@
 <!-- @format -->
 
 <template>
-  <router-link
+  <a
     v-if="to"
-    :to="to"
-    :aria-label="name"
+    :href="to"
     class="nav-button"
     :class="`
       ${active ? 'nav-button-active' : ''}
     `">
     <slot></slot>
-  </router-link>
+  </a>
 
   <button
     v-else

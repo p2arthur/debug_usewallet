@@ -27,6 +27,7 @@
 
 <style>
   .sort-select {
+    cursor: pointer;
     background: linear-gradient(
       to right,
       rgba(255, 255, 255, 0.038) 0%,
@@ -36,10 +37,19 @@
     );
     border: 0;
     color: white;
-    padding: 2px;
+    padding: 10px;
     border-radius: 10px;
+
+    &:focus {
+      border: 0;
+    }
+
+    &:active {
+      border: 0;
+    }
   }
   option {
     background-color: rgb(24, 15, 34);
+    cursor: pointer;
   }
 </style>

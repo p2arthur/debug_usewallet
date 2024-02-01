@@ -3,11 +3,27 @@
 <script setup lang="ts">
   import ItemCard from '~/components/marketplace/ItemCard.vue';
   const props = defineProps(['allItems']);
+  const loading = ref(true);
   console.log(props.allItems);
+
+  onBeforeMount(() => {
+    loading.value = true;
+
+    setTimeout(() => {
+      loading.value = false;
+    }, 1000);
+  });
 </script>
 
 <template>
-  <div class="marketplace-itens-list">
+  <div
+    class="marketplace-itens-loading"
+    v-if="loading">
+    loading
+  </div>
+  <div
+    v-if="!loading"
+    class="marketplace-itens-list">
     <ItemCard
       v-for="item in props.allItems"
       :item="item" />
@@ -15,9 +31,16 @@
 </template>
 
 <style scoped lang="scss">
+  .marketplace-itens-loading {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
   .marketplace-itens-list {
-    min-height: 100vh;
-    padding: 32px 10px;
+    min-height: 10vh;
+    padding: 16px 10px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 32px;
@@ -32,6 +55,7 @@
   @media (max-width: 768px) {
     .marketplace-itens-list {
       grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
     }
   }
 </style>

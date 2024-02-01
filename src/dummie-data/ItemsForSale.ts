@@ -9,7 +9,7 @@ export const itemsForSale: ItemInterface[] = [
     seller: 'X9G5F3OQ2A3S8VH6BZPLKJ8RWNLPA2DVJXU7C5RKO6T4N9Y1ZM0Q',
     price: '2400.99',
     list_date: 1642473600000,
-    image: '/img/marketplace_images/cgf_rxelms.jpg',
+    image: '/img/marketplace_images/npc_rxelms_banner.jpg',
   },
   {
     category: 'outfit',
@@ -20,7 +20,7 @@ export const itemsForSale: ItemInterface[] = [
     seller: 'K1J8RWNLPA2DVJXU7C5RKO6T4N9Y1ZM0QX9G5F3OQ2A3S8VH6BZPL',
     price: '1200.20',
     list_date: 1642453600000,
-    image: '/img/marketplace_images/cgf_rxelms.jpg',
+    image: '/img/marketplace_images/npc_rxelms_banner.jpg',
   },
   {
     category: 'outfit',
@@ -30,7 +30,7 @@ export const itemsForSale: ItemInterface[] = [
     seller: 'SGTSMZXVHV34QDAHH7RDH226GLD55U34BLT6YP5L4AENCK6AVVGCOQM6XG',
     price: '1800.60',
     list_date: 1642443600000,
-    image: '/img/marketplace_images/cgf_rxelms.jpg',
+    image: '/img/marketplace_images/npc_rxelms_banner.jpg',
   },
   {
     category: 'furniture',
@@ -41,7 +41,7 @@ export const itemsForSale: ItemInterface[] = [
     seller: 'A2DVJXU7C5RKO6T4N9Y1ZM0QX9G5F3OQ2A3S8VH6BZPLK1J8RWNLPA2DVJ',
     price: '950.99',
     list_date: 1642473600000,
-    image: '/img/marketplace_images/cgf_rxelms.jpg',
+    image: '/img/marketplace_images/npc_rxelms_banner.jpg',
   },
   {
     category: 'furniture',
@@ -63,7 +63,7 @@ export const itemsForSale: ItemInterface[] = [
     seller: 'U7C5RKO6T4N9Y1ZM0QX9G5F3OQ2A3S8VH6BZPLK1J8RWNLPA2DVJ',
     price: '750.75',
     list_date: 1642471600000,
-    image: '/img/marketplace_images/cgf_rxelms.jpg',
+    image: '/img/marketplace_images/npc_rxelms_banner.jpg',
   },
   {
     category: 'outfit',
@@ -85,7 +85,7 @@ export const itemsForSale: ItemInterface[] = [
     seller: 'NLPA2DVJXU7C5RKO6T4N9Y1ZM0QX9G5F3OQ2A3S8VH6BZPLK1J8RW',
     price: '1800.45',
     list_date: 1642472600000,
-    image: '/img/marketplace_images/cgf_rxelms.jpg',
+    image: '/img/marketplace_images/npc_rxelms_banner.jpg',
   },
   {
     category: 'outfit',
@@ -96,7 +96,7 @@ export const itemsForSale: ItemInterface[] = [
     seller: '7RDH226GLD55U34BLT6YP5L4AENCK6AVVGCOQM6XGSGTSMZXVHV34QD',
     price: '1200.75',
     list_date: 1642471600000,
-    image: '/img/marketplace_images/cgf_rxelms.jpg',
+    image: '/img/marketplace_images/npc_rxelms_banner.jpg',
   },
   {
     category: 'lands',
@@ -118,7 +118,7 @@ export const itemsForSale: ItemInterface[] = [
     seller: 'Q1W2E3R4T5Y6U7I8O9P0A1S2D3F4G5H6J7K8L9Z0X9C8V7B6N5M4',
     price: '4800.75',
     list_date: 1642472600000,
-    image: '/img/marketplace_images/cgf_rxelms.jpg',
+    image: '/img/marketplace_images/npc_rxelms_banner.jpg',
   },
   {
     category: 'lands',
@@ -129,7 +129,7 @@ export const itemsForSale: ItemInterface[] = [
     seller: 'M1N2O3P4Q5R6S7T8U9V0W1X2Y3Z4A5B6C7D8E9F0G1H2I3J4K5L6',
     price: '2800.50',
     list_date: 1642471600000,
-    image: '/img/marketplace_images/cgf_rxelms.jpg',
+    image: '/img/marketplace_images/npc_rxelms_banner.jpg',
   },
   {
     category: 'lands',
@@ -151,6 +151,6 @@ export const itemsForSale: ItemInterface[] = [
     seller: 'W1X2Y3Z4A5B6C7D8E9F0G1H2I3J4K5L6M7N8O9P0Q1R2S3T4U5V6',
     price: '4200.80',
     list_date: 1642472600000,
-    image: '/img/marketplace_images/cgf_rxelms.jpg',
+    image: '/img/marketplace_images/npc_rxelms_banner.jpg',
   },
 ];
