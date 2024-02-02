@@ -44,11 +44,11 @@
         <h4>Documents</h4>
       </NavBarButton>
 
-      <NavBarButton
+      <!-- <NavBarButton
         name="Builder"
         :active="matchExclude('/artists', 'docs')">
         <h4>Builder</h4>
-      </NavBarButton>
+      </NavBarButton> -->
 
       <NavBarButton
         name="Rxelms"
