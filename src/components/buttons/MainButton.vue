@@ -9,7 +9,11 @@
     <button
       :class="[
         'main-button',
-        { small: props.size === 'small', large: props.size === 'large' },
+        {
+          small: props.size === 'small',
+          medium: props.size === 'medium',
+          large: props.size === 'large',
+        },
       ]"
       @click="props.action">
       <div class="button-background-front"></div>
@@ -23,11 +27,11 @@
   .button-container {
     display: flex;
     align-items: center;
-
     height: 44px;
   }
 
   .main-button {
+    min-width: 140px;
     pointer-events: all;
     position: relative;
     background-color: #ffffff35;
@@ -96,6 +100,11 @@
     &.small {
       font-size: 0.9rem;
       padding: 6px 8px;
+    }
+
+    &.medium {
+      font-size: 1rem;
+      padding: 8px 10px;
     }
 
     &.large {

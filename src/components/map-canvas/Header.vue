@@ -6,17 +6,19 @@
 
 <template>
   <div class="map-canva-header">
-    <h2 class="title">Rxelms map</h2>
-    <p class="text">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium
-      officia delectus vel? Cum quasi quia iusto ullam odit voluptatibus
-      voluptas nemo deserunt nisi, possimus quaerat non vero at saepe enim?
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium
-      officia delectus vel? Cum quasi quia iusto ullam odit voluptatibus
-      voluptas nemo deserunt nisi, possimus quaerat non vero at saepe enim?
-    </p>
+    <div class="map-canva-text">
+      <h2 class="map-canva-title">Rxelms map</h2>
+      <p class="map-canva-description">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium
+        officia delectus vel? Cum quasi quia iusto ullam odit voluptatibus
+        voluptas nemo deserunt nisi, possimus quaerat non vero at saepe enim?
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium
+        officia delectus vel? Cum quasi quia iusto ullam odit voluptatibus
+        voluptas nemo deserunt nisi, possimus quaerat non vero at saepe enim?
+      </p>
+    </div>
     <MainButton
-      size="large"
+      size="medium"
       text="Visit the rxelms world" />
   </div>
 </template>
@@ -25,32 +27,48 @@
   .map-canva-header {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    align-items: center;
+    gap: 20px;
+    align-items: flex-start;
     width: 50%;
   }
 
-  .title {
-    font-size: 64px;
+  .map-canva-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .map-canva-title {
+    font-size: 4rem;
     margin: 0;
   }
-  .text {
+  .map-canva-desctiption {
+    margin: 0;
+    padding: 0;
     font-size: 1rem;
     text-align: center;
     color: rgb(179, 179, 179);
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     .map-canva-header {
       width: 100%;
+      align-items: center;
 
-      .title {
+      .map-canva-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .map-canva-title {
         font-size: 3rem;
       }
 
-      .text {
+      .map-canva-description {
+        font-size: 0.9rem;
+        text-align: center;
         margin: 0;
-        font-size: 1rem;
       }
     }
   }

@@ -47,11 +47,14 @@
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 50px;
+    top: 55px;
     list-style: none;
     padding: 0;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.272);
+    background: linear-gradient(
+      to bottom right,
+      rgba(14, 10, 30, 0.459),
+      rgba(26, 20, 45, 0.417)
+    );
     backdrop-filter: blur(1px);
     border-radius: 5px;
     padding: 5px;
