@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "@txnlab/use-wallet-js": "^3.0.0-alpha.11",
-    "@txnlab/use-wallet-vue": "^3.0.0-alpha.2"
-  }
-}
