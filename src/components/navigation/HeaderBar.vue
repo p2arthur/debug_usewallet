@@ -46,7 +46,6 @@
 
       <NavBarButton
         name="Builder"
-        to="/builder"
         :active="matchExclude('/artists', 'docs')">
         <h4>Builder</h4>
       </NavBarButton>
