@@ -44,13 +44,11 @@
         <p>Disconnect</p>
         <ArrowRightEndOnRectangleIcon class="disconnect-icon" />
       </li>
-      <li class="dropdown-option">
-        <NuxtLink
-          class="dropdown-option"
-          :to="`/user/${user.address}`">
-          <p>Profile</p>
-        </NuxtLink>
-      </li>
+      <NuxtLink
+        class="dropdown-option"
+        :to="`/user/${user.address}`">
+        <p>Profile</p></NuxtLink
+      >
     </ul>
   </div>
 </template>
@@ -78,6 +76,9 @@
     }
 
     .dropdown-option {
+      width: 100%;
+      padding: 10px;
+      text-align: center;
       p {
         font-size: 1rem;
         margin: 0;
