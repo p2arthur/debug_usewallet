@@ -23,7 +23,7 @@
 
   const props = defineProps(['activeAccount']);
 
-  const user = await userStore.getUserInfo(props.activeAccount.address);
+  const user = await userStore.getCurrentUserInfo(props.activeAccount.address);
 
   console.log('wallets', wallets.value, connectedWalletProvider);
 </script>

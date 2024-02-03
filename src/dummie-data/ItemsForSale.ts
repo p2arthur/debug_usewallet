@@ -9,7 +9,7 @@ export const itemsForSale: ItemInterface[] = [
     seller: 'X9G5F3OQ2A3S8VH6BZPLKJ8RWNLPA2DVJXU7C5RKO6T4N9Y1ZM0Q',
     price: 2400.99,
     list_date: 1642473600000,
-    image: '/img/marketplace_images/npc_rxelms_banner.jpg',
+    image: '/img/rxelms_walk.mp4',
     itemId: 31566704,
   },
   {
@@ -21,7 +21,7 @@ export const itemsForSale: ItemInterface[] = [
     seller: 'K1J8RWNLPA2DVJXU7C5RKO6T4N9Y1ZM0QX9G5F3OQ2A3S8VH6BZPL',
     price: 1200.2,
     list_date: 1642453600000,
-    image: '/img/marketplace_images/npc_rxelms_banner.jpg',
+    image: '/img/rxelms_walk2.mp4',
     itemId: 31566705,
   },
   {
@@ -32,7 +32,7 @@ export const itemsForSale: ItemInterface[] = [
     seller: 'SGTSMZXVHV34QDAHH7RDH226GLD55U34BLT6YP5L4AENCK6AVVGCOQM6XG',
     price: 1800.6,
     list_date: 1642443600000,
-    image: '/img/marketplace_images/npc_rxelms_banner.jpg',
+    image: '/img/rxelms_dance.mp4',
     itemId: 31566706,
   },
   {
@@ -44,7 +44,7 @@ export const itemsForSale: ItemInterface[] = [
     seller: 'A2DVJXU7C5RKO6T4N9Y1ZM0QX9G5F3OQ2A3S8VH6BZPLK1J8RWNLPA2DVJ',
     price: 950.99,
     list_date: 1642473600000,
-    image: '/img/marketplace_images/npc_rxelms_banner.jpg',
+    image: '/img/rxelms_walk2.mp4',
     itemId: 31566707,
   },
   {
@@ -56,7 +56,7 @@ export const itemsForSale: ItemInterface[] = [
     seller: 'GCOQM6XGSGTSMZXVHV34QDAHH7RDH226GLD55U34BLT6YP5L4AENCK6A',
     price: 1200.45,
     list_date: 1642472600000,
-    image: '/img/marketplace_images/cgf_rxelms.jpg',
+    image: '/img/rxelms_dance.mp4',
     itemId: 31566708,
   },
   {
@@ -68,7 +68,7 @@ export const itemsForSale: ItemInterface[] = [
     seller: 'U7C5RKO6T4N9Y1ZM0QX9G5F3OQ2A3S8VH6BZPLK1J8RWNLPA2DVJ',
     price: 750.75,
     list_date: 1642471600000,
-    image: '/img/marketplace_images/npc_rxelms_banner.jpg',
+    image: '/img/rxelms_walk2.mp4',
     itemId: 31566709,
   },
   {
@@ -80,7 +80,7 @@ export const itemsForSale: ItemInterface[] = [
     seller: 'GCOQM6XGSGTSMZXVHV34QDAHH7RDH226GLD55U34BLT6YP5L4AENCK6A',
     price: 1600.99,
     list_date: 1642473600000,
-    image: '/img/marketplace_images/cgf_rxelms.jpg',
+    image: '/img/rxelms_walk.mp4',
     itemId: 31566710,
   },
 ];

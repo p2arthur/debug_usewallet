@@ -2,17 +2,25 @@
 
 <script setup lang="ts">
   import { ItemInterface } from '~/interfaces/itemInterface';
+  import UserProfileCard from '~/components/profile/user-profile/UserProfileCard.vue';
+  import { useUserStore } from '~/stores/user/user.store';
 
   interface ItemProfileProps {
     item: ItemInterface;
   }
+  const route = useRoute();
 
-  const props = defineProps<ItemProfileProps>();
+  const walletAddress = route.params.address[0];
+
+  const userStore = useUserStore();
+  const userInfo = await userStore.getSearchedUserInfo(walletAddress);
+  console.log('userInfo', userInfo);
 </script>
 
 <template>
   <div class="item-page">
     <div class="item-content">
+      <UserProfileCard :user="userInfo" />
       <h2>Transaction History</h2>
       <table class="transaction-table">
         <thead>

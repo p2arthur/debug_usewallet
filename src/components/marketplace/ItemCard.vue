@@ -11,10 +11,23 @@
   <NuxtLink :to="`/item/${item.itemId}`">
     <div class="item-card-container">
       <div class="item-card-image-container">
-        <img
+        <!-- <img
           class="item-card-image"
           :src="item.image"
-          alt="" />
+          alt="" /> -->
+
+        <video
+          autoplay
+          width="100%"
+          height="100%"
+          muted
+          loop>
+          <source
+            :src="item.image"
+            type="video/mp4" />
+
+          Your browser does not support the video tag.
+        </video>
       </div>
       <div class="item-card-text-container">
         <h5 class="item-card-collection">{{ item.collection }}</h5>
@@ -47,8 +60,21 @@
       transform: scale(1.01);
     }
 
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 5px 5px 0 0; // Add border-radius if needed
+      transition: transform 0.1s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
     .item-card-image-container {
       background-color: rgb(0, 0, 0);
+
       height: 70%;
       width: 100%;
       overflow: hidden;

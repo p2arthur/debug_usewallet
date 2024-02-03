@@ -15,10 +15,16 @@
 <template>
   <div class="item-info-card">
     <div class="item-image-container">
-      <img
-        class="item-image"
-        :src="props.item.image"
-        alt="" />
+      <video
+        autoplay
+        width="100%"
+        height="100%"
+        muted
+        loop>
+        <source
+          :src="item.image"
+          type="video/mp4" />
+      </video>
     </div>
     <div class="item-info-container">
       <div class="item-container">
@@ -41,7 +47,6 @@
 </template>
 <style>
   .item-info-card {
-    cursor: pointer;
     display: flex;
     justify-content: space-between;
     gap: 20px;
@@ -59,6 +64,18 @@
     .item-image-container {
       padding: 10px;
       width: 30%;
+      border-radius: 5px;
+      transition: transform 0.1s ease;
+
+      video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+      &:hover {
+        transform: scale(1.01);
+      }
     }
 
     .item-action-container {
@@ -75,7 +92,8 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 5px;
+    overflow: hidden;
     transition: 0.05s linear;
 
     &:hover {
