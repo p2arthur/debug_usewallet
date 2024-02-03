@@ -13,7 +13,7 @@
     <div class="hero-image-container">
       <img
         class="hero-image"
-        src="/img/background_home2.png" />
+        src="/img/rxelms_scene_2.jpeg" />
     </div>
     <div class="hero-section-info">
       <img
@@ -36,7 +36,7 @@
 
     .hero-backdrop {
       position: absolute;
-      background: radial-gradient(rgba(0, 0, 0, 0.215), #6a00ff1b);
+      background: radial-gradient(rgba(0, 0, 0, 0.606), #36008135);
       width: 100%;
       height: 100%;
       backdrop-filter: blur(0.5px);
@@ -54,6 +54,8 @@
   }
 
   .hero-section-info {
+    background: radial-gradient(rgba(0, 0, 0, 0.31), #36008135);
+    backdrop-filter: blur(1px);
     width: 100%;
     height: 100%;
     position: absolute;

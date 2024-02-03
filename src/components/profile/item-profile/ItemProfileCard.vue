@@ -34,7 +34,7 @@
         <span class="item-price-button">{{ props.item.price }}A</span>
         <MainButton
           text="Buy now"
-          size="medium" />
+          size="small" />
       </div>
     </div>
   </div>
@@ -105,7 +105,7 @@
     }
 
     .item-price-button {
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: 700;
     }
   }
