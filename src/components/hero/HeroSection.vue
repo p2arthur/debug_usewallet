@@ -61,7 +61,7 @@
     position: absolute;
     top: 0;
     display: flex;
-    gap: 20px;
+    gap: 10px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -76,7 +76,7 @@
     border: 2px solid #ffffff;
     font-size: 2rem;
     color: white;
-    border-radius: 10px;
+    border-radius: 20px;
     background: transparent;
     cursor: pointer;
     &:hover {
