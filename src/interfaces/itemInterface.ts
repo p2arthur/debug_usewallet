@@ -4,7 +4,8 @@ export interface ItemInterface {
   collection: string;
   description: string;
   seller: string;
-  price: string;
+  price: number;
   list_date: number;
   image: string;
+  itemId: number;
 }

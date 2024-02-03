@@ -2,27 +2,30 @@
 
 <script setup lang="ts">
   import { ItemInterface } from '~/interfaces/itemInterface';
+  import { capitalizeEachWord } from '~/utils/CapitalizeAllLetters';
 
   const props = defineProps(['item']);
 </script>
 
 <template>
-  <div class="item-card-container">
-    <div class="item-card-image-container">
-      <img
-        class="item-card-image"
-        :src="item.image"
-        alt="" />
-    </div>
-    <div class="item-card-text-container">
-      <h5 class="item-card-collection">{{ item.collection }}</h5>
-      <h3 class="item-card-title">{{ item.name }}</h3>
-      <div class="item-card-baseboard">
-        <p>{{ item.price }}A</p>
-        <p>{{ item.list_date }}</p>
+  <NuxtLink :to="`/item/${item.itemId}`">
+    <div class="item-card-container">
+      <div class="item-card-image-container">
+        <img
+          class="item-card-image"
+          :src="item.image"
+          alt="" />
+      </div>
+      <div class="item-card-text-container">
+        <h5 class="item-card-collection">{{ item.collection }}</h5>
+        <h3 class="item-card-title">{{ capitalizeEachWord(item.name) }}</h3>
+        <div class="item-card-baseboard">
+          <p>{{ item.price }}A</p>
+          <p>{{ item.list_date }}</p>
+        </div>
       </div>
     </div>
-  </div>
+  </NuxtLink>
 </template>
 
 <style setup lang="scss">
