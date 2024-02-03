@@ -83,4 +83,20 @@
       justify-content: space-between;
     }
   }
+
+  @media (max-width: 1300px) {
+    .marketplace-itens-list {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  @media (max-width: 1100px) {
+    .marketplace-itens-list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  @media (max-width: 768px) {
+    .item-card-container {
+      height: 500px;
+    }
+  }
 </style>

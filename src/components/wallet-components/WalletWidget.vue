@@ -38,12 +38,18 @@
     <ul
       class="dropdown-items"
       v-if="dropDownOpen">
-      <li @click="connectedWalletProvider?.disconnect">
+      <li
+        class="dropdown-option"
+        @click="connectedWalletProvider?.disconnect">
         <p>Disconnect</p>
         <ArrowRightEndOnRectangleIcon class="disconnect-icon" />
       </li>
-      <li>
-        <NuxtLink :to="`/user/${user.address}`"><p>Profile</p></NuxtLink>
+      <li class="dropdown-option">
+        <NuxtLink
+          class="dropdown-option"
+          :to="`/user/${user.address}`">
+          <p>Profile</p>
+        </NuxtLink>
       </li>
     </ul>
   </div>
@@ -71,7 +77,7 @@
       height: 1.5rem;
     }
 
-    li {
+    .dropdown-option {
       p {
         font-size: 1rem;
         margin: 0;
