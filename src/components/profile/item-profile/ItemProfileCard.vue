@@ -36,12 +36,12 @@
         </h3>
         <h3 class="item-info-description">{{ props.item.description }}</h3>
       </div>
-      <div class="item-action-container">
+      <!-- <div class="item-action-container">
         <span class="item-price-button">{{ props.item.price }}A</span>
         <MainButton
           text="Buy now"
           size="small" />
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -49,9 +49,9 @@
   .item-info-card {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
+    position: relative;
     width: 100%;
-    height: 300px;
+    overflow: hidden;
     background: linear-gradient(
       to right,
       rgba(255, 255, 255, 0.038) 0%,
@@ -71,7 +71,6 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        border-radius: 5px;
       }
       &:hover {
         transform: scale(1.01);
@@ -95,6 +94,7 @@
     border-radius: 5px;
     overflow: hidden;
     transition: 0.05s linear;
+    flex-shrink: 80%;
 
     &:hover {
       scale: 102%;
@@ -125,6 +125,49 @@
     .item-price-button {
       font-size: 2rem;
       font-weight: 700;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .item-info-card {
+      padding: 0;
+
+      .item-info-container {
+        background-color: rgba(18, 7, 26, 0.482);
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+
+        padding: 20px 0;
+
+        box-sizing: border-box;
+      }
+
+      .item-image-container {
+        width: 100%;
+        height: 93%;
+      }
+
+      .item-info-title {
+        font-size: 2rem;
+        text-align: center;
+      }
+
+      .item-info-collection {
+        text-align: center;
+        font-size: 1rem;
+      }
+
+      .item-info-description {
+        font-size: 0.8rem;
+        word-break: break-all;
+        text-align: center;
+        padding: 0 10px;
+        line-height: 0.8rem;
+      }
+    }
+    .item-action-container {
+      display: hidden;
     }
   }
 </style>

@@ -75,8 +75,7 @@
 
   .item-page {
     background: radial-gradient(circle, #1b152b, #100e1d, #1b152b);
-    padding: 30px;
-    padding-top: 80px;
+    padding: 80px 40px;
     min-height: 100vh;
 
     .item-container {
@@ -122,12 +121,15 @@
         padding: 10px;
       }
     }
+  }
 
-    @media (max-width: 768px) {
-      .item-page {
-        padding: 10px;
-        padding-top: 80px;
-      }
+  @media (max-width: 760px) {
+    .item-page {
+      padding: 80px 0px;
+    }
+
+    .item-content {
+      padding: 0px;
     }
   }
 </style>
