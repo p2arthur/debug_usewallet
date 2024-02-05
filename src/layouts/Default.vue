@@ -7,9 +7,13 @@
   import Modal from '../components/modal/Modal.vue';
   import SideBar from '~/components/navigation/SideBar.vue';
   import { useModalStore } from '../stores/interface/modal.store';
+  import { useBreadcrumbsStore } from '../stores/interface/breadcrumbs.store';
+
+  const route = useRouter();
 
   const sideBarStore = useSidebarStore();
   const modalStore = useModalStore();
+  const breadcrumbsStore = useBreadcrumbsStore();
 
   const shouldScroll = ref(true);
 
@@ -22,6 +26,11 @@
 
   onMounted(() => {
     watchEffect(() => {
+      const currentRoute = route.currentRoute.value;
+      breadcrumbsStore.addBreadcrumb({
+        name: currentRoute.path,
+        url: currentRoute.path,
+      });
       toggleBodyScroll();
       shouldScroll.value =
         !sideBarStore.sideBarIsOpen && !modalStore.modalIsOpen;

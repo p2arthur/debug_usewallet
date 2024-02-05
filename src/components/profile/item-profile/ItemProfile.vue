@@ -3,6 +3,7 @@
 <script setup lang="ts">
   import { ItemInterface } from '~/interfaces/itemInterface';
   import ItemProfileCard from './ItemProfileCard.vue';
+  import Breadcrumbs from '~/components/navigation/Breadcrumbs.vue';
 
   interface ItemProfileProps {
     item: ItemInterface;
@@ -13,6 +14,7 @@
 
 <template>
   <div class="item-page">
+    <Breadcrumbs :crumbs="['home', 'marketplace', item.itemId]" />
     <div class="item-content">
       <ItemProfileCard :item="props.item" />
       <h2>Transaction History</h2>
@@ -85,7 +87,6 @@
 
     .item-content {
       min-height: 30vh;
-      padding: 10px;
     }
 
     .transaction-table {

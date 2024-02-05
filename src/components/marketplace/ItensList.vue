@@ -4,7 +4,6 @@
   import ItemCard from '~/components/marketplace/ItemCard.vue';
   const props = defineProps(['allItems']);
   const loading = ref(true);
-  console.log(props.allItems);
 
   onBeforeMount(() => {
     loading.value = true;

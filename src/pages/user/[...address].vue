@@ -1,24 +1,25 @@
 <!-- @format -->
 
 <script setup lang="ts">
-  import { ItemInterface } from '~/interfaces/itemInterface';
-  import UserProfileCard from '~/components/profile/user-profile/UserProfileCard.vue';
-  import { useUserStore } from '~/stores/user/user.store';
+import { ItemInterface } from "~/interfaces/itemInterface";
+import UserProfileCard from "~/components/profile/user-profile/UserProfileCard.vue";
+import { useUserStore } from "~/stores/user/user.store";
+import Breadcrumbs from "~/components/navigation/Breadcrumbs.vue";
 
-  interface ItemProfileProps {
-    item: ItemInterface;
-  }
-  const route = useRoute();
+interface ItemProfileProps {
+  item: ItemInterface;
+}
+const route = useRoute();
 
-  const walletAddress = route.params.address[0];
+const walletAddress = route.params.address[0];
 
-  const userStore = useUserStore();
-  const userInfo = await userStore.getSearchedUserInfo(walletAddress);
-  console.log('userInfo', userInfo);
+const userStore = useUserStore();
+const userInfo = await userStore.getSearchedUserInfo(walletAddress);
 </script>
 
 <template>
   <div class="item-page">
+    <Breadcrumbs :crumbs="['home', 'profile', ellipseAddress(userInfo.address)]" />
     <div class="item-content">
       <UserProfileCard :user="userInfo" />
       <h2>Transaction History</h2>
@@ -65,75 +66,74 @@
 </template>
 
 <style scoped lang="scss">
-  @font-face {
-    font-family: 'Helvetica Neue';
-    src: url('/fonts/helvetica-neue/500.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/fonts/helvetica-neue/500.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Neue 300";
+  src: url("/fonts/helvetica-neue/300.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+.item-page {
+  background: radial-gradient(circle, #1b152b, #100e1d, #1b152b);
+  padding: 30px;
+  padding-top: 80px;
+  min-height: 100vh;
+
+  .item-container {
+    display: flex;
+    flex-direction: column;
   }
 
-  @font-face {
-    font-family: 'Helvetica Neue 300';
-    src: url('/fonts/helvetica-neue/300.ttf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
+  .item-content {
+    min-height: 30vh;
   }
 
-  .item-page {
-    background: radial-gradient(circle, #1b152b, #100e1d, #1b152b);
-    padding: 30px;
-    padding-top: 80px;
-    min-height: 100vh;
+  .transaction-table {
+    width: 100%;
+    height: 100vh;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.038) 0%,
+      rgba(73, 63, 113, 0.257),
+      80%,
+      rgba(255, 255, 255, 0.038) 100%
+    );
+    align-items: start;
 
-    .item-container {
-      display: flex;
-      flex-direction: column;
+    th,
+    td {
+      padding: 8px;
+      text-align: left;
     }
 
-    .item-content {
-      min-height: 30vh;
+    tr {
+      color: white;
+      border-bottom: 2px solid #100e1d;
+    }
+
+    th {
+      color: white;
+      background-color: #100e1d;
       padding: 10px;
     }
+  }
 
-    .transaction-table {
-      width: 100%;
-      height: 100vh;
-      border-collapse: collapse;
-      margin-top: 20px;
-      border-radius: 10px;
-      overflow: hidden;
-      background: linear-gradient(
-        to right,
-        rgba(255, 255, 255, 0.038) 0%,
-        rgba(73, 63, 113, 0.257),
-        80%,
-        rgba(255, 255, 255, 0.038) 100%
-      );
-      align-items: start;
-
-      th,
-      td {
-        padding: 8px;
-        text-align: left;
-      }
-
-      tr {
-        color: white;
-        border-bottom: 2px solid #100e1d;
-      }
-
-      th {
-        color: white;
-        background-color: #100e1d;
-        padding: 10px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .item-page {
-        padding: 10px;
-        padding-top: 80px;
-      }
+  @media (max-width: 768px) {
+    .item-page {
+      padding: 10px;
+      padding-top: 80px;
     }
   }
+}
 </style>

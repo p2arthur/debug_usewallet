@@ -8,7 +8,7 @@
 </script>
 
 <template>
-  <NuxtLink :to="`/item/${item.itemId}`">
+  <NuxtLink :to="`/items/${item.itemId}`">
     <div class="item-card-container">
       <div class="item-card-image-container">
         <!-- <img
