@@ -17,8 +17,6 @@
     <div class="item-image-container">
       <video
         autoplay
-        width="100%"
-        height="100%"
         muted
         loop>
         <source
@@ -45,12 +43,14 @@
     </div>
   </div>
 </template>
-<style>
+<style scoped>
   .item-info-card {
     display: flex;
     justify-content: space-between;
     position: relative;
+    padding: 10px;
     width: 100%;
+    height: 350px;
     overflow: hidden;
     background: linear-gradient(
       to right,
@@ -62,14 +62,13 @@
     border-radius: 10px;
 
     .item-image-container {
-      padding: 10px;
-      width: 30%;
+      width: 350px;
       border-radius: 5px;
       transition: transform 0.1s ease;
 
       video {
-        width: 100%;
-        height: 100%;
+        width: 350px;
+        height: 350px;
         object-fit: cover;
       }
       &:hover {
@@ -131,13 +130,13 @@
   @media (max-width: 760px) {
     .item-info-card {
       padding: 0;
+      height: 300px;
 
       .item-info-container {
-        background-color: rgba(18, 7, 26, 0.482);
+        background-color: rgba(12, 7, 26, 0.66);
         position: absolute;
         bottom: 0;
         width: 100%;
-
         padding: 20px 0;
 
         box-sizing: border-box;
@@ -145,6 +144,7 @@
 
       .item-image-container {
         width: 100%;
+        min-width: 400px;
       }
 
       .item-info-title {

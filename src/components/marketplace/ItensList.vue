@@ -74,8 +74,8 @@
   }
   @media (max-width: 768px) {
     .marketplace-itens-list {
-      grid-template-columns: repeat(1, 1fr);
-      padding: 10px 0;
+      grid-template-columns: repeat(2, 1fr);
+      padding: 10px 5px;
       gap: 10px;
     }
   }

@@ -34,7 +34,7 @@
         <h3 class="item-card-title">{{ capitalizeEachWord(item.name) }}</h3>
         <div class="item-card-baseboard">
           <p>{{ item.price }}A</p>
-          <p>{{ item.list_date }}</p>
+          <p>{{ item.list_date / 100000000000 }}</p>
         </div>
       </div>
     </div>
@@ -92,7 +92,11 @@
 
     .item-card-text-container {
       height: 30%;
-      padding: 0 10px;
+      padding: 0 5px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
       .item-card-collection {
         font-size: 0.8rem;
         font-weight: 200;
@@ -100,6 +104,7 @@
       }
 
       .item-card-title {
+        font-size: 1.3rem;
         margin: 0;
       }
     }
@@ -107,6 +112,11 @@
     .item-card-baseboard {
       display: flex;
       justify-content: space-between;
+
+      p {
+        margin: 0;
+        font-size: 1rem;
+      }
     }
   }
 
@@ -121,8 +131,21 @@
     }
   }
   @media (max-width: 768px) {
+    .item-card-image-container {
+      width: 400px;
+      height: 10px;
+    }
+
+    .item-card-container .item-card-text-container {
+      height: 60%;
+    }
+
     .item-card-container {
-      height: 500px;
+      height: 250px;
+    }
+
+    .item-card-container .item-card-text-container .item-card-title {
+      font-size: 1.2rem;
     }
   }
 </style>

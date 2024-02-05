@@ -126,7 +126,7 @@
 
   @media (max-width: 760px) {
     .item-page {
-      padding: 80px 0px;
+      padding: 80px 10px;
     }
 
     .item-content {

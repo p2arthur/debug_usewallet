@@ -57,4 +57,14 @@
     height: 15px;
     color: white;
   }
+
+  @media (max-width: 1100px) {
+    .marketplace-search-input {
+      font-size: 0.8rem;
+    }
+
+    .marketplace-search-container {
+      padding: 5px;
+    }
+  }
 </style>
