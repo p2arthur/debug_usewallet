@@ -21,6 +21,13 @@
     v-if="loading">
     loading
   </div>
+
+  <div
+    class="marketplace-itens-empty"
+    v-if="allItems.length <= 0">
+    <h2>No items to display</h2>
+  </div>
+
   <div
     v-if="!loading"
     class="marketplace-itens-list">
@@ -38,6 +45,15 @@
     align-items: center;
     color: white;
   }
+
+  .marketplace-itens-empty {
+    height: 100vh;
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    background: radial-gradient(circle, #1b152b, #100e1d, #1b152b);
+  }
+
   .marketplace-itens-list {
     min-height: 10vh;
     padding: 16px 10px;
@@ -49,12 +65,17 @@
 
   @media (max-width: 1300px) {
     .marketplace-itens-list {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  @media (max-width: 1100px) {
+    .marketplace-itens-list {
       grid-template-columns: repeat(3, 1fr);
     }
   }
   @media (max-width: 768px) {
     .marketplace-itens-list {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(1, 1fr);
       padding: 10px 0;
       gap: 10px;
     }

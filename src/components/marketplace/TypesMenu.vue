@@ -68,12 +68,14 @@
 
       .marketplace-type-option {
         user-select: none;
+        color: rgba(255, 255, 255, 0.737);
         cursor: pointer;
         margin: 0;
         font-size: 1.3rem;
         margin: 0;
 
         &.selected {
+          color: white;
           border-bottom: 2px solid rgb(179, 108, 255);
         }
       }

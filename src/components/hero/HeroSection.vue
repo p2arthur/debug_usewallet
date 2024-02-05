@@ -13,7 +13,7 @@
     <div class="hero-image-container">
       <img
         class="hero-image"
-        src="/img/background_home2.png" />
+        src="/img/rxelms_scene_2.jpeg" />
     </div>
     <div class="hero-section-info">
       <img
@@ -36,7 +36,7 @@
 
     .hero-backdrop {
       position: absolute;
-      background: radial-gradient(rgba(0, 0, 0, 0.215), #6a00ff1b);
+      background: radial-gradient(rgba(0, 0, 0, 0.606), #36008135);
       width: 100%;
       height: 100%;
       backdrop-filter: blur(0.5px);
@@ -54,12 +54,14 @@
   }
 
   .hero-section-info {
+    background: radial-gradient(rgba(0, 0, 0, 0.31), #36008135);
+    backdrop-filter: blur(1px);
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
     display: flex;
-    gap: 20px;
+    gap: 10px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -74,7 +76,7 @@
     border: 2px solid #ffffff;
     font-size: 2rem;
     color: white;
-    border-radius: 10px;
+    border-radius: 20px;
     background: transparent;
     cursor: pointer;
     &:hover {
