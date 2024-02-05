@@ -11,8 +11,6 @@
   }
 
   const props = defineProps<UserProfileProps>();
-
-  console.log();
 </script>
 
 <template>

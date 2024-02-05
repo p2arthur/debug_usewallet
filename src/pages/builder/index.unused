@@ -14,9 +14,6 @@
   import UnityVue from 'unity-webgl/vue';
 
   const accountStore = useAccountStore();
-
-  console.log('build unity');
-
   const unityContext = new UnityWebgl({
     loaderUrl: '/build/builder/V67_builder2.loader.js',
     dataUrl: '/build/builder/webgl.data',
