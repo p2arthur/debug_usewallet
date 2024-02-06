@@ -22,14 +22,10 @@
 <style scoped>
   .team-card {
     position: relative;
-    border-radius: 10px;
     overflow: hidden;
     width: 250px;
     height: 300px;
     transition: transform 0.1s ease; /* Added transition for hover effect */
-    &:hover {
-      transform: scale(1.01);
-    }
 
     h5 {
       margin: 0;
@@ -41,25 +37,49 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    border-radius: 5px 5px 0px 0px;
+
+    border-bottom: 6px solid rgb(14, 10, 30);
+    height: 60%;
     width: 100%;
+    transition: 0.1s ease-in-out;
+
+    &:hover {
+      scale: 105%;
+    }
   }
 
   .team-card-image {
     width: 100%;
+    border-radius: 5px 5px 0 0;
     object-fit: cover;
     object-position: top center;
   }
 
   .team-card-text-container {
+    cursor: pointer;
+    z-index: 10;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
+    border-radius: 0px 0px 5px 5px;
+    border: 2px solid rgb(14, 10, 30);
     position: absolute;
     background-color: rgb(14, 10, 30);
     bottom: 0;
-    border-radius: 0 0 10px 10px;
     padding: 10px 0;
+    transition: 0.1s ease-in-out;
+
+    &:hover {
+      scale: 101%;
+      border: 2px solid rgb(14, 10, 30);
+      border-bottom: 4px solid white;
+    }
+
+    &:active {
+      border-bottom: 2px solid white;
+    }
   }
 
   .team-card-title {

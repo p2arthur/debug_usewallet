@@ -19,8 +19,18 @@ const teamList = [
   },
   {
     name: 'P2',
-    role: 'frontend dev',
+    role: 'front dev',
     image: '/img/team_pfp/nodekeeper_398.png',
+  },
+  {
+    name: 'muuo',
+    role: 'char design',
+    image: '/img/team_pfp/nodekeeper_414.png',
+  },
+  {
+    name: 'KEJI',
+    role: '3Design',
+    image: '/img/team_pfp/nodekeeper_453.png',
   },
 ];
 
