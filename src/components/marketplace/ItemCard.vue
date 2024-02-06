@@ -69,7 +69,7 @@
     min-height: 350px;
 
     &:hover {
-      transform: scale(1.01);
+      transform: scale(1.03);
       box-shadow: 0px 5px 10px rgba(107, 38, 172, 0.109);
     }
 
