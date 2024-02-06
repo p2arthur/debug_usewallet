@@ -37,7 +37,7 @@
     padding: 5px;
     border-radius: 2px;
     position: absolute;
-    z-index: 10;
+    z-index: 5;
   }
 
   .badge-category {

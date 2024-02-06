@@ -62,14 +62,13 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 10px;
+    gap: 5px;
     border-radius: 5px;
 
     transition: transform 0.1s ease;
     min-height: 350px;
 
     &:hover {
-      border-color: rgb(125, 79, 178);
       transform: scale(1.01);
     }
 
@@ -81,7 +80,7 @@
       transition: transform 0.1s ease;
 
       &:hover {
-        transform: scale(1.05);
+        transform: scale(1.01);
       }
     }
 
@@ -96,7 +95,7 @@
         object-fit: cover;
         transition: transform 0.1s ease;
         &:hover {
-          transform: scale(1.05);
+          transform: scale(1.02);
         }
       }
     }
@@ -117,6 +116,11 @@
       justify-content: space-between;
       height: 100%;
       gap: 1px;
+      transition: 0.1s ease-in-out;
+
+      &:hover {
+        scale: 102%;
+      }
 
       .item-card-collection {
         padding: 2px 10px;
