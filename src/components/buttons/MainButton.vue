@@ -13,12 +13,13 @@
           small: props.size === 'small',
           medium: props.size === 'medium',
           large: props.size === 'large',
+          secondary: props.variant === 'secondary',
         },
       ]"
       @click="props.action">
       <div class="button-background-front"></div>
       <!-- <div class="button-background-back"></div> -->
-      <h3 class="button-text">{{ text }}</h3>
+      <p class="button-text">{{ text }}</p>
     </button>
   </div>
 </template>
@@ -31,7 +32,7 @@
   }
 
   .main-button {
-    min-width: 140px;
+    min-width: 110px;
     pointer-events: all;
     position: relative;
     background-color: #ffffff35;
@@ -42,7 +43,7 @@
     border: 2px solid #ffffff;
     border-bottom: 3px solid #ffff;
     font-size: 1.2rem;
-    border-radius: 10px;
+    border-radius: 5px;
     overflow: hidden;
     cursor: pointer;
     transition: border 0.05s;
@@ -50,6 +51,8 @@
     .button-text {
       color: rgb(255, 255, 255);
       margin: 0;
+      font-size: 1rem;
+      font-weight: 500;
       z-index: 10;
     }
 
@@ -98,8 +101,8 @@
     }
 
     &.small {
-      font-size: 0.9rem;
-      padding: 6px 8px;
+      font-size: 0.8rem;
+      padding: 6px 4px;
     }
 
     &.medium {
@@ -112,9 +115,18 @@
       padding: 12px 16px;
     }
 
+    &.secondary {
+      border: 0;
+      font-size: 1rem;
+      min-width: none;
+      min-height: none;
+      padding: 6px 10px;
+      font-weight: 200;
+    }
+
     @media (max-width: 768px) {
       &.small {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
         padding: 6px 8px;
       }
 

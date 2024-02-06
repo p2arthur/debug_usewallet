@@ -3,6 +3,8 @@
 <script setup lang="ts">
   import { ItemInterface } from '~/interfaces/itemInterface';
   import { capitalizeEachWord } from '~/utils/CapitalizeAllLetters';
+  import CategoryBadge from '../item/CategoryBadge.vue';
+  import MainButton from '../buttons/MainButton.vue';
 
   const props = defineProps(['item']);
   console.log('item', props.item);
@@ -11,7 +13,7 @@
 <template>
   <NuxtLink :to="`/items/${item.itemId}`">
     <div class="item-card-container">
-      <span class="item-card-category">{{ item.category }}</span>
+      <CategoryBadge :category="item.category" />
       <div class="item-card-image-container">
         <!-- <img
           class="item-card-image"
@@ -44,9 +46,9 @@
         </div>
         <div class="item-card-baseboard">
           <h3 class="item-card-price">{{ item.price }}A</h3>
-          <p class="item-card-date">
-            {{ (item.list_date / 100000000000).toFixed(2) }}
-          </p>
+          <MainButton
+            text="Buy now"
+            variant="secondary" />
         </div>
       </div>
     </div>
@@ -61,11 +63,12 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 1px;
+    justify-content: space-between;
+    gap: 10px;
     border-radius: 5px;
-    overflow: hidden;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.082);
     transition: transform 0.1s ease;
+    min-height: 350px;
 
     &:hover {
       border-color: rgb(125, 79, 178);
@@ -89,7 +92,6 @@
 
       height: 70%;
       width: 100%;
-      overflow: hidden;
       position: relative;
 
       .item-card-image {
@@ -103,47 +105,39 @@
       }
     }
 
-    .item-card-category {
-      background-color: rgb(125, 79, 178);
-      font-size: 1.2rem;
-      right: 5px;
-      top: 5px;
-      padding: 3px;
-      border-radius: 2px;
-      position: absolute;
-      z-index: 10;
-    }
-
     .item-card-text-container {
-      height: 30%;
-      padding: 5px 10px;
       display: flex;
       flex-direction: column;
-      gap: 1px;
+      justify-content: space-between;
+      height: 100%;
+      gap: 10px;
 
       .item-card-collection {
+        padding: 2px 10px;
         font-size: 0.8rem;
         font-weight: 200;
         margin: 0;
       }
 
       .item-card-title {
+        padding: 2px 10px;
         font-size: 1.3rem;
         margin: 0;
       }
     }
 
     .item-card-baseboard {
+      background-color: #141224;
+      padding: 2px 10px;
       display: flex;
+      height: 10%;
       justify-content: space-between;
       align-items: center;
 
       .item-card-price {
         margin: 0;
         font-size: 1.3rem;
-      }
-
-      .item-card-date {
+        font-weight: 500;
       }
     }
   }
@@ -159,6 +153,11 @@
     }
   }
   @media (max-width: 768px) {
+    .item-card-container {
+      justify-content: flex-start;
+      min-height: 380px;
+    }
+
     .item-card-image-container {
       width: 400px;
       height: 10px;
@@ -170,11 +169,8 @@
       height: 40%;
     }
 
-    .item-card-container {
-      height: 270px;
-    }
-
     .item-card-container .item-card-text-container .item-card-title {
+      text-align: center;
       font-size: 1rem;
     }
 
@@ -185,6 +181,14 @@
 
     .item-card-container .item-card-baseboard .item-card-price {
       font-size: 1rem;
+    }
+
+    .item-card-baseboard {
+      flex-direction: column;
+    }
+
+    .item-card-collection {
+      text-align: center;
     }
   }
 </style>

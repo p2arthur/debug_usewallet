@@ -62,7 +62,7 @@
     background: radial-gradient(circle, #1b152b, #100e1d, #1b152b);
   }
 
-  @media (max-width: 1300px) {
+  @media (max-width: 1500px) {
     .marketplace-itens-list {
       grid-template-columns: repeat(4, 1fr);
     }

@@ -4,6 +4,7 @@
   import MainButton from '~/components/buttons/MainButton.vue';
   import { capitalizeEachWord } from '~/utils/CapitalizeAllLetters';
   import { ItemInterface } from '~/interfaces/itemInterface';
+  import CategoryBadge from '~/components/item/CategoryBadge.vue';
 
   interface ItemProfileProps {
     item: ItemInterface;
@@ -26,9 +27,14 @@
     </div>
     <div class="item-info-container">
       <div class="item-container">
-        <h1 class="item-info-title">
-          {{ capitalizeEachWord(props.item.name) }}
-        </h1>
+        <div class="item-info-title-container">
+          <h1 class="item-info-title">
+            {{ capitalizeEachWord(props.item.name) }}
+          </h1>
+          <CategoryBadge
+            class="item-info-badge"
+            :category="item.category" />
+        </div>
         <h3 class="item-info-collection">
           {{ capitalizeEachWord(props.item.collection) }}
         </h3>
@@ -76,6 +82,15 @@
       }
     }
 
+    .item-info-title-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      .item-info-badge {
+        position: relative;
+      }
+    }
+
     .item-action-container {
       display: flex;
       justify-content: flex-end;
@@ -102,7 +117,7 @@
 
   .item-info-container {
     width: 70%;
-    padding: 10px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -114,6 +129,7 @@
 
     .item-info-collection {
       margin: 0;
+      text-align: start;
       font-size: 1rem;
     }
     .item-info-description {
@@ -138,7 +154,7 @@
         position: absolute;
         bottom: 0;
         width: 100%;
-        padding: 20px 0;
+        padding: 20px 20px;
 
         box-sizing: border-box;
       }
@@ -154,15 +170,12 @@
       }
 
       .item-info-collection {
-        text-align: center;
         font-size: 1rem;
       }
 
       .item-info-description {
         font-size: 0.8rem;
         word-break: break-all;
-        text-align: center;
-        padding: 0 10px;
         line-height: 0.8rem;
       }
     }
