@@ -76,7 +76,7 @@
     .marketplace-itens-list {
       grid-template-columns: repeat(2, 1fr);
       padding: 10px 5px;
-      gap: 10px;
+      gap: 20px;
     }
   }
 </style>

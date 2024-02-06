@@ -57,8 +57,6 @@
 
 <style setup lang="scss">
   .item-card-container {
-    background: linear-gradient(to bottom, #1b152b, #100e1d);
-    border: 2px solid rgba(53, 31, 74, 0.291);
     cursor: pointer;
     position: relative;
     display: flex;
@@ -66,7 +64,7 @@
     justify-content: space-between;
     gap: 10px;
     border-radius: 5px;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.082);
+
     transition: transform 0.1s ease;
     min-height: 350px;
 
@@ -88,8 +86,6 @@
     }
 
     .item-card-image-container {
-      background-color: rgb(0, 0, 0);
-
       height: 70%;
       width: 100%;
       position: relative;
@@ -107,10 +103,20 @@
 
     .item-card-text-container {
       display: flex;
+
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.038) 0%,
+        rgba(73, 63, 113, 0.257),
+        80%,
+        rgba(255, 255, 255, 0.038) 100%
+      );
+      border-radius: 0px 0px 5px 5px;
+
       flex-direction: column;
       justify-content: space-between;
       height: 100%;
-      gap: 10px;
+      gap: 1px;
 
       .item-card-collection {
         padding: 2px 10px;
@@ -127,7 +133,6 @@
     }
 
     .item-card-baseboard {
-      background-color: #141224;
       padding: 2px 10px;
       display: flex;
       height: 10%;
@@ -154,8 +159,15 @@
   }
   @media (max-width: 768px) {
     .item-card-container {
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.038) 0%,
+        rgba(73, 63, 113, 0.124),
+        80%,
+        rgba(255, 255, 255, 0.038) 100%
+      );
+      gap: 1px;
       justify-content: flex-start;
-      min-height: 380px;
     }
 
     .item-card-image-container {
@@ -171,12 +183,12 @@
 
     .item-card-container .item-card-text-container .item-card-title {
       text-align: center;
-      font-size: 1rem;
+      font-size: 1.2rem;
     }
 
     .item-card-price {
       margin: 0;
-      font-size: 0.8rem;
+      font-size: 1rem;
     }
 
     .item-card-container .item-card-baseboard .item-card-price {
