@@ -1,5 +1,13 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
+  serverMiddleware: [
+    (req, res, next) => {
+      // Set a global property in the context object
+      req.context = { globalThis: globalThis };
+      next();
+    },
+  ],
+
   nitro: {
     preset: 'node-server',
     compressPublicAssets: {

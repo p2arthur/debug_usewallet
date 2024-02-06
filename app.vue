@@ -9,13 +9,9 @@
   </div>
 </template>
 
-<<<<<<< HEAD
-<script setup lang="ts"></script>
-=======
 <script setup lang="ts">
-  onMounted(() => {});
+  global = globalThis;
 </script>
->>>>>>> 9e41a01359b5d1465ae1351dbd3ec71d849fe5ea
 
 <style lang="scss">
   html {

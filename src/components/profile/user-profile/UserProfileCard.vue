@@ -56,13 +56,15 @@
     </div>
   </div>
 </template>
-<style>
+<style scoped>
   .item-info-card {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
+    position: relative;
+    padding: 10px;
     width: 100%;
-    height: 300px;
+    height: 350px;
+    overflow: hidden;
     background: linear-gradient(
       to right,
       rgba(255, 255, 255, 0.038) 0%,
@@ -73,16 +75,14 @@
     border-radius: 10px;
 
     .item-image-container {
-      padding: 10px;
-      width: 30%;
+      width: 350px;
       border-radius: 5px;
       transition: transform 0.1s ease;
 
       video {
-        width: 100%;
-        height: 100%;
+        width: 350px;
+        height: 350px;
         object-fit: cover;
-        border-radius: 5px;
       }
       &:hover {
         transform: scale(1.01);
@@ -106,6 +106,7 @@
     border-radius: 5px;
     overflow: hidden;
     transition: 0.05s linear;
+    flex-shrink: 80%;
 
     &:hover {
       scale: 102%;
@@ -136,6 +137,49 @@
     .item-price-button {
       font-size: 2rem;
       font-weight: 700;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .item-info-card {
+      padding: 0;
+      height: 300px;
+
+      .item-info-container {
+        background-color: rgba(12, 7, 26, 0.66);
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 20px 0;
+
+        box-sizing: border-box;
+      }
+
+      .item-image-container {
+        width: 100%;
+        min-width: 400px;
+      }
+
+      .item-info-title {
+        font-size: 2rem;
+        text-align: center;
+      }
+
+      .item-info-collection {
+        text-align: center;
+        font-size: 1rem;
+      }
+
+      .item-info-description {
+        font-size: 0.8rem;
+        word-break: break-all;
+        text-align: center;
+        padding: 0 10px;
+        line-height: 0.8rem;
+      }
+    }
+    .item-action-container {
+      display: hidden;
     }
   }
 </style>

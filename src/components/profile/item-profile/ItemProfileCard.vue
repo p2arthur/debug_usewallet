@@ -67,8 +67,8 @@
       transition: transform 0.1s ease;
 
       video {
-        width: 350px;
-        height: 350px;
+        width: 100%;
+        height: 100%;
         object-fit: cover;
       }
       &:hover {
@@ -130,7 +130,8 @@
   @media (max-width: 760px) {
     .item-info-card {
       padding: 0;
-      height: 300px;
+      height: 400px;
+      border-radius: 5px;
 
       .item-info-container {
         background-color: rgba(12, 7, 26, 0.66);
