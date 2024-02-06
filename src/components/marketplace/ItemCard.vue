@@ -70,6 +70,7 @@
 
     &:hover {
       transform: scale(1.01);
+      box-shadow: 0px 5px 10px rgba(107, 38, 172, 0.109);
     }
 
     .item-card-image {
@@ -120,6 +121,14 @@
 
       &:hover {
         scale: 102%;
+        background: linear-gradient(
+          to bottom right,
+          rgba(186, 136, 255, 0.13) 0%,
+          rgba(73, 63, 113, 0.257),
+          80%,
+          rgba(255, 255, 255, 0.038) 100%
+        );
+        box-shadow: 0px 5px 10px rgba(22, 7, 36, 0.664);
       }
 
       .item-card-collection {
